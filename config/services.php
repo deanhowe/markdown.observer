@@ -39,6 +39,7 @@ return [
         'key' => env('STRIPE_KEY'),
         'secret' => env('STRIPE_SECRET'),
         'price_pro_monthly' => env('STRIPE_PRICE_PRO_MONTHLY'),
+        'price_pro_yearly' => env('STRIPE_PRICE_PRO_YEARLY'),
         'price_lifetime' => env('STRIPE_PRICE_LIFETIME'),
     ],
 

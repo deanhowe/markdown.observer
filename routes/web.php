@@ -14,6 +14,7 @@ Route::domain('ai.markdown.observer')->group(function () {
 
 // Main domain
 Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/health', [App\Http\Controllers\HealthController::class, 'index'])->name('health');
 Route::get('/ai', [App\Http\Controllers\AI\HomeController::class, 'index'])->name('ai.local'); // Local fallback
 Route::get('/pricing', fn() => Inertia::render('Pricing'))->name('pricing');
 Route::get('/terms', [App\Http\Controllers\LegalController::class, 'terms'])->name('terms');
@@ -26,6 +27,7 @@ Route::middleware(['auth'])->group(function () {
     
     // Checkout
     Route::post('/checkout/pro-monthly', [App\Http\Controllers\CheckoutController::class, 'proMonthly'])->name('checkout.pro-monthly');
+    Route::post('/checkout/pro-yearly', [App\Http\Controllers\CheckoutController::class, 'proYearly'])->name('checkout.pro-yearly');
     Route::post('/checkout/lifetime', [App\Http\Controllers\CheckoutController::class, 'lifetime'])->name('checkout.lifetime');
     Route::get('/billing', [App\Http\Controllers\CheckoutController::class, 'portal'])->name('billing.portal');
     
