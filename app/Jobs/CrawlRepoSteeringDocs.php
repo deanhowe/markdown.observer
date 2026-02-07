@@ -15,6 +15,9 @@ class CrawlRepoSteeringDocs implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
+    public $tries = 2; // Try twice then give up
+    public $timeout = 60; // 60 second timeout
+
     public function __construct(
         public string $repo,
         public array $folders = ['.claude', '.cursor', '.ai', '.kiro', '.aider', '.windsurf']
@@ -22,10 +25,15 @@ class CrawlRepoSteeringDocs implements ShouldQueue
 
     public function handle(): void
     {
-        foreach ($this->folders as $folder) {
-            if ($this->checkFolder($folder)) {
-                $this->downloadFolder($folder);
+        try {
+            foreach ($this->folders as $folder) {
+                if ($this->checkFolder($folder)) {
+                    $this->downloadFolder($folder);
+                }
             }
+        } catch (\Exception $e) {
+            // Log and skip - don't fail the job
+            \Log::warning("Failed to crawl {$this->repo}: {$e->getMessage()}");
         }
     }
 
@@ -61,18 +69,23 @@ class CrawlRepoSteeringDocs implements ShouldQueue
 
     private function downloadFile($collection, array $file): void
     {
-        $content = Http::get($file['download_url'])->body();
-        
-        SteeringDoc::updateOrCreate(
-            [
-                'steering_collection_id' => $collection->id,
-                'file_path' => $file['path'],
-            ],
-            [
-                'content' => $content,
-                'is_edited' => false,
-            ]
-        );
+        try {
+            $content = Http::timeout(10)->get($file['download_url'])->body();
+            
+            SteeringDoc::updateOrCreate(
+                [
+                    'steering_collection_id' => $collection->id,
+                    'file_path' => $file['path'],
+                ],
+                [
+                    'content' => $content,
+                    'is_edited' => false,
+                ]
+            );
+        } catch (\Exception $e) {
+            // Skip this file, continue with others
+            \Log::debug("Skipped {$file['path']}: {$e->getMessage()}");
+        }
     }
 
     private function downloadDirectory($collection, string $path): void
