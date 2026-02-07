@@ -141,6 +141,7 @@ export default function Welcome() {
         <footer className="border-t border-gray-200 dark:border-gray-700 py-8 text-center text-gray-600 dark:text-gray-400">
           <div className="container mx-auto px-4 sm:px-6">
             <div className="flex flex-wrap justify-center gap-4 mb-4">
+              <Link href="/health" className="hover:text-gray-900 dark:hover:text-white">Health Dashboard</Link>
               <Link href="/terms" className="hover:text-gray-900 dark:hover:text-white">Terms & Conditions</Link>
               <Link href="/privacy" className="hover:text-gray-900 dark:hover:text-white">Privacy Policy</Link>
               <Link href="/faq" className="hover:text-gray-900 dark:hover:text-white">FAQ</Link>
