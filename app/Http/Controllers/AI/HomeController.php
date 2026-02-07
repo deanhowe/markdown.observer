@@ -9,6 +9,6 @@ class HomeController extends Controller
 {
     public function index()
     {
-        return Inertia::render('AI/Welcome');
+        return Inertia::render('AiSteering/Welcome');
     }
 }
