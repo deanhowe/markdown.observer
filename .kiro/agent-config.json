@@ -1,0 +1,41 @@
+{
+  "name": "markdown-agent",
+  "description": "TipTap markdown editor specialist",
+  "version": "1.0.0",
+  "project": {
+    "name": "markdown.observer",
+    "path": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer",
+    "type": "laravel"
+  },
+  "knowledge_bases": [
+    {
+      "name": "dean-global-para",
+      "path": "/Users/deanhowe/.kiro/memory",
+      "priority": "high",
+      "description": "Dean's global PARA memory system"
+    },
+    {
+      "name": "markdown.observer-project-para",
+      "path": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/.kiro/memory",
+      "priority": "high",
+      "description": "Project-specific PARA"
+    },
+    {
+      "name": "markdown.observer-steering",
+      "path": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/.kiro/steering",
+      "priority": "critical",
+      "description": "Agent identity and steering documents"
+    }
+  ],
+  "expertise": [],
+  "communication": {
+    "style": "direct",
+    "code_philosophy": "minimal",
+    "typo_handling": "silent_correction",
+    "complexity_respect": true
+  },
+  "orchestrator": {
+    "name": "kiro",
+    "para_path": "/Users/deanhowe/.kiro/memory"
+  }
+}
