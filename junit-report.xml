@@ -1,0 +1,1934 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/phpunit.xml" tests="144" assertions="509" errors="3" failures="18" skipped="7" time="4.795426">
+    <testsuite name="Unit" tests="56" assertions="175" errors="2" failures="0" skipped="0" time="1.058356">
+      <testsuite name="Tests\Unit\EventSystemTest" file="tests/Unit/EventSystemTest.php" tests="2" assertions="0" errors="2" failures="0" skipped="0" time="0.012994">
+        <testcase name="revision created event is dispatched" file="tests/Unit/EventSystemTest.php::revision created event is dispatched" class="Tests\Unit\EventSystemTest" classname="Tests.Unit.EventSystemTest" assertions="0" time="0.012275">
+          <error type="TypeError">revision created event is dispatchedTypeError: Illuminate\Support\Testing\Fakes\EventFake::__construct(): Argument #1 ($dispatcher) must be of type Illuminate\Contracts\Events\Dispatcher, null given, called in /Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Support/Facades/Event.php on line 58
+at vendor/laravel/framework/src/Illuminate/Support/Testing/Fakes/EventFake.php:55
+at vendor/laravel/framework/src/Illuminate/Support/Facades/Event.php:58
+at tests/Unit/EventSystemTest.php:14</error>
+        </testcase>
+        <testcase name="user events are dispatched" file="tests/Unit/EventSystemTest.php::user events are dispatched" class="Tests\Unit\EventSystemTest" classname="Tests.Unit.EventSystemTest" assertions="0" time="0.000719">
+          <error type="TypeError">user events are dispatchedTypeError: Illuminate\Support\Testing\Fakes\EventFake::__construct(): Argument #1 ($dispatcher) must be of type Illuminate\Contracts\Events\Dispatcher, null given, called in /Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Support/Facades/Event.php on line 58
+at vendor/laravel/framework/src/Illuminate/Support/Testing/Fakes/EventFake.php:55
+at vendor/laravel/framework/src/Illuminate/Support/Facades/Event.php:58
+at tests/Unit/EventSystemTest.php:32</error>
+        </testcase>
+      </testsuite>
+      <testsuite name="Tests\Unit\ExampleTest" file="tests/Unit/ExampleTest.php" tests="1" assertions="1" errors="0" failures="0" skipped="0" time="0.008752">
+        <testcase name="that true is true" file="tests/Unit/ExampleTest.php::that true is true" class="Tests\Unit\ExampleTest" classname="Tests.Unit.ExampleTest" assertions="1" time="0.008752"/>
+      </testsuite>
+      <testsuite name="Tests\Unit\GuideLinesTest" file="tests/Unit/GuideLinesTest.php" tests="2" assertions="2" errors="0" failures="0" skipped="0" time="0.001514">
+        <testcase name="true is true" file="tests/Unit/GuideLinesTest.php::true is true" class="Tests\Unit\GuideLinesTest" classname="Tests.Unit.GuideLinesTest" assertions="1" time="0.001072"/>
+        <testcase name="1 + 1 equals 2" file="tests/Unit/GuideLinesTest.php::1 + 1 equals 2" class="Tests\Unit\GuideLinesTest" classname="Tests.Unit.GuideLinesTest" assertions="1" time="0.000442"/>
+      </testsuite>
+      <testsuite name="Tests\Unit\Repositories\CachedPageRepositoryTest" file="tests/Unit/Repositories/CachedPageRepositoryTest.php" tests="7" assertions="45" errors="0" failures="0" skipped="0" time="0.224953">
+        <testcase name="getAllPages returns cached pages" file="tests/Unit/Repositories/CachedPageRepositoryTest.php::getAllPages returns cached pages" class="Tests\Unit\Repositories\CachedPageRepositoryTest" classname="Tests.Unit.Repositories.CachedPageRepositoryTest" assertions="8" time="0.154448"/>
+        <testcase name="getPageByFilename returns cached page" file="tests/Unit/Repositories/CachedPageRepositoryTest.php::getPageByFilename returns cached page" class="Tests\Unit\Repositories\CachedPageRepositoryTest" classname="Tests.Unit.Repositories.CachedPageRepositoryTest" assertions="8" time="0.012970"/>
+        <testcase name="createPage invalidates cache" file="tests/Unit/Repositories/CachedPageRepositoryTest.php::createPage invalidates cache" class="Tests\Unit\Repositories\CachedPageRepositoryTest" classname="Tests.Unit.Repositories.CachedPageRepositoryTest" assertions="8" time="0.009910"/>
+        <testcase name="updatePage invalidates cache" file="tests/Unit/Repositories/CachedPageRepositoryTest.php::updatePage invalidates cache" class="Tests\Unit\Repositories\CachedPageRepositoryTest" classname="Tests.Unit.Repositories.CachedPageRepositoryTest" assertions="7" time="0.011478"/>
+        <testcase name="deletePage invalidates cache" file="tests/Unit/Repositories/CachedPageRepositoryTest.php::deletePage invalidates cache" class="Tests\Unit\Repositories\CachedPageRepositoryTest" classname="Tests.Unit.Repositories.CachedPageRepositoryTest" assertions="6" time="0.011809"/>
+        <testcase name="pageExists returns cached result" file="tests/Unit/Repositories/CachedPageRepositoryTest.php::pageExists returns cached result" class="Tests\Unit\Repositories\CachedPageRepositoryTest" classname="Tests.Unit.Repositories.CachedPageRepositoryTest" assertions="6" time="0.011551"/>
+        <testcase name="sanitizeFilename delegates to repository" file="tests/Unit/Repositories/CachedPageRepositoryTest.php::sanitizeFilename delegates to repository" class="Tests\Unit\Repositories\CachedPageRepositoryTest" classname="Tests.Unit.Repositories.CachedPageRepositoryTest" assertions="2" time="0.012786"/>
+      </testsuite>
+      <testsuite name="Tests\Unit\Repositories\CachedPageRevisionRepositoryTest" file="tests/Unit/Repositories/CachedPageRevisionRepositoryTest.php" tests="4" assertions="28" errors="0" failures="0" skipped="0" time="0.054247">
+        <testcase name="getLatestRevision returns cached revision" file="tests/Unit/Repositories/CachedPageRevisionRepositoryTest.php::getLatestRevision returns cached revision" class="Tests\Unit\Repositories\CachedPageRevisionRepositoryTest" classname="Tests.Unit.Repositories.CachedPageRevisionRepositoryTest" assertions="7" time="0.019715"/>
+        <testcase name="createRevision invalidates cache" file="tests/Unit/Repositories/CachedPageRevisionRepositoryTest.php::createRevision invalidates cache" class="Tests\Unit\Repositories\CachedPageRevisionRepositoryTest" classname="Tests.Unit.Repositories.CachedPageRevisionRepositoryTest" assertions="7" time="0.011915"/>
+        <testcase name="getRevisionHistory returns cached history" file="tests/Unit/Repositories/CachedPageRevisionRepositoryTest.php::getRevisionHistory returns cached history" class="Tests\Unit\Repositories\CachedPageRevisionRepositoryTest" classname="Tests.Unit.Repositories.CachedPageRevisionRepositoryTest" assertions="9" time="0.011941"/>
+        <testcase name="hasRevisions returns cached result" file="tests/Unit/Repositories/CachedPageRevisionRepositoryTest.php::hasRevisions returns cached result" class="Tests\Unit\Repositories\CachedPageRevisionRepositoryTest" classname="Tests.Unit.Repositories.CachedPageRevisionRepositoryTest" assertions="5" time="0.010676"/>
+      </testsuite>
+      <testsuite name="Tests\Unit\Repositories\PageRepositoryTest" file="tests/Unit/Repositories/PageRepositoryTest.php" tests="13" assertions="51" errors="0" failures="0" skipped="0" time="0.168073">
+        <testcase name="getAllPages returns all markdown files" file="tests/Unit/Repositories/PageRepositoryTest.php::getAllPages returns all markdown files" class="Tests\Unit\Repositories\PageRepositoryTest" classname="Tests.Unit.Repositories.PageRepositoryTest" assertions="4" time="0.022940"/>
+        <testcase name="getPageByFilename returns page when it exists" file="tests/Unit/Repositories/PageRepositoryTest.php::getPageByFilename returns page when it exists" class="Tests\Unit\Repositories\PageRepositoryTest" classname="Tests.Unit.Repositories.PageRepositoryTest" assertions="7" time="0.012634"/>
+        <testcase name="getPageByFilename returns null when page does not exist" file="tests/Unit/Repositories/PageRepositoryTest.php::getPageByFilename returns null when page does not exist" class="Tests\Unit\Repositories\PageRepositoryTest" classname="Tests.Unit.Repositories.PageRepositoryTest" assertions="1" time="0.011475"/>
+        <testcase name="createPage creates a new page" file="tests/Unit/Repositories/PageRepositoryTest.php::createPage creates a new page" class="Tests\Unit\Repositories\PageRepositoryTest" classname="Tests.Unit.Repositories.PageRepositoryTest" assertions="8" time="0.012847"/>
+        <testcase name="createPage throws exception when page already exists" file="tests/Unit/Repositories/PageRepositoryTest.php::createPage throws exception when page already exists" class="Tests\Unit\Repositories\PageRepositoryTest" classname="Tests.Unit.Repositories.PageRepositoryTest" assertions="2" time="0.011883"/>
+        <testcase name="updatePage updates an existing page" file="tests/Unit/Repositories/PageRepositoryTest.php::updatePage updates an existing page" class="Tests\Unit\Repositories\PageRepositoryTest" classname="Tests.Unit.Repositories.PageRepositoryTest" assertions="8" time="0.012471"/>
+        <testcase name="updatePage with different content" file="tests/Unit/Repositories/PageRepositoryTest.php::updatePage with different content" class="Tests\Unit\Repositories\PageRepositoryTest" classname="Tests.Unit.Repositories.PageRepositoryTest" assertions="8" time="0.012414"/>
+        <testcase name="updatePage throws exception when page does not exist" file="tests/Unit/Repositories/PageRepositoryTest.php::updatePage throws exception when page does not exist" class="Tests\Unit\Repositories\PageRepositoryTest" classname="Tests.Unit.Repositories.PageRepositoryTest" assertions="2" time="0.014245"/>
+        <testcase name="deletePage deletes an existing page" file="tests/Unit/Repositories/PageRepositoryTest.php::deletePage deletes an existing page" class="Tests\Unit\Repositories\PageRepositoryTest" classname="Tests.Unit.Repositories.PageRepositoryTest" assertions="2" time="0.011521"/>
+        <testcase name="deletePage returns false when page does not exist" file="tests/Unit/Repositories/PageRepositoryTest.php::deletePage returns false when page does not exist" class="Tests\Unit\Repositories\PageRepositoryTest" classname="Tests.Unit.Repositories.PageRepositoryTest" assertions="1" time="0.011628"/>
+        <testcase name="pageExists returns true when page exists" file="tests/Unit/Repositories/PageRepositoryTest.php::pageExists returns true when page exists" class="Tests\Unit\Repositories\PageRepositoryTest" classname="Tests.Unit.Repositories.PageRepositoryTest" assertions="1" time="0.010810"/>
+        <testcase name="pageExists returns false when page does not exist" file="tests/Unit/Repositories/PageRepositoryTest.php::pageExists returns false when page does not exist" class="Tests\Unit\Repositories\PageRepositoryTest" classname="Tests.Unit.Repositories.PageRepositoryTest" assertions="1" time="0.010833"/>
+        <testcase name="sanitizeFilename sanitizes filenames correctly" file="tests/Unit/Repositories/PageRepositoryTest.php::sanitizeFilename sanitizes filenames correctly" class="Tests\Unit\Repositories\PageRepositoryTest" classname="Tests.Unit.Repositories.PageRepositoryTest" assertions="6" time="0.012371"/>
+      </testsuite>
+      <testsuite name="Tests\Unit\Repositories\PageRevisionRepositoryTest" file="tests/Unit/Repositories/PageRevisionRepositoryTest.php" tests="7" assertions="20" errors="0" failures="0" skipped="0" time="0.198406">
+        <testcase name="getLatestRevision returns latest revision" file="tests/Unit/Repositories/PageRevisionRepositoryTest.php::getLatestRevision returns latest revision" class="Tests\Unit\Repositories\PageRevisionRepositoryTest" classname="Tests.Unit.Repositories.PageRevisionRepositoryTest" assertions="3" time="0.125842"/>
+        <testcase name="getLatestRevision returns null when no revisions exist" file="tests/Unit/Repositories/PageRevisionRepositoryTest.php::getLatestRevision returns null when no revisions exist" class="Tests\Unit\Repositories\PageRevisionRepositoryTest" classname="Tests.Unit.Repositories.PageRevisionRepositoryTest" assertions="1" time="0.012441"/>
+        <testcase name="createRevision creates a new revision" file="tests/Unit/Repositories/PageRevisionRepositoryTest.php::createRevision creates a new revision" class="Tests\Unit\Repositories\PageRevisionRepositoryTest" classname="Tests.Unit.Repositories.PageRevisionRepositoryTest" assertions="7" time="0.012078"/>
+        <testcase name="getRevisionHistory returns all revisions for a file" file="tests/Unit/Repositories/PageRevisionRepositoryTest.php::getRevisionHistory returns all revisions for a file" class="Tests\Unit\Repositories\PageRevisionRepositoryTest" classname="Tests.Unit.Repositories.PageRevisionRepositoryTest" assertions="5" time="0.014157"/>
+        <testcase name="getRevisionHistory returns empty array when no revisions exist" file="tests/Unit/Repositories/PageRevisionRepositoryTest.php::getRevisionHistory returns empty array when no revisions exist" class="Tests\Unit\Repositories\PageRevisionRepositoryTest" classname="Tests.Unit.Repositories.PageRevisionRepositoryTest" assertions="2" time="0.011468"/>
+        <testcase name="hasRevisions returns true when revisions exist" file="tests/Unit/Repositories/PageRevisionRepositoryTest.php::hasRevisions returns true when revisions exist" class="Tests\Unit\Repositories\PageRevisionRepositoryTest" classname="Tests.Unit.Repositories.PageRevisionRepositoryTest" assertions="1" time="0.010526"/>
+        <testcase name="hasRevisions returns false when no revisions exist" file="tests/Unit/Repositories/PageRevisionRepositoryTest.php::hasRevisions returns false when no revisions exist" class="Tests\Unit\Repositories\PageRevisionRepositoryTest" classname="Tests.Unit.Repositories.PageRevisionRepositoryTest" assertions="1" time="0.011894"/>
+      </testsuite>
+      <testsuite name="Tests\Unit\Services\MarkdownRenderingTest" file="tests/Unit/Services/MarkdownRenderingTest.php" tests="6" assertions="26" errors="0" failures="0" skipped="0" time="0.372969">
+        <testcase name="it renders headings correctly" file="tests/Unit/Services/MarkdownRenderingTest.php::it renders headings correctly" class="Tests\Unit\Services\MarkdownRenderingTest" classname="Tests.Unit.Services.MarkdownRenderingTest" assertions="6" time="0.074827"/>
+        <testcase name="it renders lists correctly" file="tests/Unit/Services/MarkdownRenderingTest.php::it renders lists correctly" class="Tests\Unit\Services\MarkdownRenderingTest" classname="Tests.Unit.Services.MarkdownRenderingTest" assertions="8" time="0.016220"/>
+        <testcase name="it renders tables correctly" file="tests/Unit/Services/MarkdownRenderingTest.php::it renders tables correctly" class="Tests\Unit\Services\MarkdownRenderingTest" classname="Tests.Unit.Services.MarkdownRenderingTest" assertions="6" time="0.013214"/>
+        <testcase name="it renders code blocks with syntax highlighting" file="tests/Unit/Services/MarkdownRenderingTest.php::it renders code blocks with syntax highlighting" class="Tests\Unit\Services\MarkdownRenderingTest" classname="Tests.Unit.Services.MarkdownRenderingTest" assertions="2" time="0.243043"/>
+        <testcase name="it caches rendered markdown" file="tests/Unit/Services/MarkdownRenderingTest.php::it caches rendered markdown" class="Tests\Unit\Services\MarkdownRenderingTest" classname="Tests.Unit.Services.MarkdownRenderingTest" assertions="2" time="0.012481"/>
+        <testcase name="it clears specific markdown cache" file="tests/Unit/Services/MarkdownRenderingTest.php::it clears specific markdown cache" class="Tests\Unit\Services\MarkdownRenderingTest" classname="Tests.Unit.Services.MarkdownRenderingTest" assertions="2" time="0.013184"/>
+      </testsuite>
+      <testsuite name="Tests\Unit\Services\MarkdownServiceTest" file="tests/Unit/Services/MarkdownServiceTest.php" tests="3" assertions="0" errors="0" failures="0" skipped="0" time="0.005576">
+        <testcase name="toHtml converts markdown to html" file="tests/Unit/Services/MarkdownServiceTest.php::toHtml converts markdown to html" class="Tests\Unit\Services\MarkdownServiceTest" classname="Tests.Unit.Services.MarkdownServiceTest" assertions="0" time="0.004550"/>
+        <testcase name="toMarkdown converts html to markdown" file="tests/Unit/Services/MarkdownServiceTest.php::toMarkdown converts html to markdown" class="Tests\Unit\Services\MarkdownServiceTest" classname="Tests.Unit.Services.MarkdownServiceTest" assertions="0" time="0.000554"/>
+        <testcase name="sanitizeHtml cleans html" file="tests/Unit/Services/MarkdownServiceTest.php::sanitizeHtml cleans html" class="Tests\Unit\Services\MarkdownServiceTest" classname="Tests.Unit.Services.MarkdownServiceTest" assertions="0" time="0.000473"/>
+      </testsuite>
+      <testsuite name="Tests\Unit\Services\PageServiceTest" file="tests/Unit/Services/PageServiceTest.php" tests="9" assertions="0" errors="0" failures="0" skipped="0" time="0.005476">
+        <testcase name="getAllPages returns all pages from repository" file="tests/Unit/Services/PageServiceTest.php::getAllPages returns all pages from repository" class="Tests\Unit\Services\PageServiceTest" classname="Tests.Unit.Services.PageServiceTest" assertions="0" time="0.001698"/>
+        <testcase name="getPageByFilename returns page with tiptap_json from revision" file="tests/Unit/Services/PageServiceTest.php::getPageByFilename returns page with tiptap_json from revision" class="Tests\Unit\Services\PageServiceTest" classname="Tests.Unit.Services.PageServiceTest" assertions="0" time="0.000468"/>
+        <testcase name="getPageByFilename returns null when page not found" file="tests/Unit/Services/PageServiceTest.php::getPageByFilename returns null when page not found" class="Tests\Unit\Services\PageServiceTest" classname="Tests.Unit.Services.PageServiceTest" assertions="0" time="0.000466"/>
+        <testcase name="createPage creates page and tracks revision" file="tests/Unit/Services/PageServiceTest.php::createPage creates page and tracks revision" class="Tests\Unit\Services\PageServiceTest" classname="Tests.Unit.Services.PageServiceTest" assertions="0" time="0.000466"/>
+        <testcase name="updatePage updates page and tracks revision" file="tests/Unit/Services/PageServiceTest.php::updatePage updates page and tracks revision" class="Tests\Unit\Services\PageServiceTest" classname="Tests.Unit.Services.PageServiceTest" assertions="0" time="0.000505"/>
+        <testcase name="updatePage throws exception when page has external changes" file="tests/Unit/Services/PageServiceTest.php::updatePage throws exception when page has external changes" class="Tests\Unit\Services\PageServiceTest" classname="Tests.Unit.Services.PageServiceTest" assertions="0" time="0.000466"/>
+        <testcase name="deletePage deletes page and tracks revision" file="tests/Unit/Services/PageServiceTest.php::deletePage deletes page and tracks revision" class="Tests\Unit\Services\PageServiceTest" classname="Tests.Unit.Services.PageServiceTest" assertions="0" time="0.000471"/>
+        <testcase name="convertToHtml delegates to markdown service" file="tests/Unit/Services/PageServiceTest.php::convertToHtml delegates to markdown service" class="Tests\Unit\Services\PageServiceTest" classname="Tests.Unit.Services.PageServiceTest" assertions="0" time="0.000469"/>
+        <testcase name="convertToMarkdown delegates to markdown service" file="tests/Unit/Services/PageServiceTest.php::convertToMarkdown delegates to markdown service" class="Tests\Unit\Services\PageServiceTest" classname="Tests.Unit.Services.PageServiceTest" assertions="0" time="0.000467"/>
+      </testsuite>
+      <testsuite name="Tests\Unit\SimpleTest" file="tests/Unit/SimpleTest.php" tests="2" assertions="2" errors="0" failures="0" skipped="0" time="0.005395">
+        <testcase name="string contains substring" file="tests/Unit/SimpleTest.php::string contains substring" class="Tests\Unit\SimpleTest" classname="Tests.Unit.SimpleTest" assertions="1" time="0.004815"/>
+        <testcase name="array has specific item" file="tests/Unit/SimpleTest.php::array has specific item" class="Tests\Unit\SimpleTest" classname="Tests.Unit.SimpleTest" assertions="1" time="0.000579"/>
+      </testsuite>
+    </testsuite>
+    <testsuite name="Feature" tests="88" assertions="334" errors="1" failures="18" skipped="7" time="3.737070">
+      <testsuite name="Tests\Feature\Api\LogControllerTest" file="tests/Feature/Api/LogControllerTest.php" tests="5" assertions="19" errors="0" failures="0" skipped="0" time="0.103619">
+        <testcase name="can log message" file="tests/Feature/Api/LogControllerTest.php::can log message" class="Tests\Feature\Api\LogControllerTest" classname="Tests.Feature.Api.LogControllerTest" assertions="3" time="0.043201"/>
+        <testcase name="can log markdown error" file="tests/Feature/Api/LogControllerTest.php::can log markdown error" class="Tests\Feature\Api\LogControllerTest" classname="Tests.Feature.Api.LogControllerTest" assertions="4" time="0.013780"/>
+        <testcase name="validates required fields" file="tests/Feature/Api/LogControllerTest.php::validates required fields" class="Tests\Feature\Api\LogControllerTest" classname="Tests.Feature.Api.LogControllerTest" assertions="5" time="0.014662"/>
+        <testcase name="validates level field" file="tests/Feature/Api/LogControllerTest.php::validates level field" class="Tests\Feature\Api\LogControllerTest" classname="Tests.Feature.Api.LogControllerTest" assertions="4" time="0.013941"/>
+        <testcase name="adds user info to context" file="tests/Feature/Api/LogControllerTest.php::adds user info to context" class="Tests\Feature\Api\LogControllerTest" classname="Tests.Feature.Api.LogControllerTest" assertions="3" time="0.018035"/>
+      </testsuite>
+      <testsuite name="Tests\Feature\Api\PageControllerTest" file="tests/Feature/Api/PageControllerTest.php" tests="13" assertions="43" errors="0" failures="6" skipped="0" time="0.333734">
+        <testcase name="can list pages" file="tests/Feature/Api/PageControllerTest.php::can list pages" class="Tests\Feature\Api\PageControllerTest" classname="Tests.Feature.Api.PageControllerTest" assertions="6" time="0.024079"/>
+        <testcase name="can show page" file="tests/Feature/Api/PageControllerTest.php::can show page" class="Tests\Feature\Api\PageControllerTest" classname="Tests.Feature.Api.PageControllerTest" assertions="1" time="0.025788">
+          <failure type="PHPUnit\Framework\ExpectationFailedException">can show pageExpected response status code [200] but received 404.
+Failed asserting that 404 is identical to 200.
+at vendor/laravel/framework/src/Illuminate/Testing/TestResponseAssert.php:45
+at vendor/laravel/framework/src/Illuminate/Testing/TestResponse.php:174
+at tests/Feature/Api/PageControllerTest.php:52</failure>
+        </testcase>
+        <testcase name="returns 404 for nonexistent page" file="tests/Feature/Api/PageControllerTest.php::returns 404 for nonexistent page" class="Tests\Feature\Api\PageControllerTest" classname="Tests.Feature.Api.PageControllerTest" assertions="2" time="0.070675">
+          <failure type="PHPUnit\Framework\ExpectationFailedException">returns 404 for nonexistent pageUnable to find JSON: 
+
+[{
+    "message": "Page not found",
+    "meta": {
+        "api_version": "v1"
+    }
+}]
+
+within response JSON:
+
+[{
+    "message": "The route api/pages/nonexistent-page could not be found.",
+    "exception": "Symfony\\Component\\HttpKernel\\Exception\\NotFoundHttpException",
+    "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Routing/AbstractRouteCollection.php",
+    "line": 45,
+    "trace": [
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Routing/RouteCollection.php",
+            "line": 184,
+            "function": "handleMatchedRoute",
+            "class": "Illuminate\\Routing\\AbstractRouteCollection",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Routing/Router.php",
+            "line": 777,
+            "function": "match",
+            "class": "Illuminate\\Routing\\RouteCollection",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Routing/Router.php",
+            "line": 764,
+            "function": "findRoute",
+            "class": "Illuminate\\Routing\\Router",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Routing/Router.php",
+            "line": 753,
+            "function": "dispatchToRoute",
+            "class": "Illuminate\\Routing\\Router",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php",
+            "line": 200,
+            "function": "dispatch",
+            "class": "Illuminate\\Routing\\Router",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+            "line": 180,
+            "function": "{closure:Illuminate\\Foundation\\Http\\Kernel::dispatchToRouter():197}",
+            "class": "Illuminate\\Foundation\\Http\\Kernel",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/livewire/livewire/src/Features/SupportDisablingBackButtonCache/DisableBackButtonCacheMiddleware.php",
+            "line": 19,
+            "function": "{closure:Illuminate\\Pipeline\\Pipeline::prepareDestination():178}",
+            "class": "Illuminate\\Pipeline\\Pipeline",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+            "line": 219,
+            "function": "handle",
+            "class": "Livewire\\Features\\SupportDisablingBackButtonCache\\DisableBackButtonCacheMiddleware",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php",
+            "line": 21,
+            "function": "{closure:{closure:Illuminate\\Pipeline\\Pipeline::carry():194}:195}",
+            "class": "Illuminate\\Pipeline\\Pipeline",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull.php",
+            "line": 31,
+            "function": "handle",
+            "class": "Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+            "line": 219,
+            "function": "handle",
+            "class": "Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php",
+            "line": 21,
+            "function": "{closure:{closure:Illuminate\\Pipeline\\Pipeline::carry():194}:195}",
+            "class": "Illuminate\\Pipeline\\Pipeline",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TrimStrings.php",
+            "line": 51,
+            "function": "handle",
+            "class": "Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+            "line": 219,
+            "function": "handle",
+            "class": "Illuminate\\Foundation\\Http\\Middleware\\TrimStrings",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Http/Middleware/ValidatePostSize.php",
+            "line": 27,
+            "function": "{closure:{closure:Illuminate\\Pipeline\\Pipeline::carry():194}:195}",
+            "class": "Illuminate\\Pipeline\\Pipeline",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+            "line": 219,
+            "function": "handle",
+            "class": "Illuminate\\Http\\Middleware\\ValidatePostSize",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/PreventRequestsDuringMaintenance.php",
+            "line": 109,
+            "function": "{closure:{closure:Illuminate\\Pipeline\\Pipeline::carry():194}:195}",
+            "class": "Illuminate\\Pipeline\\Pipeline",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+            "line": 219,
+            "function": "handle",
+            "class": "Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Http/Middleware/HandleCors.php",
+            "line": 61,
+            "function": "{closure:{closure:Illuminate\\Pipeline\\Pipeline::carry():194}:195}",
+            "class": "Illuminate\\Pipeline\\Pipeline",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+            "line": 219,
+            "function": "handle",
+            "class": "Illuminate\\Http\\Middleware\\HandleCors",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Http/Middleware/TrustProxies.php",
+            "line": 58,
+            "function": "{closure:{closure:Illuminate\\Pipeline\\Pipeline::carry():194}:195}",
+            "class": "Illuminate\\Pipeline\\Pipeline",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+            "line": 219,
+            "function": "handle",
+            "class": "Illuminate\\Http\\Middleware\\TrustProxies",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/InvokeDeferredCallbacks.php",
+            "line": 22,
+            "function": "{closure:{closure:Illuminate\\Pipeline\\Pipeline::carry():194}:195}",
+            "class": "Illuminate\\Pipeline\\Pipeline",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+            "line": 219,
+            "function": "handle",
+            "class": "Illuminate\\Foundation\\Http\\Middleware\\InvokeDeferredCallbacks",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Http/Middleware/ValidatePathEncoding.php",
+            "line": 26,
+            "function": "{closure:{closure:Illuminate\\Pipeline\\Pipeline::carry():194}:195}",
+            "class": "Illuminate\\Pipeline\\Pipeline",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+            "line": 219,
+            "function": "handle",
+            "class": "Illuminate\\Http\\Middleware\\ValidatePathEncoding",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+            "line": 137,
+            "function": "{closure:{closure:Illuminate\\Pipeline\\Pipeline::carry():194}:195}",
+            "class": "Illuminate\\Pipeline\\Pipeline",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php",
+            "line": 175,
+            "function": "then",
+            "class": "Illuminate\\Pipeline\\Pipeline",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php",
+            "line": 144,
+            "function": "sendRequestThroughRouter",
+            "class": "Illuminate\\Foundation\\Http\\Kernel",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Foundation/Testing/Concerns/MakesHttpRequests.php",
+            "line": 607,
+            "function": "handle",
+            "class": "Illuminate\\Foundation\\Http\\Kernel",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Foundation/Testing/Concerns/MakesHttpRequests.php",
+            "line": 573,
+            "function": "call",
+            "class": "Illuminate\\Foundation\\Testing\\TestCase",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Foundation/Testing/Concerns/MakesHttpRequests.php",
+            "line": 381,
+            "function": "json",
+            "class": "Illuminate\\Foundation\\Testing\\TestCase",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/tests/Feature/Api/PageControllerTest.php",
+            "line": 67,
+            "function": "getJson",
+            "class": "Illuminate\\Foundation\\Testing\\TestCase",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/pestphp/pest/src/Factories/TestCaseMethodFactory.php",
+            "line": 168,
+            "function": "{closure:/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/tests/Feature/Api/PageControllerTest.php:65}",
+            "class": "P\\Tests\\Feature\\Api\\PageControllerTest",
+            "type": "-&gt;"
+        },
+        {
+            "function": "{closure:Pest\\Factories\\TestCaseMethodFactory::getClosure():158}",
+            "class": "P\\Tests\\Feature\\Api\\PageControllerTest",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/pestphp/pest/src/Concerns/Testable.php",
+            "line": 419,
+            "function": "call_user_func_array"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/pestphp/pest/src/Support/ExceptionTrace.php",
+            "line": 26,
+            "function": "{closure:Pest\\Concerns\\Testable::__callClosure():419}",
+            "class": "P\\Tests\\Feature\\Api\\PageControllerTest",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/pestphp/pest/src/Concerns/Testable.php",
+            "line": 419,
+            "function": "ensure",
+            "class": "Pest\\Support\\ExceptionTrace",
+            "type": "::"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/pestphp/pest/src/Concerns/Testable.php",
+            "line": 321,
+            "function": "__callClosure",
+            "class": "P\\Tests\\Feature\\Api\\PageControllerTest",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/pestphp/pest/src/Factories/TestCaseFactory.php(169) : eval()'d code",
+            "line": 35,
+            "function": "__runTest",
+            "class": "P\\Tests\\Feature\\Api\\PageControllerTest",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/phpunit/phpunit/src/Framework/TestCase.php",
+            "line": 1656,
+            "function": "__pest_evaluable_returns_404_for_nonexistent_page",
+            "class": "P\\Tests\\Feature\\Api\\PageControllerTest",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/phpunit/phpunit/src/Framework/TestCase.php",
+            "line": 514,
+            "function": "runTest",
+            "class": "PHPUnit\\Framework\\TestCase",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/phpunit/phpunit/src/Framework/TestRunner/TestRunner.php",
+            "line": 87,
+            "function": "runBare",
+            "class": "PHPUnit\\Framework\\TestCase",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/phpunit/phpunit/src/Framework/TestCase.php",
+            "line": 361,
+            "function": "run",
+            "class": "PHPUnit\\Framework\\TestRunner",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/phpunit/phpunit/src/Framework/TestSuite.php",
+            "line": 369,
+            "function": "run",
+            "class": "PHPUnit\\Framework\\TestCase",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/phpunit/phpunit/src/Framework/TestSuite.php",
+            "line": 369,
+            "function": "run",
+            "class": "PHPUnit\\Framework\\TestSuite",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/phpunit/phpunit/src/Framework/TestSuite.php",
+            "line": 369,
+            "function": "run",
+            "class": "PHPUnit\\Framework\\TestSuite",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/phpunit/phpunit/src/TextUI/TestRunner.php",
+            "line": 64,
+            "function": "run",
+            "class": "PHPUnit\\Framework\\TestSuite",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/phpunit/phpunit/src/TextUI/Application.php",
+            "line": 211,
+            "function": "run",
+            "class": "PHPUnit\\TextUI\\TestRunner",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/pestphp/pest/src/Kernel.php",
+            "line": 103,
+            "function": "run",
+            "class": "PHPUnit\\TextUI\\Application",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/pestphp/pest/bin/pest",
+            "line": 184,
+            "function": "handle",
+            "class": "Pest\\Kernel",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/pestphp/pest/bin/pest",
+            "line": 192,
+            "function": "{closure:/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/pestphp/pest/bin/pest:18}"
+        }
+    ]
+}].
+
+
+Failed asserting that an array has the subset Array &amp;0 [
+    'message' =&gt; 'Page not found',
+    'meta' =&gt; Array &amp;1 [
+        'api_version' =&gt; 'v1',
+    ],
+].
+at vendor/laravel/framework/src/Illuminate/Testing/Constraints/ArraySubset.php:80
+at vendor/laravel/framework/src/Illuminate/Testing/Assert.php:36
+at vendor/laravel/framework/src/Illuminate/Testing/AssertableJsonString.php:319
+at vendor/laravel/framework/src/Illuminate/Testing/TestResponse.php:833
+at tests/Feature/Api/PageControllerTest.php:70</failure>
+        </testcase>
+        <testcase name="can create page" file="tests/Feature/Api/PageControllerTest.php::can create page" class="Tests\Feature\Api\PageControllerTest" classname="Tests.Feature.Api.PageControllerTest" assertions="11" time="0.018658"/>
+        <testcase name="validates create page request" file="tests/Feature/Api/PageControllerTest.php::validates create page request" class="Tests\Feature\Api\PageControllerTest" classname="Tests.Feature.Api.PageControllerTest" assertions="4" time="0.016067"/>
+        <testcase name="can update page" file="tests/Feature/Api/PageControllerTest.php::can update page" class="Tests\Feature\Api\PageControllerTest" classname="Tests.Feature.Api.PageControllerTest" assertions="1" time="0.015577">
+          <failure type="PHPUnit\Framework\ExpectationFailedException">can update pageExpected response status code [200] but received 404.
+Failed asserting that 404 is identical to 200.
+at vendor/laravel/framework/src/Illuminate/Testing/TestResponseAssert.php:45
+at vendor/laravel/framework/src/Illuminate/Testing/TestResponse.php:174
+at tests/Feature/Api/PageControllerTest.php:137</failure>
+        </testcase>
+        <testcase name="validates update page request" file="tests/Feature/Api/PageControllerTest.php::validates update page request" class="Tests\Feature\Api\PageControllerTest" classname="Tests.Feature.Api.PageControllerTest" assertions="1" time="0.014621">
+          <failure type="PHPUnit\Framework\ExpectationFailedException">validates update page requestExpected response status code [422] but received 404.
+Failed asserting that 404 is identical to 422.
+at vendor/laravel/framework/src/Illuminate/Testing/TestResponseAssert.php:45
+at vendor/laravel/framework/src/Illuminate/Testing/TestResponse.php:174
+at tests/Feature/Api/PageControllerTest.php:168</failure>
+        </testcase>
+        <testcase name="can delete page" file="tests/Feature/Api/PageControllerTest.php::can delete page" class="Tests\Feature\Api\PageControllerTest" classname="Tests.Feature.Api.PageControllerTest" assertions="1" time="0.014610">
+          <failure type="PHPUnit\Framework\ExpectationFailedException">can delete pageExpected response status code [200] but received 404.
+Failed asserting that 404 is identical to 200.
+at vendor/laravel/framework/src/Illuminate/Testing/TestResponseAssert.php:45
+at vendor/laravel/framework/src/Illuminate/Testing/TestResponse.php:174
+at tests/Feature/Api/PageControllerTest.php:179</failure>
+        </testcase>
+        <testcase name="delete returns 404 for nonexistent page" file="tests/Feature/Api/PageControllerTest.php::delete returns 404 for nonexistent page" class="Tests\Feature\Api\PageControllerTest" classname="Tests.Feature.Api.PageControllerTest" assertions="2" time="0.067852">
+          <failure type="PHPUnit\Framework\ExpectationFailedException">delete returns 404 for nonexistent pageUnable to find JSON: 
+
+[{
+    "message": "Page not found",
+    "meta": {
+        "api_version": "v1"
+    }
+}]
+
+within response JSON:
+
+[{
+    "message": "The route api/pages/nonexistent-page could not be found.",
+    "exception": "Symfony\\Component\\HttpKernel\\Exception\\NotFoundHttpException",
+    "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Routing/AbstractRouteCollection.php",
+    "line": 45,
+    "trace": [
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Routing/RouteCollection.php",
+            "line": 184,
+            "function": "handleMatchedRoute",
+            "class": "Illuminate\\Routing\\AbstractRouteCollection",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Routing/Router.php",
+            "line": 777,
+            "function": "match",
+            "class": "Illuminate\\Routing\\RouteCollection",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Routing/Router.php",
+            "line": 764,
+            "function": "findRoute",
+            "class": "Illuminate\\Routing\\Router",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Routing/Router.php",
+            "line": 753,
+            "function": "dispatchToRoute",
+            "class": "Illuminate\\Routing\\Router",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php",
+            "line": 200,
+            "function": "dispatch",
+            "class": "Illuminate\\Routing\\Router",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+            "line": 180,
+            "function": "{closure:Illuminate\\Foundation\\Http\\Kernel::dispatchToRouter():197}",
+            "class": "Illuminate\\Foundation\\Http\\Kernel",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/livewire/livewire/src/Features/SupportDisablingBackButtonCache/DisableBackButtonCacheMiddleware.php",
+            "line": 19,
+            "function": "{closure:Illuminate\\Pipeline\\Pipeline::prepareDestination():178}",
+            "class": "Illuminate\\Pipeline\\Pipeline",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+            "line": 219,
+            "function": "handle",
+            "class": "Livewire\\Features\\SupportDisablingBackButtonCache\\DisableBackButtonCacheMiddleware",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php",
+            "line": 21,
+            "function": "{closure:{closure:Illuminate\\Pipeline\\Pipeline::carry():194}:195}",
+            "class": "Illuminate\\Pipeline\\Pipeline",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull.php",
+            "line": 31,
+            "function": "handle",
+            "class": "Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+            "line": 219,
+            "function": "handle",
+            "class": "Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php",
+            "line": 21,
+            "function": "{closure:{closure:Illuminate\\Pipeline\\Pipeline::carry():194}:195}",
+            "class": "Illuminate\\Pipeline\\Pipeline",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TrimStrings.php",
+            "line": 51,
+            "function": "handle",
+            "class": "Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+            "line": 219,
+            "function": "handle",
+            "class": "Illuminate\\Foundation\\Http\\Middleware\\TrimStrings",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Http/Middleware/ValidatePostSize.php",
+            "line": 27,
+            "function": "{closure:{closure:Illuminate\\Pipeline\\Pipeline::carry():194}:195}",
+            "class": "Illuminate\\Pipeline\\Pipeline",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+            "line": 219,
+            "function": "handle",
+            "class": "Illuminate\\Http\\Middleware\\ValidatePostSize",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/PreventRequestsDuringMaintenance.php",
+            "line": 109,
+            "function": "{closure:{closure:Illuminate\\Pipeline\\Pipeline::carry():194}:195}",
+            "class": "Illuminate\\Pipeline\\Pipeline",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+            "line": 219,
+            "function": "handle",
+            "class": "Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Http/Middleware/HandleCors.php",
+            "line": 61,
+            "function": "{closure:{closure:Illuminate\\Pipeline\\Pipeline::carry():194}:195}",
+            "class": "Illuminate\\Pipeline\\Pipeline",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+            "line": 219,
+            "function": "handle",
+            "class": "Illuminate\\Http\\Middleware\\HandleCors",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Http/Middleware/TrustProxies.php",
+            "line": 58,
+            "function": "{closure:{closure:Illuminate\\Pipeline\\Pipeline::carry():194}:195}",
+            "class": "Illuminate\\Pipeline\\Pipeline",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+            "line": 219,
+            "function": "handle",
+            "class": "Illuminate\\Http\\Middleware\\TrustProxies",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/InvokeDeferredCallbacks.php",
+            "line": 22,
+            "function": "{closure:{closure:Illuminate\\Pipeline\\Pipeline::carry():194}:195}",
+            "class": "Illuminate\\Pipeline\\Pipeline",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+            "line": 219,
+            "function": "handle",
+            "class": "Illuminate\\Foundation\\Http\\Middleware\\InvokeDeferredCallbacks",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Http/Middleware/ValidatePathEncoding.php",
+            "line": 26,
+            "function": "{closure:{closure:Illuminate\\Pipeline\\Pipeline::carry():194}:195}",
+            "class": "Illuminate\\Pipeline\\Pipeline",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+            "line": 219,
+            "function": "handle",
+            "class": "Illuminate\\Http\\Middleware\\ValidatePathEncoding",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+            "line": 137,
+            "function": "{closure:{closure:Illuminate\\Pipeline\\Pipeline::carry():194}:195}",
+            "class": "Illuminate\\Pipeline\\Pipeline",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php",
+            "line": 175,
+            "function": "then",
+            "class": "Illuminate\\Pipeline\\Pipeline",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php",
+            "line": 144,
+            "function": "sendRequestThroughRouter",
+            "class": "Illuminate\\Foundation\\Http\\Kernel",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Foundation/Testing/Concerns/MakesHttpRequests.php",
+            "line": 607,
+            "function": "handle",
+            "class": "Illuminate\\Foundation\\Http\\Kernel",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Foundation/Testing/Concerns/MakesHttpRequests.php",
+            "line": 573,
+            "function": "call",
+            "class": "Illuminate\\Foundation\\Testing\\TestCase",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Foundation/Testing/Concerns/MakesHttpRequests.php",
+            "line": 501,
+            "function": "json",
+            "class": "Illuminate\\Foundation\\Testing\\TestCase",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/tests/Feature/Api/PageControllerTest.php",
+            "line": 200,
+            "function": "deleteJson",
+            "class": "Illuminate\\Foundation\\Testing\\TestCase",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/pestphp/pest/src/Factories/TestCaseMethodFactory.php",
+            "line": 168,
+            "function": "{closure:/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/tests/Feature/Api/PageControllerTest.php:198}",
+            "class": "P\\Tests\\Feature\\Api\\PageControllerTest",
+            "type": "-&gt;"
+        },
+        {
+            "function": "{closure:Pest\\Factories\\TestCaseMethodFactory::getClosure():158}",
+            "class": "P\\Tests\\Feature\\Api\\PageControllerTest",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/pestphp/pest/src/Concerns/Testable.php",
+            "line": 419,
+            "function": "call_user_func_array"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/pestphp/pest/src/Support/ExceptionTrace.php",
+            "line": 26,
+            "function": "{closure:Pest\\Concerns\\Testable::__callClosure():419}",
+            "class": "P\\Tests\\Feature\\Api\\PageControllerTest",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/pestphp/pest/src/Concerns/Testable.php",
+            "line": 419,
+            "function": "ensure",
+            "class": "Pest\\Support\\ExceptionTrace",
+            "type": "::"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/pestphp/pest/src/Concerns/Testable.php",
+            "line": 321,
+            "function": "__callClosure",
+            "class": "P\\Tests\\Feature\\Api\\PageControllerTest",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/pestphp/pest/src/Factories/TestCaseFactory.php(169) : eval()'d code",
+            "line": 89,
+            "function": "__runTest",
+            "class": "P\\Tests\\Feature\\Api\\PageControllerTest",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/phpunit/phpunit/src/Framework/TestCase.php",
+            "line": 1656,
+            "function": "__pest_evaluable_delete_returns_404_for_nonexistent_page",
+            "class": "P\\Tests\\Feature\\Api\\PageControllerTest",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/phpunit/phpunit/src/Framework/TestCase.php",
+            "line": 514,
+            "function": "runTest",
+            "class": "PHPUnit\\Framework\\TestCase",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/phpunit/phpunit/src/Framework/TestRunner/TestRunner.php",
+            "line": 87,
+            "function": "runBare",
+            "class": "PHPUnit\\Framework\\TestCase",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/phpunit/phpunit/src/Framework/TestCase.php",
+            "line": 361,
+            "function": "run",
+            "class": "PHPUnit\\Framework\\TestRunner",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/phpunit/phpunit/src/Framework/TestSuite.php",
+            "line": 369,
+            "function": "run",
+            "class": "PHPUnit\\Framework\\TestCase",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/phpunit/phpunit/src/Framework/TestSuite.php",
+            "line": 369,
+            "function": "run",
+            "class": "PHPUnit\\Framework\\TestSuite",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/phpunit/phpunit/src/Framework/TestSuite.php",
+            "line": 369,
+            "function": "run",
+            "class": "PHPUnit\\Framework\\TestSuite",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/phpunit/phpunit/src/TextUI/TestRunner.php",
+            "line": 64,
+            "function": "run",
+            "class": "PHPUnit\\Framework\\TestSuite",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/phpunit/phpunit/src/TextUI/Application.php",
+            "line": 211,
+            "function": "run",
+            "class": "PHPUnit\\TextUI\\TestRunner",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/pestphp/pest/src/Kernel.php",
+            "line": 103,
+            "function": "run",
+            "class": "PHPUnit\\TextUI\\Application",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/pestphp/pest/bin/pest",
+            "line": 184,
+            "function": "handle",
+            "class": "Pest\\Kernel",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/pestphp/pest/bin/pest",
+            "line": 192,
+            "function": "{closure:/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/pestphp/pest/bin/pest:18}"
+        }
+    ]
+}].
+
+
+Failed asserting that an array has the subset Array &amp;0 [
+    'message' =&gt; 'Page not found',
+    'meta' =&gt; Array &amp;1 [
+        'api_version' =&gt; 'v1',
+    ],
+].
+at vendor/laravel/framework/src/Illuminate/Testing/Constraints/ArraySubset.php:80
+at vendor/laravel/framework/src/Illuminate/Testing/Assert.php:36
+at vendor/laravel/framework/src/Illuminate/Testing/AssertableJsonString.php:319
+at vendor/laravel/framework/src/Illuminate/Testing/TestResponse.php:833
+at tests/Feature/Api/PageControllerTest.php:203</failure>
+        </testcase>
+        <testcase name="can convert markdown to html" file="tests/Feature/Api/PageControllerTest.php::can convert markdown to html" class="Tests\Feature\Api\PageControllerTest" classname="Tests.Feature.Api.PageControllerTest" assertions="4" time="0.018411"/>
+        <testcase name="validates markdown to html request" file="tests/Feature/Api/PageControllerTest.php::validates markdown to html request" class="Tests\Feature\Api\PageControllerTest" classname="Tests.Feature.Api.PageControllerTest" assertions="3" time="0.015068"/>
+        <testcase name="can convert html to markdown" file="tests/Feature/Api/PageControllerTest.php::can convert html to markdown" class="Tests\Feature\Api\PageControllerTest" classname="Tests.Feature.Api.PageControllerTest" assertions="4" time="0.015713"/>
+        <testcase name="validates html to markdown request" file="tests/Feature/Api/PageControllerTest.php::validates html to markdown request" class="Tests\Feature\Api\PageControllerTest" classname="Tests.Feature.Api.PageControllerTest" assertions="3" time="0.016615"/>
+      </testsuite>
+      <testsuite name="Tests\Feature\Api\V1\LogControllerTest" file="tests/Feature/Api/V1/LogControllerTest.php" tests="5" assertions="17" errors="0" failures="0" skipped="0" time="0.076531">
+        <testcase name="can log message" file="tests/Feature/Api/V1/LogControllerTest.php::can log message" class="Tests\Feature\Api\V1\LogControllerTest" classname="Tests.Feature.Api.V1.LogControllerTest" assertions="3" time="0.021410"/>
+        <testcase name="can log markdown error" file="tests/Feature/Api/V1/LogControllerTest.php::can log markdown error" class="Tests\Feature\Api\V1\LogControllerTest" classname="Tests.Feature.Api.V1.LogControllerTest" assertions="4" time="0.013284"/>
+        <testcase name="validates required fields" file="tests/Feature/Api/V1/LogControllerTest.php::validates required fields" class="Tests\Feature\Api\V1\LogControllerTest" classname="Tests.Feature.Api.V1.LogControllerTest" assertions="4" time="0.013304"/>
+        <testcase name="validates level field" file="tests/Feature/Api/V1/LogControllerTest.php::validates level field" class="Tests\Feature\Api\V1\LogControllerTest" classname="Tests.Feature.Api.V1.LogControllerTest" assertions="3" time="0.013929"/>
+        <testcase name="adds user info to context" file="tests/Feature/Api/V1/LogControllerTest.php::adds user info to context" class="Tests\Feature\Api\V1\LogControllerTest" classname="Tests.Feature.Api.V1.LogControllerTest" assertions="3" time="0.014604"/>
+      </testsuite>
+      <testsuite name="Tests\Feature\Api\V1\PageControllerTest" file="tests/Feature/Api/V1/PageControllerTest.php" tests="13" assertions="43" errors="0" failures="6" skipped="0" time="0.345071">
+        <testcase name="can list pages" file="tests/Feature/Api/V1/PageControllerTest.php::can list pages" class="Tests\Feature\Api\V1\PageControllerTest" classname="Tests.Feature.Api.V1.PageControllerTest" assertions="6" time="0.024200"/>
+        <testcase name="can show page" file="tests/Feature/Api/V1/PageControllerTest.php::can show page" class="Tests\Feature\Api\V1\PageControllerTest" classname="Tests.Feature.Api.V1.PageControllerTest" assertions="1" time="0.022868">
+          <failure type="PHPUnit\Framework\ExpectationFailedException">can show pageExpected response status code [200] but received 404.
+Failed asserting that 404 is identical to 200.
+at vendor/laravel/framework/src/Illuminate/Testing/TestResponseAssert.php:45
+at vendor/laravel/framework/src/Illuminate/Testing/TestResponse.php:174
+at tests/Feature/Api/V1/PageControllerTest.php:51</failure>
+        </testcase>
+        <testcase name="returns 404 for nonexistent page" file="tests/Feature/Api/V1/PageControllerTest.php::returns 404 for nonexistent page" class="Tests\Feature\Api\V1\PageControllerTest" classname="Tests.Feature.Api.V1.PageControllerTest" assertions="2" time="0.066318">
+          <failure type="PHPUnit\Framework\ExpectationFailedException">returns 404 for nonexistent pageUnable to find JSON: 
+
+[{
+    "message": "Page not found",
+    "meta": {
+        "api_version": "v1"
+    }
+}]
+
+within response JSON:
+
+[{
+    "message": "The route api/pages/nonexistent-page could not be found.",
+    "exception": "Symfony\\Component\\HttpKernel\\Exception\\NotFoundHttpException",
+    "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Routing/AbstractRouteCollection.php",
+    "line": 45,
+    "trace": [
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Routing/RouteCollection.php",
+            "line": 184,
+            "function": "handleMatchedRoute",
+            "class": "Illuminate\\Routing\\AbstractRouteCollection",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Routing/Router.php",
+            "line": 777,
+            "function": "match",
+            "class": "Illuminate\\Routing\\RouteCollection",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Routing/Router.php",
+            "line": 764,
+            "function": "findRoute",
+            "class": "Illuminate\\Routing\\Router",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Routing/Router.php",
+            "line": 753,
+            "function": "dispatchToRoute",
+            "class": "Illuminate\\Routing\\Router",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php",
+            "line": 200,
+            "function": "dispatch",
+            "class": "Illuminate\\Routing\\Router",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+            "line": 180,
+            "function": "{closure:Illuminate\\Foundation\\Http\\Kernel::dispatchToRouter():197}",
+            "class": "Illuminate\\Foundation\\Http\\Kernel",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/livewire/livewire/src/Features/SupportDisablingBackButtonCache/DisableBackButtonCacheMiddleware.php",
+            "line": 19,
+            "function": "{closure:Illuminate\\Pipeline\\Pipeline::prepareDestination():178}",
+            "class": "Illuminate\\Pipeline\\Pipeline",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+            "line": 219,
+            "function": "handle",
+            "class": "Livewire\\Features\\SupportDisablingBackButtonCache\\DisableBackButtonCacheMiddleware",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php",
+            "line": 21,
+            "function": "{closure:{closure:Illuminate\\Pipeline\\Pipeline::carry():194}:195}",
+            "class": "Illuminate\\Pipeline\\Pipeline",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull.php",
+            "line": 31,
+            "function": "handle",
+            "class": "Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+            "line": 219,
+            "function": "handle",
+            "class": "Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php",
+            "line": 21,
+            "function": "{closure:{closure:Illuminate\\Pipeline\\Pipeline::carry():194}:195}",
+            "class": "Illuminate\\Pipeline\\Pipeline",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TrimStrings.php",
+            "line": 51,
+            "function": "handle",
+            "class": "Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+            "line": 219,
+            "function": "handle",
+            "class": "Illuminate\\Foundation\\Http\\Middleware\\TrimStrings",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Http/Middleware/ValidatePostSize.php",
+            "line": 27,
+            "function": "{closure:{closure:Illuminate\\Pipeline\\Pipeline::carry():194}:195}",
+            "class": "Illuminate\\Pipeline\\Pipeline",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+            "line": 219,
+            "function": "handle",
+            "class": "Illuminate\\Http\\Middleware\\ValidatePostSize",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/PreventRequestsDuringMaintenance.php",
+            "line": 109,
+            "function": "{closure:{closure:Illuminate\\Pipeline\\Pipeline::carry():194}:195}",
+            "class": "Illuminate\\Pipeline\\Pipeline",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+            "line": 219,
+            "function": "handle",
+            "class": "Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Http/Middleware/HandleCors.php",
+            "line": 61,
+            "function": "{closure:{closure:Illuminate\\Pipeline\\Pipeline::carry():194}:195}",
+            "class": "Illuminate\\Pipeline\\Pipeline",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+            "line": 219,
+            "function": "handle",
+            "class": "Illuminate\\Http\\Middleware\\HandleCors",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Http/Middleware/TrustProxies.php",
+            "line": 58,
+            "function": "{closure:{closure:Illuminate\\Pipeline\\Pipeline::carry():194}:195}",
+            "class": "Illuminate\\Pipeline\\Pipeline",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+            "line": 219,
+            "function": "handle",
+            "class": "Illuminate\\Http\\Middleware\\TrustProxies",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/InvokeDeferredCallbacks.php",
+            "line": 22,
+            "function": "{closure:{closure:Illuminate\\Pipeline\\Pipeline::carry():194}:195}",
+            "class": "Illuminate\\Pipeline\\Pipeline",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+            "line": 219,
+            "function": "handle",
+            "class": "Illuminate\\Foundation\\Http\\Middleware\\InvokeDeferredCallbacks",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Http/Middleware/ValidatePathEncoding.php",
+            "line": 26,
+            "function": "{closure:{closure:Illuminate\\Pipeline\\Pipeline::carry():194}:195}",
+            "class": "Illuminate\\Pipeline\\Pipeline",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+            "line": 219,
+            "function": "handle",
+            "class": "Illuminate\\Http\\Middleware\\ValidatePathEncoding",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+            "line": 137,
+            "function": "{closure:{closure:Illuminate\\Pipeline\\Pipeline::carry():194}:195}",
+            "class": "Illuminate\\Pipeline\\Pipeline",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php",
+            "line": 175,
+            "function": "then",
+            "class": "Illuminate\\Pipeline\\Pipeline",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php",
+            "line": 144,
+            "function": "sendRequestThroughRouter",
+            "class": "Illuminate\\Foundation\\Http\\Kernel",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Foundation/Testing/Concerns/MakesHttpRequests.php",
+            "line": 607,
+            "function": "handle",
+            "class": "Illuminate\\Foundation\\Http\\Kernel",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Foundation/Testing/Concerns/MakesHttpRequests.php",
+            "line": 573,
+            "function": "call",
+            "class": "Illuminate\\Foundation\\Testing\\TestCase",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Foundation/Testing/Concerns/MakesHttpRequests.php",
+            "line": 381,
+            "function": "json",
+            "class": "Illuminate\\Foundation\\Testing\\TestCase",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/tests/Feature/Api/V1/PageControllerTest.php",
+            "line": 66,
+            "function": "getJson",
+            "class": "Illuminate\\Foundation\\Testing\\TestCase",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/pestphp/pest/src/Factories/TestCaseMethodFactory.php",
+            "line": 168,
+            "function": "{closure:/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/tests/Feature/Api/V1/PageControllerTest.php:64}",
+            "class": "P\\Tests\\Feature\\Api\\V1\\PageControllerTest",
+            "type": "-&gt;"
+        },
+        {
+            "function": "{closure:Pest\\Factories\\TestCaseMethodFactory::getClosure():158}",
+            "class": "P\\Tests\\Feature\\Api\\V1\\PageControllerTest",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/pestphp/pest/src/Concerns/Testable.php",
+            "line": 419,
+            "function": "call_user_func_array"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/pestphp/pest/src/Support/ExceptionTrace.php",
+            "line": 26,
+            "function": "{closure:Pest\\Concerns\\Testable::__callClosure():419}",
+            "class": "P\\Tests\\Feature\\Api\\V1\\PageControllerTest",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/pestphp/pest/src/Concerns/Testable.php",
+            "line": 419,
+            "function": "ensure",
+            "class": "Pest\\Support\\ExceptionTrace",
+            "type": "::"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/pestphp/pest/src/Concerns/Testable.php",
+            "line": 321,
+            "function": "__callClosure",
+            "class": "P\\Tests\\Feature\\Api\\V1\\PageControllerTest",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/pestphp/pest/src/Factories/TestCaseFactory.php(169) : eval()'d code",
+            "line": 35,
+            "function": "__runTest",
+            "class": "P\\Tests\\Feature\\Api\\V1\\PageControllerTest",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/phpunit/phpunit/src/Framework/TestCase.php",
+            "line": 1656,
+            "function": "__pest_evaluable_returns_404_for_nonexistent_page",
+            "class": "P\\Tests\\Feature\\Api\\V1\\PageControllerTest",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/phpunit/phpunit/src/Framework/TestCase.php",
+            "line": 514,
+            "function": "runTest",
+            "class": "PHPUnit\\Framework\\TestCase",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/phpunit/phpunit/src/Framework/TestRunner/TestRunner.php",
+            "line": 87,
+            "function": "runBare",
+            "class": "PHPUnit\\Framework\\TestCase",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/phpunit/phpunit/src/Framework/TestCase.php",
+            "line": 361,
+            "function": "run",
+            "class": "PHPUnit\\Framework\\TestRunner",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/phpunit/phpunit/src/Framework/TestSuite.php",
+            "line": 369,
+            "function": "run",
+            "class": "PHPUnit\\Framework\\TestCase",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/phpunit/phpunit/src/Framework/TestSuite.php",
+            "line": 369,
+            "function": "run",
+            "class": "PHPUnit\\Framework\\TestSuite",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/phpunit/phpunit/src/Framework/TestSuite.php",
+            "line": 369,
+            "function": "run",
+            "class": "PHPUnit\\Framework\\TestSuite",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/phpunit/phpunit/src/TextUI/TestRunner.php",
+            "line": 64,
+            "function": "run",
+            "class": "PHPUnit\\Framework\\TestSuite",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/phpunit/phpunit/src/TextUI/Application.php",
+            "line": 211,
+            "function": "run",
+            "class": "PHPUnit\\TextUI\\TestRunner",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/pestphp/pest/src/Kernel.php",
+            "line": 103,
+            "function": "run",
+            "class": "PHPUnit\\TextUI\\Application",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/pestphp/pest/bin/pest",
+            "line": 184,
+            "function": "handle",
+            "class": "Pest\\Kernel",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/pestphp/pest/bin/pest",
+            "line": 192,
+            "function": "{closure:/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/pestphp/pest/bin/pest:18}"
+        }
+    ]
+}].
+
+
+Failed asserting that an array has the subset Array &amp;0 [
+    'message' =&gt; 'Page not found',
+    'meta' =&gt; Array &amp;1 [
+        'api_version' =&gt; 'v1',
+    ],
+].
+at vendor/laravel/framework/src/Illuminate/Testing/Constraints/ArraySubset.php:80
+at vendor/laravel/framework/src/Illuminate/Testing/Assert.php:36
+at vendor/laravel/framework/src/Illuminate/Testing/AssertableJsonString.php:319
+at vendor/laravel/framework/src/Illuminate/Testing/TestResponse.php:833
+at tests/Feature/Api/V1/PageControllerTest.php:69</failure>
+        </testcase>
+        <testcase name="can create page" file="tests/Feature/Api/V1/PageControllerTest.php::can create page" class="Tests\Feature\Api\V1\PageControllerTest" classname="Tests.Feature.Api.V1.PageControllerTest" assertions="11" time="0.019165"/>
+        <testcase name="validates create page request" file="tests/Feature/Api/V1/PageControllerTest.php::validates create page request" class="Tests\Feature\Api\V1\PageControllerTest" classname="Tests.Feature.Api.V1.PageControllerTest" assertions="4" time="0.016768"/>
+        <testcase name="can update page" file="tests/Feature/Api/V1/PageControllerTest.php::can update page" class="Tests\Feature\Api\V1\PageControllerTest" classname="Tests.Feature.Api.V1.PageControllerTest" assertions="1" time="0.015136">
+          <failure type="PHPUnit\Framework\ExpectationFailedException">can update pageExpected response status code [200] but received 404.
+Failed asserting that 404 is identical to 200.
+at vendor/laravel/framework/src/Illuminate/Testing/TestResponseAssert.php:45
+at vendor/laravel/framework/src/Illuminate/Testing/TestResponse.php:174
+at tests/Feature/Api/V1/PageControllerTest.php:136</failure>
+        </testcase>
+        <testcase name="validates update page request" file="tests/Feature/Api/V1/PageControllerTest.php::validates update page request" class="Tests\Feature\Api\V1\PageControllerTest" classname="Tests.Feature.Api.V1.PageControllerTest" assertions="1" time="0.014956">
+          <failure type="PHPUnit\Framework\ExpectationFailedException">validates update page requestExpected response status code [422] but received 404.
+Failed asserting that 404 is identical to 422.
+at vendor/laravel/framework/src/Illuminate/Testing/TestResponseAssert.php:45
+at vendor/laravel/framework/src/Illuminate/Testing/TestResponse.php:174
+at tests/Feature/Api/V1/PageControllerTest.php:167</failure>
+        </testcase>
+        <testcase name="can delete page" file="tests/Feature/Api/V1/PageControllerTest.php::can delete page" class="Tests\Feature\Api\V1\PageControllerTest" classname="Tests.Feature.Api.V1.PageControllerTest" assertions="1" time="0.016077">
+          <failure type="PHPUnit\Framework\ExpectationFailedException">can delete pageExpected response status code [200] but received 404.
+Failed asserting that 404 is identical to 200.
+at vendor/laravel/framework/src/Illuminate/Testing/TestResponseAssert.php:45
+at vendor/laravel/framework/src/Illuminate/Testing/TestResponse.php:174
+at tests/Feature/Api/V1/PageControllerTest.php:178</failure>
+        </testcase>
+        <testcase name="delete returns 404 for nonexistent page" file="tests/Feature/Api/V1/PageControllerTest.php::delete returns 404 for nonexistent page" class="Tests\Feature\Api\V1\PageControllerTest" classname="Tests.Feature.Api.V1.PageControllerTest" assertions="2" time="0.067463">
+          <failure type="PHPUnit\Framework\ExpectationFailedException">delete returns 404 for nonexistent pageUnable to find JSON: 
+
+[{
+    "message": "Page not found",
+    "meta": {
+        "api_version": "v1"
+    }
+}]
+
+within response JSON:
+
+[{
+    "message": "The route api/pages/nonexistent-page could not be found.",
+    "exception": "Symfony\\Component\\HttpKernel\\Exception\\NotFoundHttpException",
+    "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Routing/AbstractRouteCollection.php",
+    "line": 45,
+    "trace": [
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Routing/RouteCollection.php",
+            "line": 184,
+            "function": "handleMatchedRoute",
+            "class": "Illuminate\\Routing\\AbstractRouteCollection",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Routing/Router.php",
+            "line": 777,
+            "function": "match",
+            "class": "Illuminate\\Routing\\RouteCollection",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Routing/Router.php",
+            "line": 764,
+            "function": "findRoute",
+            "class": "Illuminate\\Routing\\Router",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Routing/Router.php",
+            "line": 753,
+            "function": "dispatchToRoute",
+            "class": "Illuminate\\Routing\\Router",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php",
+            "line": 200,
+            "function": "dispatch",
+            "class": "Illuminate\\Routing\\Router",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+            "line": 180,
+            "function": "{closure:Illuminate\\Foundation\\Http\\Kernel::dispatchToRouter():197}",
+            "class": "Illuminate\\Foundation\\Http\\Kernel",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/livewire/livewire/src/Features/SupportDisablingBackButtonCache/DisableBackButtonCacheMiddleware.php",
+            "line": 19,
+            "function": "{closure:Illuminate\\Pipeline\\Pipeline::prepareDestination():178}",
+            "class": "Illuminate\\Pipeline\\Pipeline",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+            "line": 219,
+            "function": "handle",
+            "class": "Livewire\\Features\\SupportDisablingBackButtonCache\\DisableBackButtonCacheMiddleware",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php",
+            "line": 21,
+            "function": "{closure:{closure:Illuminate\\Pipeline\\Pipeline::carry():194}:195}",
+            "class": "Illuminate\\Pipeline\\Pipeline",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull.php",
+            "line": 31,
+            "function": "handle",
+            "class": "Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+            "line": 219,
+            "function": "handle",
+            "class": "Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php",
+            "line": 21,
+            "function": "{closure:{closure:Illuminate\\Pipeline\\Pipeline::carry():194}:195}",
+            "class": "Illuminate\\Pipeline\\Pipeline",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TrimStrings.php",
+            "line": 51,
+            "function": "handle",
+            "class": "Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+            "line": 219,
+            "function": "handle",
+            "class": "Illuminate\\Foundation\\Http\\Middleware\\TrimStrings",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Http/Middleware/ValidatePostSize.php",
+            "line": 27,
+            "function": "{closure:{closure:Illuminate\\Pipeline\\Pipeline::carry():194}:195}",
+            "class": "Illuminate\\Pipeline\\Pipeline",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+            "line": 219,
+            "function": "handle",
+            "class": "Illuminate\\Http\\Middleware\\ValidatePostSize",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/PreventRequestsDuringMaintenance.php",
+            "line": 109,
+            "function": "{closure:{closure:Illuminate\\Pipeline\\Pipeline::carry():194}:195}",
+            "class": "Illuminate\\Pipeline\\Pipeline",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+            "line": 219,
+            "function": "handle",
+            "class": "Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Http/Middleware/HandleCors.php",
+            "line": 61,
+            "function": "{closure:{closure:Illuminate\\Pipeline\\Pipeline::carry():194}:195}",
+            "class": "Illuminate\\Pipeline\\Pipeline",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+            "line": 219,
+            "function": "handle",
+            "class": "Illuminate\\Http\\Middleware\\HandleCors",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Http/Middleware/TrustProxies.php",
+            "line": 58,
+            "function": "{closure:{closure:Illuminate\\Pipeline\\Pipeline::carry():194}:195}",
+            "class": "Illuminate\\Pipeline\\Pipeline",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+            "line": 219,
+            "function": "handle",
+            "class": "Illuminate\\Http\\Middleware\\TrustProxies",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/InvokeDeferredCallbacks.php",
+            "line": 22,
+            "function": "{closure:{closure:Illuminate\\Pipeline\\Pipeline::carry():194}:195}",
+            "class": "Illuminate\\Pipeline\\Pipeline",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+            "line": 219,
+            "function": "handle",
+            "class": "Illuminate\\Foundation\\Http\\Middleware\\InvokeDeferredCallbacks",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Http/Middleware/ValidatePathEncoding.php",
+            "line": 26,
+            "function": "{closure:{closure:Illuminate\\Pipeline\\Pipeline::carry():194}:195}",
+            "class": "Illuminate\\Pipeline\\Pipeline",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+            "line": 219,
+            "function": "handle",
+            "class": "Illuminate\\Http\\Middleware\\ValidatePathEncoding",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+            "line": 137,
+            "function": "{closure:{closure:Illuminate\\Pipeline\\Pipeline::carry():194}:195}",
+            "class": "Illuminate\\Pipeline\\Pipeline",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php",
+            "line": 175,
+            "function": "then",
+            "class": "Illuminate\\Pipeline\\Pipeline",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php",
+            "line": 144,
+            "function": "sendRequestThroughRouter",
+            "class": "Illuminate\\Foundation\\Http\\Kernel",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Foundation/Testing/Concerns/MakesHttpRequests.php",
+            "line": 607,
+            "function": "handle",
+            "class": "Illuminate\\Foundation\\Http\\Kernel",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Foundation/Testing/Concerns/MakesHttpRequests.php",
+            "line": 573,
+            "function": "call",
+            "class": "Illuminate\\Foundation\\Testing\\TestCase",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Foundation/Testing/Concerns/MakesHttpRequests.php",
+            "line": 501,
+            "function": "json",
+            "class": "Illuminate\\Foundation\\Testing\\TestCase",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/tests/Feature/Api/V1/PageControllerTest.php",
+            "line": 199,
+            "function": "deleteJson",
+            "class": "Illuminate\\Foundation\\Testing\\TestCase",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/pestphp/pest/src/Factories/TestCaseMethodFactory.php",
+            "line": 168,
+            "function": "{closure:/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/tests/Feature/Api/V1/PageControllerTest.php:197}",
+            "class": "P\\Tests\\Feature\\Api\\V1\\PageControllerTest",
+            "type": "-&gt;"
+        },
+        {
+            "function": "{closure:Pest\\Factories\\TestCaseMethodFactory::getClosure():158}",
+            "class": "P\\Tests\\Feature\\Api\\V1\\PageControllerTest",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/pestphp/pest/src/Concerns/Testable.php",
+            "line": 419,
+            "function": "call_user_func_array"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/pestphp/pest/src/Support/ExceptionTrace.php",
+            "line": 26,
+            "function": "{closure:Pest\\Concerns\\Testable::__callClosure():419}",
+            "class": "P\\Tests\\Feature\\Api\\V1\\PageControllerTest",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/pestphp/pest/src/Concerns/Testable.php",
+            "line": 419,
+            "function": "ensure",
+            "class": "Pest\\Support\\ExceptionTrace",
+            "type": "::"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/pestphp/pest/src/Concerns/Testable.php",
+            "line": 321,
+            "function": "__callClosure",
+            "class": "P\\Tests\\Feature\\Api\\V1\\PageControllerTest",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/pestphp/pest/src/Factories/TestCaseFactory.php(169) : eval()'d code",
+            "line": 89,
+            "function": "__runTest",
+            "class": "P\\Tests\\Feature\\Api\\V1\\PageControllerTest",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/phpunit/phpunit/src/Framework/TestCase.php",
+            "line": 1656,
+            "function": "__pest_evaluable_delete_returns_404_for_nonexistent_page",
+            "class": "P\\Tests\\Feature\\Api\\V1\\PageControllerTest",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/phpunit/phpunit/src/Framework/TestCase.php",
+            "line": 514,
+            "function": "runTest",
+            "class": "PHPUnit\\Framework\\TestCase",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/phpunit/phpunit/src/Framework/TestRunner/TestRunner.php",
+            "line": 87,
+            "function": "runBare",
+            "class": "PHPUnit\\Framework\\TestCase",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/phpunit/phpunit/src/Framework/TestCase.php",
+            "line": 361,
+            "function": "run",
+            "class": "PHPUnit\\Framework\\TestRunner",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/phpunit/phpunit/src/Framework/TestSuite.php",
+            "line": 369,
+            "function": "run",
+            "class": "PHPUnit\\Framework\\TestCase",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/phpunit/phpunit/src/Framework/TestSuite.php",
+            "line": 369,
+            "function": "run",
+            "class": "PHPUnit\\Framework\\TestSuite",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/phpunit/phpunit/src/Framework/TestSuite.php",
+            "line": 369,
+            "function": "run",
+            "class": "PHPUnit\\Framework\\TestSuite",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/phpunit/phpunit/src/TextUI/TestRunner.php",
+            "line": 64,
+            "function": "run",
+            "class": "PHPUnit\\Framework\\TestSuite",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/phpunit/phpunit/src/TextUI/Application.php",
+            "line": 211,
+            "function": "run",
+            "class": "PHPUnit\\TextUI\\TestRunner",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/pestphp/pest/src/Kernel.php",
+            "line": 103,
+            "function": "run",
+            "class": "PHPUnit\\TextUI\\Application",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/pestphp/pest/bin/pest",
+            "line": 184,
+            "function": "handle",
+            "class": "Pest\\Kernel",
+            "type": "-&gt;"
+        },
+        {
+            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/pestphp/pest/bin/pest",
+            "line": 192,
+            "function": "{closure:/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/pestphp/pest/bin/pest:18}"
+        }
+    ]
+}].
+
+
+Failed asserting that an array has the subset Array &amp;0 [
+    'message' =&gt; 'Page not found',
+    'meta' =&gt; Array &amp;1 [
+        'api_version' =&gt; 'v1',
+    ],
+].
+at vendor/laravel/framework/src/Illuminate/Testing/Constraints/ArraySubset.php:80
+at vendor/laravel/framework/src/Illuminate/Testing/Assert.php:36
+at vendor/laravel/framework/src/Illuminate/Testing/AssertableJsonString.php:319
+at vendor/laravel/framework/src/Illuminate/Testing/TestResponse.php:833
+at tests/Feature/Api/V1/PageControllerTest.php:202</failure>
+        </testcase>
+        <testcase name="can convert markdown to html" file="tests/Feature/Api/V1/PageControllerTest.php::can convert markdown to html" class="Tests\Feature\Api\V1\PageControllerTest" classname="Tests.Feature.Api.V1.PageControllerTest" assertions="4" time="0.016255"/>
+        <testcase name="validates markdown to html request" file="tests/Feature/Api/V1/PageControllerTest.php::validates markdown to html request" class="Tests\Feature\Api\V1\PageControllerTest" classname="Tests.Feature.Api.V1.PageControllerTest" assertions="3" time="0.028786"/>
+        <testcase name="can convert html to markdown" file="tests/Feature/Api/V1/PageControllerTest.php::can convert html to markdown" class="Tests\Feature\Api\V1\PageControllerTest" classname="Tests.Feature.Api.V1.PageControllerTest" assertions="4" time="0.020770"/>
+        <testcase name="validates html to markdown request" file="tests/Feature/Api/V1/PageControllerTest.php::validates html to markdown request" class="Tests\Feature\Api\V1\PageControllerTest" classname="Tests.Feature.Api.V1.PageControllerTest" assertions="3" time="0.016308"/>
+      </testsuite>
+      <testsuite name="Tests\Feature\Auth\AuthenticationTest" file="tests/Feature/Auth/AuthenticationTest.php" tests="4" assertions="8" errors="0" failures="0" skipped="0" time="0.289047">
+        <testcase name="login screen can be rendered" file="tests/Feature/Auth/AuthenticationTest.php::login screen can be rendered" class="Tests\Feature\Auth\AuthenticationTest" classname="Tests.Feature.Auth.AuthenticationTest" assertions="1" time="0.034809"/>
+        <testcase name="users can authenticate using the login screen" file="tests/Feature/Auth/AuthenticationTest.php::users can authenticate using the login screen" class="Tests\Feature\Auth\AuthenticationTest" classname="Tests.Feature.Auth.AuthenticationTest" assertions="3" time="0.020066"/>
+        <testcase name="users can not authenticate with invalid password" file="tests/Feature/Auth/AuthenticationTest.php::users can not authenticate with invalid password" class="Tests\Feature\Auth\AuthenticationTest" classname="Tests.Feature.Auth.AuthenticationTest" assertions="1" time="0.221180"/>
+        <testcase name="users can logout" file="tests/Feature/Auth/AuthenticationTest.php::users can logout" class="Tests\Feature\Auth\AuthenticationTest" classname="Tests.Feature.Auth.AuthenticationTest" assertions="3" time="0.012991"/>
+      </testsuite>
+      <testsuite name="Tests\Feature\Auth\EmailVerificationTest" file="tests/Feature/Auth/EmailVerificationTest.php" tests="3" assertions="6" errors="0" failures="0" skipped="0" time="0.052760">
+        <testcase name="email verification screen can be rendered" file="tests/Feature/Auth/EmailVerificationTest.php::email verification screen can be rendered" class="Tests\Feature\Auth\EmailVerificationTest" classname="Tests.Feature.Auth.EmailVerificationTest" assertions="1" time="0.019959"/>
+        <testcase name="email can be verified" file="tests/Feature/Auth/EmailVerificationTest.php::email can be verified" class="Tests\Feature\Auth\EmailVerificationTest" classname="Tests.Feature.Auth.EmailVerificationTest" assertions="4" time="0.016597"/>
+        <testcase name="email is not verified with invalid hash" file="tests/Feature/Auth/EmailVerificationTest.php::email is not verified with invalid hash" class="Tests\Feature\Auth\EmailVerificationTest" classname="Tests.Feature.Auth.EmailVerificationTest" assertions="1" time="0.016205"/>
+      </testsuite>
+      <testsuite name="Tests\Feature\Auth\PasswordConfirmationTest" file="tests/Feature/Auth/PasswordConfirmationTest.php" tests="3" assertions="4" errors="0" failures="0" skipped="0" time="0.256187">
+        <testcase name="confirm password screen can be rendered" file="tests/Feature/Auth/PasswordConfirmationTest.php::confirm password screen can be rendered" class="Tests\Feature\Auth\PasswordConfirmationTest" classname="Tests.Feature.Auth.PasswordConfirmationTest" assertions="1" time="0.023088"/>
+        <testcase name="password can be confirmed" file="tests/Feature/Auth/PasswordConfirmationTest.php::password can be confirmed" class="Tests\Feature\Auth\PasswordConfirmationTest" classname="Tests.Feature.Auth.PasswordConfirmationTest" assertions="2" time="0.014732"/>
+        <testcase name="password is not confirmed with invalid password" file="tests/Feature/Auth/PasswordConfirmationTest.php::password is not confirmed with invalid password" class="Tests\Feature\Auth\PasswordConfirmationTest" classname="Tests.Feature.Auth.PasswordConfirmationTest" assertions="1" time="0.218367"/>
+      </testsuite>
+      <testsuite name="Tests\Feature\Auth\PasswordResetTest" file="tests/Feature/Auth/PasswordResetTest.php" tests="4" assertions="8" errors="0" failures="0" skipped="0" time="0.677753">
+        <testcase name="reset password link screen can be rendered" file="tests/Feature/Auth/PasswordResetTest.php::reset password link screen can be rendered" class="Tests\Feature\Auth\PasswordResetTest" classname="Tests.Feature.Auth.PasswordResetTest" assertions="1" time="0.017696"/>
+        <testcase name="reset password link can be requested" file="tests/Feature/Auth/PasswordResetTest.php::reset password link can be requested" class="Tests\Feature\Auth\PasswordResetTest" classname="Tests.Feature.Auth.PasswordResetTest" assertions="1" time="0.217419"/>
+        <testcase name="reset password screen can be rendered" file="tests/Feature/Auth/PasswordResetTest.php::reset password screen can be rendered" class="Tests\Feature\Auth\PasswordResetTest" classname="Tests.Feature.Auth.PasswordResetTest" assertions="2" time="0.221578"/>
+        <testcase name="password can be reset with valid token" file="tests/Feature/Auth/PasswordResetTest.php::password can be reset with valid token" class="Tests\Feature\Auth\PasswordResetTest" classname="Tests.Feature.Auth.PasswordResetTest" assertions="4" time="0.221059"/>
+      </testsuite>
+      <testsuite name="Tests\Feature\Auth\RegistrationTest" file="tests/Feature/Auth/RegistrationTest.php" tests="2" assertions="4" errors="0" failures="0" skipped="0" time="0.035468">
+        <testcase name="registration screen can be rendered" file="tests/Feature/Auth/RegistrationTest.php::registration screen can be rendered" class="Tests\Feature\Auth\RegistrationTest" classname="Tests.Feature.Auth.RegistrationTest" assertions="1" time="0.018759"/>
+        <testcase name="new users can register" file="tests/Feature/Auth/RegistrationTest.php::new users can register" class="Tests\Feature\Auth\RegistrationTest" classname="Tests.Feature.Auth.RegistrationTest" assertions="3" time="0.016709"/>
+      </testsuite>
+      <testsuite name="Tests\Feature\Commands\AnalyzeComposerPackagesTest" file="tests/Feature/Commands/AnalyzeComposerPackagesTest.php" tests="1" assertions="2" errors="0" failures="1" skipped="0" time="0.269657">
+        <testcase name="command runs successfully" file="tests/Feature/Commands/AnalyzeComposerPackagesTest.php::command runs successfully" class="Tests\Feature\Commands\AnalyzeComposerPackagesTest" classname="Tests.Feature.Commands.AnalyzeComposerPackagesTest" assertions="2" time="0.269657">
+          <failure type="PHPUnit\Framework\ExpectationFailedException">command runs successfullyOutput file does not exist
+Failed asserting that false is true.
+at tests/Feature/Commands/AnalyzeComposerPackagesTest.php:73</failure>
+        </testcase>
+      </testsuite>
+      <testsuite name="Tests\Feature\Controllers\ComposerPackageControllerTest" file="tests/Feature/Controllers/ComposerPackageControllerTest.php" tests="5" assertions="74" errors="1" failures="0" skipped="1" time="0.810355">
+        <testcase name="index returns expected data" file="tests/Feature/Controllers/ComposerPackageControllerTest.php::index returns expected data" class="Tests\Feature\Controllers\ComposerPackageControllerTest" classname="Tests.Feature.Controllers.ComposerPackageControllerTest" assertions="61" time="0.263436"/>
+        <testcase name="pagination works correctly" file="tests/Feature/Controllers/ComposerPackageControllerTest.php::pagination works correctly" class="Tests\Feature\Controllers\ComposerPackageControllerTest" classname="Tests.Feature.Controllers.ComposerPackageControllerTest" assertions="7" time="0.260269"/>
+        <testcase name="show returns specific package" file="tests/Feature/Controllers/ComposerPackageControllerTest.php::show returns specific package" class="Tests\Feature\Controllers\ComposerPackageControllerTest" classname="Tests.Feature.Controllers.ComposerPackageControllerTest" assertions="0" time="0.012491">
+          <skipped/>
+        </testcase>
+        <testcase name="show returns 404 for nonexistent package" file="tests/Feature/Controllers/ComposerPackageControllerTest.php::show returns 404 for nonexistent package" class="Tests\Feature\Controllers\ComposerPackageControllerTest" classname="Tests.Feature.Controllers.ComposerPackageControllerTest" assertions="1" time="0.013613">
+          <error type="Symfony\Component\HttpKernel\Exception\NotFoundHttpException">show returns 404 for nonexistent packageSymfony\Component\HttpKernel\Exception\NotFoundHttpException: The route api/composer-packages/nonexistent-package could not be found.
+at vendor/laravel/framework/src/Illuminate/Routing/AbstractRouteCollection.php:45
+at vendor/laravel/framework/src/Illuminate/Routing/RouteCollection.php:184
+at vendor/laravel/framework/src/Illuminate/Routing/Router.php:777
+at vendor/laravel/framework/src/Illuminate/Routing/Router.php:764
+at vendor/laravel/framework/src/Illuminate/Routing/Router.php:753
+at vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php:200
+at vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:180
+at vendor/livewire/livewire/src/Features/SupportDisablingBackButtonCache/DisableBackButtonCacheMiddleware.php:19
+at vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:219
+at vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php:21
+at vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull.php:31
+at vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:219
+at vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php:21
+at vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TrimStrings.php:51
+at vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:219
+at vendor/laravel/framework/src/Illuminate/Http/Middleware/ValidatePostSize.php:27
+at vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:219
+at vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/PreventRequestsDuringMaintenance.php:109
+at vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:219
+at vendor/laravel/framework/src/Illuminate/Http/Middleware/HandleCors.php:61
+at vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:219
+at vendor/laravel/framework/src/Illuminate/Http/Middleware/TrustProxies.php:58
+at vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:219
+at vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/InvokeDeferredCallbacks.php:22
+at vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:219
+at vendor/laravel/framework/src/Illuminate/Http/Middleware/ValidatePathEncoding.php:26
+at vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:219
+at vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php:137
+at vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php:175
+at vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php:144
+at vendor/laravel/framework/src/Illuminate/Foundation/Testing/Concerns/MakesHttpRequests.php:607
+at vendor/laravel/framework/src/Illuminate/Foundation/Testing/Concerns/MakesHttpRequests.php:368
+at tests/Feature/Controllers/ComposerPackageControllerTest.php:109</error>
+        </testcase>
+        <testcase name="handles invalid page parameters" file="tests/Feature/Controllers/ComposerPackageControllerTest.php::handles invalid page parameters" class="Tests\Feature\Controllers\ComposerPackageControllerTest" classname="Tests.Feature.Controllers.ComposerPackageControllerTest" assertions="5" time="0.260546"/>
+      </testsuite>
+      <testsuite name="Tests\Feature\Controllers\PackageMarkdownControllerTest" file="tests/Feature/Controllers/PackageMarkdownControllerTest.php" tests="1" assertions="19" errors="0" failures="0" skipped="0" time="0.021107">
+        <testcase name="packages carousel api returns expected data" file="tests/Feature/Controllers/PackageMarkdownControllerTest.php::packages carousel api returns expected data" class="Tests\Feature\Controllers\PackageMarkdownControllerTest" classname="Tests.Feature.Controllers.PackageMarkdownControllerTest" assertions="19" time="0.021107">
+          <system-out>Number of packages returned: 3
+First package: {
+    "name": "laravel\/framework",
+    "logo": {
+        "path": null,
+        "url": "https:\/\/laravel.com\/img\/logomark.min.svg"
+    },
+    "readme_html": "&lt;h1&gt;Laravel Framework&lt;\/h1&gt;",
+    "rank": 1,
+    "type": "prod",
+    "description": "The Laravel Framework."
+}
+</system-out>
+        </testcase>
+      </testsuite>
+      <testsuite name="Tests\Feature\DashboardTest" file="tests/Feature/DashboardTest.php" tests="2" assertions="3" errors="0" failures="0" skipped="0" time="0.030082">
+        <testcase name="guests are redirected to the login page" file="tests/Feature/DashboardTest.php::guests are redirected to the login page" class="Tests\Feature\DashboardTest" classname="Tests.Feature.DashboardTest" assertions="2" time="0.014544"/>
+        <testcase name="authenticated users can visit the dashboard" file="tests/Feature/DashboardTest.php::authenticated users can visit the dashboard" class="Tests\Feature\DashboardTest" classname="Tests.Feature.DashboardTest" assertions="1" time="0.015537"/>
+      </testsuite>
+      <testsuite name="Tests\Feature\Editor\EditorContentLoadingTest" file="tests/Feature/Editor/EditorContentLoadingTest.php" tests="4" assertions="11" errors="0" failures="2" skipped="0" time="0.079958">
+        <testcase name="api returns complete page data" file="tests/Feature/Editor/EditorContentLoadingTest.php::api returns complete page data" class="Tests\Feature\Editor\EditorContentLoadingTest" classname="Tests.Feature.Editor.EditorContentLoadingTest" assertions="1" time="0.020175">
+          <failure type="PHPUnit\Framework\ExpectationFailedException">api returns complete page dataExpected response status code [200] but received 404.
+Failed asserting that 404 is identical to 200.
+at vendor/laravel/framework/src/Illuminate/Testing/TestResponseAssert.php:45
+at vendor/laravel/framework/src/Illuminate/Testing/TestResponse.php:174
+at tests/Feature/Editor/EditorContentLoadingTest.php:57</failure>
+        </testcase>
+        <testcase name="page manager loads page content" file="tests/Feature/Editor/EditorContentLoadingTest.php::page manager loads page content" class="Tests\Feature\Editor\EditorContentLoadingTest" classname="Tests.Feature.Editor.EditorContentLoadingTest" assertions="1" time="0.022689">
+          <failure type="PHPUnit\Framework\ExpectationFailedException">page manager loads page contentExpected response status code [200] but received 404.
+Failed asserting that 404 is identical to 200.
+at vendor/laravel/framework/src/Illuminate/Testing/TestResponseAssert.php:45
+at vendor/laravel/framework/src/Illuminate/Testing/TestResponse.php:174
+at tests/Feature/Editor/EditorContentLoadingTest.php:93</failure>
+        </testcase>
+        <testcase name="markdown to html conversion" file="tests/Feature/Editor/EditorContentLoadingTest.php::markdown to html conversion" class="Tests\Feature\Editor\EditorContentLoadingTest" classname="Tests.Feature.Editor.EditorContentLoadingTest" assertions="5" time="0.019244"/>
+        <testcase name="html to markdown conversion" file="tests/Feature/Editor/EditorContentLoadingTest.php::html to markdown conversion" class="Tests\Feature\Editor\EditorContentLoadingTest" classname="Tests.Feature.Editor.EditorContentLoadingTest" assertions="4" time="0.017850"/>
+      </testsuite>
+      <testsuite name="Tests\Feature\ExampleTest" file="tests/Feature/ExampleTest.php" tests="1" assertions="1" errors="0" failures="0" skipped="0" time="0.018608">
+        <testcase name="it returns a successful response" file="tests/Feature/ExampleTest.php::it returns a successful response" class="Tests\Feature\ExampleTest" classname="Tests.Feature.ExampleTest" assertions="1" time="0.018608"/>
+      </testsuite>
+      <testsuite name="Tests\Feature\HomeControllerTest" file="tests/Feature/HomeControllerTest.php" tests="2" assertions="11" errors="0" failures="0" skipped="0" time="0.033222">
+        <testcase name="home page can be rendered" file="tests/Feature/HomeControllerTest.php::home page can be rendered" class="Tests\Feature\HomeControllerTest" classname="Tests.Feature.HomeControllerTest" assertions="10" time="0.019202"/>
+        <testcase name="home page is accessible to guests" file="tests/Feature/HomeControllerTest.php::home page is accessible to guests" class="Tests\Feature\HomeControllerTest" classname="Tests.Feature.HomeControllerTest" assertions="1" time="0.014020"/>
+      </testsuite>
+      <testsuite name="Tests\Feature\PageControllerTest" file="tests/Feature/PageControllerTest.php" tests="7" assertions="20" errors="0" failures="3" skipped="0" time="0.119962">
+        <testcase name="can list pages" file="tests/Feature/PageControllerTest.php::can list pages" class="Tests\Feature\PageControllerTest" classname="Tests.Feature.PageControllerTest" assertions="6" time="0.018872"/>
+        <testcase name="can show page" file="tests/Feature/PageControllerTest.php::can show page" class="Tests\Feature\PageControllerTest" classname="Tests.Feature.PageControllerTest" assertions="1" time="0.015694">
+          <failure type="PHPUnit\Framework\ExpectationFailedException">can show pageExpected response status code [200] but received 404.
+Failed asserting that 404 is identical to 200.
+at vendor/laravel/framework/src/Illuminate/Testing/TestResponseAssert.php:45
+at vendor/laravel/framework/src/Illuminate/Testing/TestResponse.php:174
+at tests/Feature/PageControllerTest.php:48</failure>
+        </testcase>
+        <testcase name="can create page" file="tests/Feature/PageControllerTest.php::can create page" class="Tests\Feature\PageControllerTest" classname="Tests.Feature.PageControllerTest" assertions="4" time="0.023313"/>
+        <testcase name="can update page" file="tests/Feature/PageControllerTest.php::can update page" class="Tests\Feature\PageControllerTest" classname="Tests.Feature.PageControllerTest" assertions="1" time="0.016496">
+          <failure type="PHPUnit\Framework\ExpectationFailedException">can update pageExpected response status code [200] but received 404.
+Failed asserting that 404 is identical to 200.
+at vendor/laravel/framework/src/Illuminate/Testing/TestResponseAssert.php:45
+at vendor/laravel/framework/src/Illuminate/Testing/TestResponse.php:174
+at tests/Feature/PageControllerTest.php:93</failure>
+        </testcase>
+        <testcase name="can delete page" file="tests/Feature/PageControllerTest.php::can delete page" class="Tests\Feature\PageControllerTest" classname="Tests.Feature.PageControllerTest" assertions="1" time="0.014454">
+          <failure type="PHPUnit\Framework\ExpectationFailedException">can delete pageExpected response status code [200] but received 404.
+Failed asserting that 404 is identical to 200.
+at vendor/laravel/framework/src/Illuminate/Testing/TestResponseAssert.php:45
+at vendor/laravel/framework/src/Illuminate/Testing/TestResponse.php:174
+at tests/Feature/PageControllerTest.php:114</failure>
+        </testcase>
+        <testcase name="can convert markdown to html" file="tests/Feature/PageControllerTest.php::can convert markdown to html" class="Tests\Feature\PageControllerTest" classname="Tests.Feature.PageControllerTest" assertions="4" time="0.016587"/>
+        <testcase name="can convert html to markdown" file="tests/Feature/PageControllerTest.php::can convert html to markdown" class="Tests\Feature\PageControllerTest" classname="Tests.Feature.PageControllerTest" assertions="3" time="0.014546"/>
+      </testsuite>
+      <testsuite name="Tests\Feature\Services\ComposerPackagesServiceTest" file="tests/Feature/Services/ComposerPackagesServiceTest.php" tests="6" assertions="31" errors="0" failures="0" skipped="1" time="0.083742">
+        <testcase name="get package logo returns placeholder for nonexistent package" file="tests/Feature/Services/ComposerPackagesServiceTest.php::get package logo returns placeholder for nonexistent package" class="Tests\Feature\Services\ComposerPackagesServiceTest" classname="Tests.Feature.Services.ComposerPackagesServiceTest" assertions="1" time="0.021395"/>
+        <testcase name="analyze includes logo information" file="tests/Feature/Services/ComposerPackagesServiceTest.php::analyze includes logo information" class="Tests\Feature\Services\ComposerPackagesServiceTest" classname="Tests.Feature.Services.ComposerPackagesServiceTest" assertions="6" time="0.014501"/>
+        <testcase name="create placeholder logo" file="tests/Feature/Services/ComposerPackagesServiceTest.php::create placeholder logo" class="Tests\Feature\Services\ComposerPackagesServiceTest" classname="Tests.Feature.Services.ComposerPackagesServiceTest" assertions="4" time="0.011463"/>
+        <testcase name="get package readme with html conversion" file="tests/Feature/Services/ComposerPackagesServiceTest.php::get package readme with html conversion" class="Tests\Feature\Services\ComposerPackagesServiceTest" classname="Tests.Feature.Services.ComposerPackagesServiceTest" assertions="0" time="0.012497">
+          <skipped/>
+        </testcase>
+        <testcase name="analyze includes readme html when requested" file="tests/Feature/Services/ComposerPackagesServiceTest.php::analyze includes readme html when requested" class="Tests\Feature\Services\ComposerPackagesServiceTest" classname="Tests.Feature.Services.ComposerPackagesServiceTest" assertions="4" time="0.011449"/>
+        <testcase name="get paginated" file="tests/Feature/Services/ComposerPackagesServiceTest.php::get paginated" class="Tests\Feature\Services\ComposerPackagesServiceTest" classname="Tests.Feature.Services.ComposerPackagesServiceTest" assertions="16" time="0.012436"/>
+      </testsuite>
+      <testsuite name="Tests\Feature\Settings\PasswordUpdateTest" file="tests/Feature/Settings/PasswordUpdateTest.php" tests="2" assertions="0" errors="0" failures="0" skipped="2" time="0.028366">
+        <testcase name="password can be updated" file="tests/Feature/Settings/PasswordUpdateTest.php::password can be updated" class="Tests\Feature\Settings\PasswordUpdateTest" classname="Tests.Feature.Settings.PasswordUpdateTest" assertions="0" time="0.016186">
+          <skipped/>
+        </testcase>
+        <testcase name="correct password must be provided to update password" file="tests/Feature/Settings/PasswordUpdateTest.php::correct password must be provided to update password" class="Tests\Feature\Settings\PasswordUpdateTest" classname="Tests.Feature.Settings.PasswordUpdateTest" assertions="0" time="0.012180">
+          <skipped/>
+        </testcase>
+      </testsuite>
+      <testsuite name="Tests\Feature\Settings\ProfileUpdateTest" file="tests/Feature/Settings/ProfileUpdateTest.php" tests="5" assertions="10" errors="0" failures="0" skipped="3" time="0.071842">
+        <testcase name="profile page is displayed" file="tests/Feature/Settings/ProfileUpdateTest.php::profile page is displayed" class="Tests\Feature\Settings\ProfileUpdateTest" classname="Tests.Feature.Settings.ProfileUpdateTest" assertions="0" time="0.018561">
+          <skipped/>
+        </testcase>
+        <testcase name="profile information can be updated" file="tests/Feature/Settings/ProfileUpdateTest.php::profile information can be updated" class="Tests\Feature\Settings\ProfileUpdateTest" classname="Tests.Feature.Settings.ProfileUpdateTest" assertions="0" time="0.011856">
+          <skipped/>
+        </testcase>
+        <testcase name="email verification status is unchanged when the email address is unchanged" file="tests/Feature/Settings/ProfileUpdateTest.php::email verification status is unchanged when the email address is unchanged" class="Tests\Feature\Settings\ProfileUpdateTest" classname="Tests.Feature.Settings.ProfileUpdateTest" assertions="0" time="0.011357">
+          <skipped/>
+        </testcase>
+        <testcase name="user can delete their account" file="tests/Feature/Settings/ProfileUpdateTest.php::user can delete their account" class="Tests\Feature\Settings\ProfileUpdateTest" classname="Tests.Feature.Settings.ProfileUpdateTest" assertions="5" time="0.014505"/>
+        <testcase name="correct password must be provided to delete account" file="tests/Feature/Settings/ProfileUpdateTest.php::correct password must be provided to delete account" class="Tests\Feature\Settings\ProfileUpdateTest" classname="Tests.Feature.Settings.ProfileUpdateTest" assertions="5" time="0.015563"/>
+      </testsuite>
+    </testsuite>
+  </testsuite>
+</testsuites>

@@ -1,0 +1,17 @@
+/* Browser-specific fixes for the package carousel */
+
+/* Safari Navigation Button Fix */
+@supports (-webkit-touch-callout: none) {
+  [data-slot="carousel-previous"],
+  [data-slot="carousel-next"] {
+    display: flex !important;
+    opacity: 0.8;
+  }
+}
+
+/* Firefox Syntax Highlighting Fix */
+@-moz-document url-prefix() {
+  pre code {
+    background-color: transparent !important;
+  }
+}

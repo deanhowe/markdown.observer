@@ -1,0 +1,3 @@
+# New Page
+
+Start writing your content here...
