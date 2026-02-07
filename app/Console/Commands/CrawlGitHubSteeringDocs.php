@@ -72,14 +72,14 @@ class CrawlGitHubSteeringDocs extends Command
     private function checkFolder(string $repo, string $folder): bool
     {
         $url = "https://api.github.com/repos/{$repo}/contents/{$folder}";
-        $response = Http::get($url);
+        $response = Http::withToken(config('services.github.token'))->get($url);
         return $response->successful();
     }
 
     private function downloadFolder(string $repo, string $folder): void
     {
         $url = "https://api.github.com/repos/{$repo}/contents/{$folder}";
-        $response = Http::get($url);
+        $response = Http::withToken(config('services.github.token'))->get($url);
         
         if (!$response->successful()) return;
 
@@ -124,7 +124,7 @@ class CrawlGitHubSteeringDocs extends Command
     {
         $repo = explode(' ', $collection->name)[0];
         $url = "https://api.github.com/repos/{$repo}/contents/{$path}";
-        $response = Http::get($url);
+        $response = Http::withToken(config('services.github.token'))->get($url);
         
         if (!$response->successful()) return;
 
