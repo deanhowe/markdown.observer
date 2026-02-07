@@ -13,6 +13,11 @@ class HorizonServiceProvider extends HorizonApplicationServiceProvider
      */
     public function boot(): void
     {
+        // Skip Horizon if Redis not available
+        if (!config('database.redis.default.host')) {
+            return;
+        }
+        
         parent::boot();
 
         // Horizon::routeSmsNotificationsTo('15556667777');
