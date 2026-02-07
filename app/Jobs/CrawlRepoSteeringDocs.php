@@ -72,7 +72,7 @@ class CrawlRepoSteeringDocs implements ShouldQueue
         try {
             $content = Http::timeout(10)->get($file['download_url'])->body();
             
-            SteeringDoc::updateOrCreate(
+            $doc = SteeringDoc::updateOrCreate(
                 [
                     'steering_collection_id' => $collection->id,
                     'file_path' => $file['path'],
@@ -82,6 +82,11 @@ class CrawlRepoSteeringDocs implements ShouldQueue
                     'is_edited' => false,
                 ]
             );
+            
+            // Track version if content changed
+            if ($doc->wasChanged('content')) {
+                $doc->createVersion('crawled');
+            }
         } catch (\Exception $e) {
             // Skip this file, continue with others
             \Log::debug("Skipped {$file['path']}: {$e->getMessage()}");

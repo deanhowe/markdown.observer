@@ -14,6 +14,13 @@ return Application::configure(basePath: dirname(__DIR__))
         commands: __DIR__.'/../routes/console.php',
         health: '/up',
     )
+    ->withSchedule(function ($schedule) {
+        // Crawl GitHub for steering docs every hour - stay fresh!
+        $schedule->command('crawl:steering-docs')->hourly();
+        
+        // Clean up old failed jobs monthly
+        $schedule->command('queue:prune-failed --hours=720')->monthly();
+    })
     ->withMiddleware(function (Middleware $middleware) {
         $middleware->encryptCookies(except: ['appearance', 'sidebar_state']);
 
