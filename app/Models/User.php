@@ -21,7 +21,13 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'subscription_tier',
     ];
+
+    public function steeringCollections()
+    {
+        return $this->hasMany(SteeringCollection::class);
+    }
 
     /**
      * The attributes that should be hidden for serialization.

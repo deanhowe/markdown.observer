@@ -24,6 +24,9 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/packages/{package}/docs', [App\Http\Controllers\PackageUploadController::class, 'viewDocs'])->name('packages.docs');
     Route::post('/docs/{doc}/update', [App\Http\Controllers\PackageUploadController::class, 'updateDoc'])->name('docs.update');
     
+    // Steering docs
+    Route::post('/steering/upload', [App\Http\Controllers\SteeringDocController::class, 'upload'])->name('steering.upload');
+    
     // Page editor (legacy)
     Route::get('/pages/create', fn() => Inertia::render('PageEditor'))->name('pages.create');
     Route::get('/pages/{slug}/edit', [PageController::class, 'edit'])->name('pages.edit');
