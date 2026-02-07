@@ -16,6 +16,9 @@ Route::domain('ai.markdown.observer')->group(function () {
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/ai', [App\Http\Controllers\AI\HomeController::class, 'index'])->name('ai.local'); // Local fallback
 Route::get('/pricing', fn() => Inertia::render('Pricing'))->name('pricing');
+Route::get('/terms', [App\Http\Controllers\LegalController::class, 'terms'])->name('terms');
+Route::get('/privacy', [App\Http\Controllers\LegalController::class, 'privacy'])->name('privacy');
+Route::get('/faq', [App\Http\Controllers\LegalController::class, 'faq'])->name('faq');
 
 Route::middleware(['auth'])->group(function () {
     // Dashboard
