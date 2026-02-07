@@ -7,6 +7,12 @@ use App\Http\Controllers\PageController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
+// AI Steering Docs subdomain
+Route::domain('ai.markdown.observer')->group(function () {
+    Route::get('/', [App\Http\Controllers\AI\HomeController::class, 'index'])->name('ai.home');
+});
+
+// Main domain
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/pricing', fn() => Inertia::render('Pricing'))->name('pricing');
 
