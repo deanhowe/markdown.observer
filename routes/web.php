@@ -14,6 +14,11 @@ Route::middleware(['auth'])->group(function () {
     // Dashboard
     Route::get('/dashboard', [PageController::class, 'index'])->name('dashboard');
     
+    // Checkout
+    Route::post('/checkout/pro-monthly', [App\Http\Controllers\CheckoutController::class, 'proMonthly'])->name('checkout.pro-monthly');
+    Route::post('/checkout/lifetime', [App\Http\Controllers\CheckoutController::class, 'lifetime'])->name('checkout.lifetime');
+    Route::get('/billing', [App\Http\Controllers\CheckoutController::class, 'portal'])->name('billing.portal');
+    
     // Package upload
     Route::get('/upload', fn() => Inertia::render('UploadPackages'))->name('packages.upload.form');
     Route::post('/upload', [App\Http\Controllers\PackageUploadController::class, 'upload'])->name('packages.upload');
