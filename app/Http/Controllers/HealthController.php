@@ -39,7 +39,7 @@ class HealthController extends Controller
             
             'packages' => [
                 'total' => UserPackage::count(),
-                'unique' => UserPackage::distinct('name')->count(),
+                'unique' => UserPackage::distinct('package_name')->count(),
             ],
             
             'queue' => [
