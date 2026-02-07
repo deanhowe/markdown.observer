@@ -13,6 +13,9 @@ interface Stats {
     collections: number
     documents: number
     public: number
+    versions_total: number
+    versions_today: number
+    versions_this_week: number
     by_type: Record<string, number>
   }
   packages: {
@@ -95,6 +98,21 @@ export default function Health({ stats }: { stats: Stats }) {
                 <div className="flex justify-between">
                   <span>Public:</span>
                   <span>{stats.steering_docs.public}</span>
+                </div>
+                <div className="border-t border-gray-200 dark:border-gray-700 pt-2 mt-2">
+                  <div className="text-sm font-semibold mb-1">Version Changes:</div>
+                  <div className="flex justify-between text-sm">
+                    <span>Total:</span>
+                    <span>{stats.steering_docs.versions_total}</span>
+                  </div>
+                  <div className="flex justify-between text-sm">
+                    <span>Today:</span>
+                    <span className="font-bold text-blue-500">{stats.steering_docs.versions_today}</span>
+                  </div>
+                  <div className="flex justify-between text-sm">
+                    <span>This Week:</span>
+                    <span className="font-bold">{stats.steering_docs.versions_this_week}</span>
+                  </div>
                 </div>
                 <div className="border-t border-gray-200 dark:border-gray-700 pt-2 mt-2">
                   <div className="text-sm font-semibold mb-1">By Type:</div>

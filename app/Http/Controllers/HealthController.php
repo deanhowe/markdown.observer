@@ -28,6 +28,9 @@ class HealthController extends Controller
                 'collections' => SteeringCollection::count(),
                 'documents' => SteeringDoc::count(),
                 'public' => SteeringCollection::where('is_public', true)->count(),
+                'versions_total' => DB::table('steering_doc_versions')->count(),
+                'versions_today' => DB::table('steering_doc_versions')->whereDate('created_at', today())->count(),
+                'versions_this_week' => DB::table('steering_doc_versions')->where('created_at', '>=', now()->subWeek())->count(),
                 'by_type' => SteeringCollection::select('type', DB::raw('count(*) as count'))
                     ->groupBy('type')
                     ->pluck('count', 'type')
