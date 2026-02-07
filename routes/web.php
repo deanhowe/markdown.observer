@@ -7,13 +7,14 @@ use App\Http\Controllers\PageController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
-// AI Steering Docs subdomain
+// AI Steering Docs subdomain (production only)
 Route::domain('ai.markdown.observer')->group(function () {
     Route::get('/', [App\Http\Controllers\AI\HomeController::class, 'index'])->name('ai.home');
 });
 
 // Main domain
 Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/ai', [App\Http\Controllers\AI\HomeController::class, 'index'])->name('ai.local'); // Local fallback
 Route::get('/pricing', fn() => Inertia::render('Pricing'))->name('pricing');
 
 Route::middleware(['auth'])->group(function () {
