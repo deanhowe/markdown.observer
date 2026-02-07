@@ -16,6 +16,16 @@ class CheckoutController extends Controller
             ]);
     }
 
+    public function proYearly(Request $request)
+    {
+        return $request->user()
+            ->newSubscription('default', config('services.stripe.price_pro_yearly'))
+            ->checkout([
+                'success_url' => route('dashboard') . '?success=true',
+                'cancel_url' => route('welcome'),
+            ]);
+    }
+
     public function lifetime(Request $request)
     {
         return $request->user()->checkout([config('services.stripe.price_lifetime')], [
