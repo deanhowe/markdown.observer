@@ -1,0 +1,9 @@
+# Ignore other AI assistant files
+other_ai/
+.junie/
+.ai/
+.amazonq/
+.claude/
+
+# OS files
+.DS_Store

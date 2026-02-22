@@ -7,8 +7,10 @@ use App\Http\Controllers\PageController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
-// AI Steering Docs subdomain (production only)
-Route::domain('ai.markdown.observer')->group(function () {
+// AI Steering Docs subdomain
+$aiDomain = app()->environment('production') ? 'ai.markdown.observer' : 'ai.markdown.observer.test';
+
+Route::domain($aiDomain)->group(function () {
     Route::get('/', [App\Http\Controllers\AI\HomeController::class, 'index'])->name('ai.home');
 });
 
@@ -24,26 +26,26 @@ Route::get('/faq', [App\Http\Controllers\LegalController::class, 'faq'])->name('
 Route::middleware(['auth'])->group(function () {
     // Dashboard
     Route::get('/dashboard', [PageController::class, 'index'])->name('dashboard');
-    
+
     // Checkout
     Route::post('/checkout/pro-monthly', [App\Http\Controllers\CheckoutController::class, 'proMonthly'])->name('checkout.pro-monthly');
     Route::post('/checkout/pro-yearly', [App\Http\Controllers\CheckoutController::class, 'proYearly'])->name('checkout.pro-yearly');
     Route::post('/checkout/lifetime', [App\Http\Controllers\CheckoutController::class, 'lifetime'])->name('checkout.lifetime');
     Route::get('/billing', [App\Http\Controllers\CheckoutController::class, 'portal'])->name('billing.portal');
-    
+
     // Package upload
     Route::get('/upload', fn() => Inertia::render('UploadPackages'))->name('packages.upload.form');
     Route::post('/upload', [App\Http\Controllers\PackageUploadController::class, 'upload'])->name('packages.upload');
     Route::post('/packages/confirm', [App\Http\Controllers\PackageUploadController::class, 'confirm'])->name('packages.confirm');
     Route::post('/packages/{package}/sync', [App\Http\Controllers\PackageUploadController::class, 'sync'])->name('packages.sync');
-    
+
     // Package docs
     Route::get('/packages/{package}/docs', [App\Http\Controllers\PackageUploadController::class, 'viewDocs'])->name('packages.docs');
     Route::post('/docs/{doc}/update', [App\Http\Controllers\PackageUploadController::class, 'updateDoc'])->name('docs.update');
-    
+
     // Steering docs
     Route::post('/steering/upload', [App\Http\Controllers\SteeringDocController::class, 'upload'])->name('steering.upload');
-    
+
     // Page editor (legacy)
     Route::get('/pages/create', fn() => Inertia::render('PageEditor'))->name('pages.create');
     Route::get('/pages/{slug}/edit', [PageController::class, 'edit'])->name('pages.edit');
@@ -67,6 +69,9 @@ Route::middleware(['auth', 'verified'])->group(function () {
         ->where('file-path', '.*');
     Route::get('packages/{package}/html/{file-path}', [PackageMarkdownController::class, 'getHtml'])
         ->name('packages.html')
+        ->where('file-path', '.*');
+    Route::get('packages/{package}/last-modified/{file-path}', [PackageMarkdownController::class, 'lastModified'])
+        ->name('packages.last-modified')
         ->where('file-path', '.*');
 });
 

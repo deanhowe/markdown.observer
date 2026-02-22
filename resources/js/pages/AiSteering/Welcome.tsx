@@ -1,10 +1,18 @@
 import { Head, Link } from '@inertiajs/react'
 
-export default function AIWelcome() {
+interface AIWelcomeProps {
+  stats: {
+    collections: number;
+    documents: number;
+    repos: number;
+  }
+}
+
+export default function AIWelcome({ stats }: AIWelcomeProps) {
   return (
     <>
       <Head title="AI Steering Docs Search" />
-      
+
       <div className="min-h-screen relative z-10">
         {/* Header */}
         <header className="container mx-auto px-6 py-6 flex justify-between items-center">
@@ -32,17 +40,17 @@ export default function AIWelcome() {
             <span className="text-blue-500">AI Steering Docs Search Engine</span>
           </h2>
           <p className="text-xl text-gray-600 dark:text-gray-400 mb-8 max-w-2xl mx-auto">
-            Learn how React, Next.js, Livewire structure their AI instructions. 
-            Search 500+ top projects for <code className="bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded">.claude/</code>, 
-            <code className="bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded">.cursor/</code>, 
+            Learn how React, Next.js, Livewire structure their AI instructions.
+            Search 500+ top projects for <code className="bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded">.claude/</code>,
+            <code className="bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded">.cursor/</code>,
             <code className="bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded">.ai/</code> folders.
           </p>
-          
+
           {/* Search Preview */}
           <div className="max-w-2xl mx-auto mb-8">
             <div className="backdrop-blur-sm bg-white/70 dark:bg-gray-800/70 rounded-2xl p-6 border border-gray-200 dark:border-gray-700">
-              <input 
-                type="text" 
+              <input
+                type="text"
                 placeholder="Search: What do React's steering docs contain?"
                 className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 dark:bg-gray-900 dark:text-white"
                 disabled
@@ -90,15 +98,15 @@ export default function AIWelcome() {
         <section className="container mx-auto px-6 py-20 text-center">
           <div className="grid md:grid-cols-3 gap-8 max-w-3xl mx-auto">
             <div>
-              <p className="text-4xl font-bold text-blue-500">500+</p>
+              <p className="text-4xl font-bold text-blue-500">{stats.repos.toLocaleString()}+</p>
               <p className="text-gray-600 dark:text-gray-400">Repos Crawled</p>
             </div>
             <div>
-              <p className="text-4xl font-bold text-blue-500">~100</p>
+              <p className="text-4xl font-bold text-blue-500">~{stats.collections.toLocaleString()}</p>
               <p className="text-gray-600 dark:text-gray-400">Collections Found</p>
             </div>
             <div>
-              <p className="text-4xl font-bold text-blue-500">2,000+</p>
+              <p className="text-4xl font-bold text-blue-500">{stats.documents.toLocaleString()}+</p>
               <p className="text-gray-600 dark:text-gray-400">Steering Docs</p>
             </div>
           </div>

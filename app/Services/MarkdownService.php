@@ -24,10 +24,15 @@ class MarkdownService
      * Convert Markdown to HTML
      *
      * @param string $markdown
+     * @param bool $useCache
      * @return string
      */
-    public function toHtml(string $markdown): string
+    public function toHtml(string $markdown, bool $useCache = true): string
     {
+        if (!$useCache) {
+            return Purify::clean($this->markdownRenderer->toHtml($markdown));
+        }
+
         // Generate a cache key based on the markdown content
         $cacheKey = 'markdown_html_' . md5($markdown);
 

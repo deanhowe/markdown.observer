@@ -26,7 +26,9 @@ class MarkdownFileData extends Data
         public readonly ?string $phpStormUrl,
 
         #[Nullable, StringType]
-        public readonly ?string $relativePath
+        public readonly ?string $relativePath,
+
+        public readonly ?int $lastModified = null
     ) {}
 
     /**
@@ -43,6 +45,7 @@ class MarkdownFileData extends Data
             'html' => $this->html,
             'phpstorm_url' => $this->phpStormUrl,
             'relative_path' => $this->relativePath,
+            'last_modified' => $this->lastModified,
         ];
     }
 }
