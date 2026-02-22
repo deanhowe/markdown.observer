@@ -9,6 +9,14 @@ class HomeController extends Controller
 {
     public function index()
     {
-        return Inertia::render('AiSteering/Welcome');
+        $stats = [
+            'collections' => \App\Models\SteeringCollection::count(),
+            'documents' => \App\Models\SteeringDoc::count(),
+            'repos' => \App\Models\SteeringCollection::distinct('name')->count(),
+        ];
+
+        return Inertia::render('AiSteering/Welcome', [
+            'stats' => $stats
+        ]);
     }
 }

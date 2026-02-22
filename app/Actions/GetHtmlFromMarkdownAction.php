@@ -10,7 +10,7 @@ class GetHtmlFromMarkdownAction
 {
     public function __construct(
         private readonly PackageMarkdownService $packageMarkdownService,
-        private readonly MarkdownRenderer $markdownRenderer
+        private readonly \App\Services\MarkdownService $markdownService
     ) {}
 
     /**
@@ -29,6 +29,6 @@ class GetHtmlFromMarkdownAction
             abort(404, 'Markdown file not found');
         }
 
-        return $this->markdownRenderer->toHtml($content);
+        return $this->markdownService->toHtml($content);
     }
 }

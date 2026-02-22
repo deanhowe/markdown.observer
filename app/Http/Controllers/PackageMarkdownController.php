@@ -98,6 +98,18 @@ class PackageMarkdownController extends Controller
     }
 
     /**
+     * Get the last modified timestamp of a markdown file.
+     */
+    public function lastModified(string $packageName, string $filePath, \App\Actions\GetMarkdownFileLastModifiedAction $action)
+    {
+        $lastModified = $action->execute($packageName, $filePath);
+
+        return response()->json([
+            'last_modified' => $lastModified,
+        ]);
+    }
+
+    /**
      * Get packages with logos for the carousel.
      */
     public function getPackagesForCarousel(CarouselQueryRequest $request, \App\Actions\GetPackagesForCarouselAction $action)

@@ -20,6 +20,10 @@ class ComposerPackageStorageServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
+        if ($this->app->runningInConsole() && !$this->app->runningUnitTests()) {
+            return;
+        }
+
         // Register a disk for each composer package
         $this->registerComposerPackageDisks();
     }

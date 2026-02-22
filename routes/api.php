@@ -44,5 +44,9 @@ Route::middleware(['auth:sanctum'])->group(function () {
     Route::prefix('markdown')->name('api.markdown.')->group(function () {
         Route::post('/to-html', [PageController::class, 'convertToHtml'])->name('to-html');
         Route::post('/to-markdown', [PageController::class, 'convertToMarkdown'])->name('to-markdown');
+        Route::post('/export-for-ai', function (\Illuminate\Http\Request $request, \App\Actions\ExportMarkdownForAiAction $action) {
+            $request->validate(['markdown' => 'required|string']);
+            return response()->json(['markdown' => $action->execute($request->input('markdown'))]);
+        })->name('export-for-ai');
     });
 });

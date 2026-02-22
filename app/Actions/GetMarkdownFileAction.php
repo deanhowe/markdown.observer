@@ -40,13 +40,17 @@ class GetMarkdownFileAction
         $phpStormUrl = $this->packageMarkdownService->getPhpStormUrl($packageName, $filePath);
         $relativePath = $this->packageMarkdownService->getRelativePath($packageName, $filePath);
 
+        $lastModifiedAction = app(\App\Actions\GetMarkdownFileLastModifiedAction::class);
+        $lastModified = $lastModifiedAction->execute($packageName, $filePath);
+
         return new MarkdownFileData(
             package: $package,
             filePath: $filePath,
             content: $content,
             html: $html,
             phpStormUrl: $phpStormUrl,
-            relativePath: $relativePath
+            relativePath: $relativePath,
+            lastModified: $lastModified
         );
     }
 }
