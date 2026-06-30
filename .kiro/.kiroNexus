@@ -1,0 +1,25 @@
+---
+id: .kiro
+name: ".kiro"
+parent: /Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer
+status: active
+role: app
+owner: deanhowe
+# mission:
+languages:
+  # none detected
+frameworks:
+  # none detected
+infra:
+  # none detected
+# env: (no .env found)
+git_remote: git@github.com:deanhowe/para.git
+last_commit: 2026-02-07
+license: 
+updated: 2026-04-05
+---
+
+# .kiro
+
+## TODO
+- [ ] Document purpose

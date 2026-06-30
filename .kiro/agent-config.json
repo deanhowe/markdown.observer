@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "project": {
     "name": "markdown.observer",
-    "path": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer",
+    "path": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer",
     "type": "laravel"
   },
   "knowledge_bases": [
@@ -16,13 +16,13 @@
     },
     {
       "name": "markdown.observer-project-para",
-      "path": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/.kiro/memory",
+      "path": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/.kiro/memory",
       "priority": "high",
       "description": "Project-specific PARA"
     },
     {
       "name": "markdown.observer-steering",
-      "path": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/.kiro/steering",
+      "path": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/.kiro/steering",
       "priority": "critical",
       "description": "Agent identity and steering documents"
     }

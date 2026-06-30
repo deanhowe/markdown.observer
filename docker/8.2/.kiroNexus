@@ -1,0 +1,25 @@
+---
+id: 8.2
+name: "8.2"
+parent: /Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/docker
+status: active
+role: infra
+owner: deanhowe
+# mission:
+languages:
+  # none detected
+frameworks:
+  # none detected
+infra:
+  - Docker
+# env: (no .env found)
+git_remote: git@github.com:deanhowe/markdown.observer.git
+last_commit: 2026-02-22
+license: 
+updated: 2026-04-05
+---
+
+# 8.2
+
+## TODO
+- [ ] Document purpose

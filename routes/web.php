@@ -23,14 +23,17 @@ Route::get('/terms', [App\Http\Controllers\LegalController::class, 'terms'])->na
 Route::get('/privacy', [App\Http\Controllers\LegalController::class, 'privacy'])->name('privacy');
 Route::get('/faq', [App\Http\Controllers\LegalController::class, 'faq'])->name('faq');
 
+// Checkout (works for guests AND logged-in users)
+Route::post('/checkout/{plan}', [App\Http\Controllers\CheckoutController::class, 'checkout'])
+    ->name('checkout')
+    ->where('plan', 'pro-monthly|pro-yearly|lifetime');
+Route::get('/checkout/success', [App\Http\Controllers\CheckoutController::class, 'success'])->name('checkout.success');
+
 Route::middleware(['auth'])->group(function () {
     // Dashboard
     Route::get('/dashboard', [PageController::class, 'index'])->name('dashboard');
 
-    // Checkout
-    Route::post('/checkout/pro-monthly', [App\Http\Controllers\CheckoutController::class, 'proMonthly'])->name('checkout.pro-monthly');
-    Route::post('/checkout/pro-yearly', [App\Http\Controllers\CheckoutController::class, 'proYearly'])->name('checkout.pro-yearly');
-    Route::post('/checkout/lifetime', [App\Http\Controllers\CheckoutController::class, 'lifetime'])->name('checkout.lifetime');
+    // Billing portal
     Route::get('/billing', [App\Http\Controllers\CheckoutController::class, 'portal'])->name('billing.portal');
 
     // Package upload
