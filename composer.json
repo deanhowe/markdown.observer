@@ -2,14 +2,35 @@
     "$schema": "https://getcomposer.org/schema.json",
     "name": "deanhowe/markdown.observer",
     "type": "project",
-    "description": "Edit in Markdown or TipTap, preview in real-time, and maintain your `.md` files as the single source of truth. Simple really.",
+    "description": "Transform your package documentation into an editable knowledge base. TipTap rich text editor, version control, and Markdown files as source of truth. Built for Laravel developers.",
     "keywords": [
         "markdown",
+        "documentation",
         "tiptap",
+        "editor",
         "laravel",
-        "framework"
+        "version-control",
+        "knowledge-base",
+        "composer-packages",
+        "package-docs",
+        "developer-tools",
+        "spatie-markdown",
+        "shiki-highlighter"
     ],
+    "homepage": "https://markdown.observer",
     "license": "MIT",
+    "authors": [
+        {
+            "name": "Dean Howe",
+            "email": "dean@markdown.observer",
+            "homepage": "https://markdown.observer"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/deanhowe/markdown.observer/issues",
+        "source": "https://github.com/deanhowe/markdown.observer",
+        "docs": "https://markdown.observer/docs"
+    },
     "require": {
         "php": "^8.2",
         "calebporzio/sushi": "^2.5.3",

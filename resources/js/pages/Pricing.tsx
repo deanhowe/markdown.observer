@@ -5,12 +5,7 @@ export default function Pricing({ auth }: { auth?: { user: any } }) {
   const [isYearly, setIsYearly] = useState(false)
   
   const handleCheckout = (plan: 'pro-monthly' | 'pro-yearly' | 'lifetime') => {
-    if (!auth?.user) {
-      router.visit(route('register'))
-      return
-    }
-    
-    router.post(route(`checkout.${plan}`))
+    router.post(route('checkout', { plan }))
   }
 
   return (

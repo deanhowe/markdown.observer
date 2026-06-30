@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuites>
-  <testsuite name="/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/phpunit.xml" tests="144" assertions="509" errors="3" failures="18" skipped="7" time="4.795426">
+  <testsuite name="/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/phpunit.xml" tests="144" assertions="509" errors="3" failures="18" skipped="7" time="4.795426">
     <testsuite name="Unit" tests="56" assertions="175" errors="2" failures="0" skipped="0" time="1.058356">
       <testsuite name="Tests\Unit\EventSystemTest" file="tests/Unit/EventSystemTest.php" tests="2" assertions="0" errors="2" failures="0" skipped="0" time="0.012994">
         <testcase name="revision created event is dispatched" file="tests/Unit/EventSystemTest.php::revision created event is dispatched" class="Tests\Unit\EventSystemTest" classname="Tests.Unit.EventSystemTest" assertions="0" time="0.012275">
-          <error type="TypeError">revision created event is dispatchedTypeError: Illuminate\Support\Testing\Fakes\EventFake::__construct(): Argument #1 ($dispatcher) must be of type Illuminate\Contracts\Events\Dispatcher, null given, called in /Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Support/Facades/Event.php on line 58
+          <error type="TypeError">revision created event is dispatchedTypeError: Illuminate\Support\Testing\Fakes\EventFake::__construct(): Argument #1 ($dispatcher) must be of type Illuminate\Contracts\Events\Dispatcher, null given, called in /Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Support/Facades/Event.php on line 58
 at vendor/laravel/framework/src/Illuminate/Support/Testing/Fakes/EventFake.php:55
 at vendor/laravel/framework/src/Illuminate/Support/Facades/Event.php:58
 at tests/Unit/EventSystemTest.php:14</error>
         </testcase>
         <testcase name="user events are dispatched" file="tests/Unit/EventSystemTest.php::user events are dispatched" class="Tests\Unit\EventSystemTest" classname="Tests.Unit.EventSystemTest" assertions="0" time="0.000719">
-          <error type="TypeError">user events are dispatchedTypeError: Illuminate\Support\Testing\Fakes\EventFake::__construct(): Argument #1 ($dispatcher) must be of type Illuminate\Contracts\Events\Dispatcher, null given, called in /Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Support/Facades/Event.php on line 58
+          <error type="TypeError">user events are dispatchedTypeError: Illuminate\Support\Testing\Fakes\EventFake::__construct(): Argument #1 ($dispatcher) must be of type Illuminate\Contracts\Events\Dispatcher, null given, called in /Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Support/Facades/Event.php on line 58
 at vendor/laravel/framework/src/Illuminate/Support/Testing/Fakes/EventFake.php:55
 at vendor/laravel/framework/src/Illuminate/Support/Facades/Event.php:58
 at tests/Unit/EventSystemTest.php:32</error>
@@ -123,244 +123,244 @@ within response JSON:
 [{
     "message": "The route api/pages/nonexistent-page could not be found.",
     "exception": "Symfony\\Component\\HttpKernel\\Exception\\NotFoundHttpException",
-    "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Routing/AbstractRouteCollection.php",
+    "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Routing/AbstractRouteCollection.php",
     "line": 45,
     "trace": [
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Routing/RouteCollection.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Routing/RouteCollection.php",
             "line": 184,
             "function": "handleMatchedRoute",
             "class": "Illuminate\\Routing\\AbstractRouteCollection",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Routing/Router.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Routing/Router.php",
             "line": 777,
             "function": "match",
             "class": "Illuminate\\Routing\\RouteCollection",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Routing/Router.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Routing/Router.php",
             "line": 764,
             "function": "findRoute",
             "class": "Illuminate\\Routing\\Router",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Routing/Router.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Routing/Router.php",
             "line": 753,
             "function": "dispatchToRoute",
             "class": "Illuminate\\Routing\\Router",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php",
             "line": 200,
             "function": "dispatch",
             "class": "Illuminate\\Routing\\Router",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
             "line": 180,
             "function": "{closure:Illuminate\\Foundation\\Http\\Kernel::dispatchToRouter():197}",
             "class": "Illuminate\\Foundation\\Http\\Kernel",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/livewire/livewire/src/Features/SupportDisablingBackButtonCache/DisableBackButtonCacheMiddleware.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/livewire/livewire/src/Features/SupportDisablingBackButtonCache/DisableBackButtonCacheMiddleware.php",
             "line": 19,
             "function": "{closure:Illuminate\\Pipeline\\Pipeline::prepareDestination():178}",
             "class": "Illuminate\\Pipeline\\Pipeline",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
             "line": 219,
             "function": "handle",
             "class": "Livewire\\Features\\SupportDisablingBackButtonCache\\DisableBackButtonCacheMiddleware",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php",
             "line": 21,
             "function": "{closure:{closure:Illuminate\\Pipeline\\Pipeline::carry():194}:195}",
             "class": "Illuminate\\Pipeline\\Pipeline",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull.php",
             "line": 31,
             "function": "handle",
             "class": "Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
             "line": 219,
             "function": "handle",
             "class": "Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php",
             "line": 21,
             "function": "{closure:{closure:Illuminate\\Pipeline\\Pipeline::carry():194}:195}",
             "class": "Illuminate\\Pipeline\\Pipeline",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TrimStrings.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TrimStrings.php",
             "line": 51,
             "function": "handle",
             "class": "Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
             "line": 219,
             "function": "handle",
             "class": "Illuminate\\Foundation\\Http\\Middleware\\TrimStrings",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Http/Middleware/ValidatePostSize.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Http/Middleware/ValidatePostSize.php",
             "line": 27,
             "function": "{closure:{closure:Illuminate\\Pipeline\\Pipeline::carry():194}:195}",
             "class": "Illuminate\\Pipeline\\Pipeline",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
             "line": 219,
             "function": "handle",
             "class": "Illuminate\\Http\\Middleware\\ValidatePostSize",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/PreventRequestsDuringMaintenance.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/PreventRequestsDuringMaintenance.php",
             "line": 109,
             "function": "{closure:{closure:Illuminate\\Pipeline\\Pipeline::carry():194}:195}",
             "class": "Illuminate\\Pipeline\\Pipeline",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
             "line": 219,
             "function": "handle",
             "class": "Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Http/Middleware/HandleCors.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Http/Middleware/HandleCors.php",
             "line": 61,
             "function": "{closure:{closure:Illuminate\\Pipeline\\Pipeline::carry():194}:195}",
             "class": "Illuminate\\Pipeline\\Pipeline",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
             "line": 219,
             "function": "handle",
             "class": "Illuminate\\Http\\Middleware\\HandleCors",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Http/Middleware/TrustProxies.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Http/Middleware/TrustProxies.php",
             "line": 58,
             "function": "{closure:{closure:Illuminate\\Pipeline\\Pipeline::carry():194}:195}",
             "class": "Illuminate\\Pipeline\\Pipeline",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
             "line": 219,
             "function": "handle",
             "class": "Illuminate\\Http\\Middleware\\TrustProxies",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/InvokeDeferredCallbacks.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/InvokeDeferredCallbacks.php",
             "line": 22,
             "function": "{closure:{closure:Illuminate\\Pipeline\\Pipeline::carry():194}:195}",
             "class": "Illuminate\\Pipeline\\Pipeline",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
             "line": 219,
             "function": "handle",
             "class": "Illuminate\\Foundation\\Http\\Middleware\\InvokeDeferredCallbacks",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Http/Middleware/ValidatePathEncoding.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Http/Middleware/ValidatePathEncoding.php",
             "line": 26,
             "function": "{closure:{closure:Illuminate\\Pipeline\\Pipeline::carry():194}:195}",
             "class": "Illuminate\\Pipeline\\Pipeline",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
             "line": 219,
             "function": "handle",
             "class": "Illuminate\\Http\\Middleware\\ValidatePathEncoding",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
             "line": 137,
             "function": "{closure:{closure:Illuminate\\Pipeline\\Pipeline::carry():194}:195}",
             "class": "Illuminate\\Pipeline\\Pipeline",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php",
             "line": 175,
             "function": "then",
             "class": "Illuminate\\Pipeline\\Pipeline",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php",
             "line": 144,
             "function": "sendRequestThroughRouter",
             "class": "Illuminate\\Foundation\\Http\\Kernel",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Foundation/Testing/Concerns/MakesHttpRequests.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Foundation/Testing/Concerns/MakesHttpRequests.php",
             "line": 607,
             "function": "handle",
             "class": "Illuminate\\Foundation\\Http\\Kernel",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Foundation/Testing/Concerns/MakesHttpRequests.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Foundation/Testing/Concerns/MakesHttpRequests.php",
             "line": 573,
             "function": "call",
             "class": "Illuminate\\Foundation\\Testing\\TestCase",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Foundation/Testing/Concerns/MakesHttpRequests.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Foundation/Testing/Concerns/MakesHttpRequests.php",
             "line": 381,
             "function": "json",
             "class": "Illuminate\\Foundation\\Testing\\TestCase",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/tests/Feature/Api/PageControllerTest.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/tests/Feature/Api/PageControllerTest.php",
             "line": 67,
             "function": "getJson",
             "class": "Illuminate\\Foundation\\Testing\\TestCase",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/pestphp/pest/src/Factories/TestCaseMethodFactory.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/pestphp/pest/src/Factories/TestCaseMethodFactory.php",
             "line": 168,
-            "function": "{closure:/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/tests/Feature/Api/PageControllerTest.php:65}",
+            "function": "{closure:/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/tests/Feature/Api/PageControllerTest.php:65}",
             "class": "P\\Tests\\Feature\\Api\\PageControllerTest",
             "type": "-&gt;"
         },
@@ -370,119 +370,119 @@ within response JSON:
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/pestphp/pest/src/Concerns/Testable.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/pestphp/pest/src/Concerns/Testable.php",
             "line": 419,
             "function": "call_user_func_array"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/pestphp/pest/src/Support/ExceptionTrace.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/pestphp/pest/src/Support/ExceptionTrace.php",
             "line": 26,
             "function": "{closure:Pest\\Concerns\\Testable::__callClosure():419}",
             "class": "P\\Tests\\Feature\\Api\\PageControllerTest",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/pestphp/pest/src/Concerns/Testable.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/pestphp/pest/src/Concerns/Testable.php",
             "line": 419,
             "function": "ensure",
             "class": "Pest\\Support\\ExceptionTrace",
             "type": "::"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/pestphp/pest/src/Concerns/Testable.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/pestphp/pest/src/Concerns/Testable.php",
             "line": 321,
             "function": "__callClosure",
             "class": "P\\Tests\\Feature\\Api\\PageControllerTest",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/pestphp/pest/src/Factories/TestCaseFactory.php(169) : eval()'d code",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/pestphp/pest/src/Factories/TestCaseFactory.php(169) : eval()'d code",
             "line": 35,
             "function": "__runTest",
             "class": "P\\Tests\\Feature\\Api\\PageControllerTest",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/phpunit/phpunit/src/Framework/TestCase.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/phpunit/phpunit/src/Framework/TestCase.php",
             "line": 1656,
             "function": "__pest_evaluable_returns_404_for_nonexistent_page",
             "class": "P\\Tests\\Feature\\Api\\PageControllerTest",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/phpunit/phpunit/src/Framework/TestCase.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/phpunit/phpunit/src/Framework/TestCase.php",
             "line": 514,
             "function": "runTest",
             "class": "PHPUnit\\Framework\\TestCase",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/phpunit/phpunit/src/Framework/TestRunner/TestRunner.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/phpunit/phpunit/src/Framework/TestRunner/TestRunner.php",
             "line": 87,
             "function": "runBare",
             "class": "PHPUnit\\Framework\\TestCase",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/phpunit/phpunit/src/Framework/TestCase.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/phpunit/phpunit/src/Framework/TestCase.php",
             "line": 361,
             "function": "run",
             "class": "PHPUnit\\Framework\\TestRunner",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/phpunit/phpunit/src/Framework/TestSuite.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/phpunit/phpunit/src/Framework/TestSuite.php",
             "line": 369,
             "function": "run",
             "class": "PHPUnit\\Framework\\TestCase",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/phpunit/phpunit/src/Framework/TestSuite.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/phpunit/phpunit/src/Framework/TestSuite.php",
             "line": 369,
             "function": "run",
             "class": "PHPUnit\\Framework\\TestSuite",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/phpunit/phpunit/src/Framework/TestSuite.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/phpunit/phpunit/src/Framework/TestSuite.php",
             "line": 369,
             "function": "run",
             "class": "PHPUnit\\Framework\\TestSuite",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/phpunit/phpunit/src/TextUI/TestRunner.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/phpunit/phpunit/src/TextUI/TestRunner.php",
             "line": 64,
             "function": "run",
             "class": "PHPUnit\\Framework\\TestSuite",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/phpunit/phpunit/src/TextUI/Application.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/phpunit/phpunit/src/TextUI/Application.php",
             "line": 211,
             "function": "run",
             "class": "PHPUnit\\TextUI\\TestRunner",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/pestphp/pest/src/Kernel.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/pestphp/pest/src/Kernel.php",
             "line": 103,
             "function": "run",
             "class": "PHPUnit\\TextUI\\Application",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/pestphp/pest/bin/pest",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/pestphp/pest/bin/pest",
             "line": 184,
             "function": "handle",
             "class": "Pest\\Kernel",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/pestphp/pest/bin/pest",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/pestphp/pest/bin/pest",
             "line": 192,
-            "function": "{closure:/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/pestphp/pest/bin/pest:18}"
+            "function": "{closure:/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/pestphp/pest/bin/pest:18}"
         }
     ]
 }].
@@ -538,244 +538,244 @@ within response JSON:
 [{
     "message": "The route api/pages/nonexistent-page could not be found.",
     "exception": "Symfony\\Component\\HttpKernel\\Exception\\NotFoundHttpException",
-    "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Routing/AbstractRouteCollection.php",
+    "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Routing/AbstractRouteCollection.php",
     "line": 45,
     "trace": [
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Routing/RouteCollection.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Routing/RouteCollection.php",
             "line": 184,
             "function": "handleMatchedRoute",
             "class": "Illuminate\\Routing\\AbstractRouteCollection",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Routing/Router.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Routing/Router.php",
             "line": 777,
             "function": "match",
             "class": "Illuminate\\Routing\\RouteCollection",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Routing/Router.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Routing/Router.php",
             "line": 764,
             "function": "findRoute",
             "class": "Illuminate\\Routing\\Router",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Routing/Router.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Routing/Router.php",
             "line": 753,
             "function": "dispatchToRoute",
             "class": "Illuminate\\Routing\\Router",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php",
             "line": 200,
             "function": "dispatch",
             "class": "Illuminate\\Routing\\Router",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
             "line": 180,
             "function": "{closure:Illuminate\\Foundation\\Http\\Kernel::dispatchToRouter():197}",
             "class": "Illuminate\\Foundation\\Http\\Kernel",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/livewire/livewire/src/Features/SupportDisablingBackButtonCache/DisableBackButtonCacheMiddleware.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/livewire/livewire/src/Features/SupportDisablingBackButtonCache/DisableBackButtonCacheMiddleware.php",
             "line": 19,
             "function": "{closure:Illuminate\\Pipeline\\Pipeline::prepareDestination():178}",
             "class": "Illuminate\\Pipeline\\Pipeline",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
             "line": 219,
             "function": "handle",
             "class": "Livewire\\Features\\SupportDisablingBackButtonCache\\DisableBackButtonCacheMiddleware",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php",
             "line": 21,
             "function": "{closure:{closure:Illuminate\\Pipeline\\Pipeline::carry():194}:195}",
             "class": "Illuminate\\Pipeline\\Pipeline",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull.php",
             "line": 31,
             "function": "handle",
             "class": "Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
             "line": 219,
             "function": "handle",
             "class": "Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php",
             "line": 21,
             "function": "{closure:{closure:Illuminate\\Pipeline\\Pipeline::carry():194}:195}",
             "class": "Illuminate\\Pipeline\\Pipeline",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TrimStrings.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TrimStrings.php",
             "line": 51,
             "function": "handle",
             "class": "Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
             "line": 219,
             "function": "handle",
             "class": "Illuminate\\Foundation\\Http\\Middleware\\TrimStrings",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Http/Middleware/ValidatePostSize.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Http/Middleware/ValidatePostSize.php",
             "line": 27,
             "function": "{closure:{closure:Illuminate\\Pipeline\\Pipeline::carry():194}:195}",
             "class": "Illuminate\\Pipeline\\Pipeline",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
             "line": 219,
             "function": "handle",
             "class": "Illuminate\\Http\\Middleware\\ValidatePostSize",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/PreventRequestsDuringMaintenance.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/PreventRequestsDuringMaintenance.php",
             "line": 109,
             "function": "{closure:{closure:Illuminate\\Pipeline\\Pipeline::carry():194}:195}",
             "class": "Illuminate\\Pipeline\\Pipeline",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
             "line": 219,
             "function": "handle",
             "class": "Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Http/Middleware/HandleCors.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Http/Middleware/HandleCors.php",
             "line": 61,
             "function": "{closure:{closure:Illuminate\\Pipeline\\Pipeline::carry():194}:195}",
             "class": "Illuminate\\Pipeline\\Pipeline",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
             "line": 219,
             "function": "handle",
             "class": "Illuminate\\Http\\Middleware\\HandleCors",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Http/Middleware/TrustProxies.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Http/Middleware/TrustProxies.php",
             "line": 58,
             "function": "{closure:{closure:Illuminate\\Pipeline\\Pipeline::carry():194}:195}",
             "class": "Illuminate\\Pipeline\\Pipeline",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
             "line": 219,
             "function": "handle",
             "class": "Illuminate\\Http\\Middleware\\TrustProxies",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/InvokeDeferredCallbacks.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/InvokeDeferredCallbacks.php",
             "line": 22,
             "function": "{closure:{closure:Illuminate\\Pipeline\\Pipeline::carry():194}:195}",
             "class": "Illuminate\\Pipeline\\Pipeline",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
             "line": 219,
             "function": "handle",
             "class": "Illuminate\\Foundation\\Http\\Middleware\\InvokeDeferredCallbacks",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Http/Middleware/ValidatePathEncoding.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Http/Middleware/ValidatePathEncoding.php",
             "line": 26,
             "function": "{closure:{closure:Illuminate\\Pipeline\\Pipeline::carry():194}:195}",
             "class": "Illuminate\\Pipeline\\Pipeline",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
             "line": 219,
             "function": "handle",
             "class": "Illuminate\\Http\\Middleware\\ValidatePathEncoding",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
             "line": 137,
             "function": "{closure:{closure:Illuminate\\Pipeline\\Pipeline::carry():194}:195}",
             "class": "Illuminate\\Pipeline\\Pipeline",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php",
             "line": 175,
             "function": "then",
             "class": "Illuminate\\Pipeline\\Pipeline",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php",
             "line": 144,
             "function": "sendRequestThroughRouter",
             "class": "Illuminate\\Foundation\\Http\\Kernel",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Foundation/Testing/Concerns/MakesHttpRequests.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Foundation/Testing/Concerns/MakesHttpRequests.php",
             "line": 607,
             "function": "handle",
             "class": "Illuminate\\Foundation\\Http\\Kernel",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Foundation/Testing/Concerns/MakesHttpRequests.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Foundation/Testing/Concerns/MakesHttpRequests.php",
             "line": 573,
             "function": "call",
             "class": "Illuminate\\Foundation\\Testing\\TestCase",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Foundation/Testing/Concerns/MakesHttpRequests.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Foundation/Testing/Concerns/MakesHttpRequests.php",
             "line": 501,
             "function": "json",
             "class": "Illuminate\\Foundation\\Testing\\TestCase",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/tests/Feature/Api/PageControllerTest.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/tests/Feature/Api/PageControllerTest.php",
             "line": 200,
             "function": "deleteJson",
             "class": "Illuminate\\Foundation\\Testing\\TestCase",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/pestphp/pest/src/Factories/TestCaseMethodFactory.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/pestphp/pest/src/Factories/TestCaseMethodFactory.php",
             "line": 168,
-            "function": "{closure:/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/tests/Feature/Api/PageControllerTest.php:198}",
+            "function": "{closure:/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/tests/Feature/Api/PageControllerTest.php:198}",
             "class": "P\\Tests\\Feature\\Api\\PageControllerTest",
             "type": "-&gt;"
         },
@@ -785,119 +785,119 @@ within response JSON:
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/pestphp/pest/src/Concerns/Testable.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/pestphp/pest/src/Concerns/Testable.php",
             "line": 419,
             "function": "call_user_func_array"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/pestphp/pest/src/Support/ExceptionTrace.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/pestphp/pest/src/Support/ExceptionTrace.php",
             "line": 26,
             "function": "{closure:Pest\\Concerns\\Testable::__callClosure():419}",
             "class": "P\\Tests\\Feature\\Api\\PageControllerTest",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/pestphp/pest/src/Concerns/Testable.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/pestphp/pest/src/Concerns/Testable.php",
             "line": 419,
             "function": "ensure",
             "class": "Pest\\Support\\ExceptionTrace",
             "type": "::"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/pestphp/pest/src/Concerns/Testable.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/pestphp/pest/src/Concerns/Testable.php",
             "line": 321,
             "function": "__callClosure",
             "class": "P\\Tests\\Feature\\Api\\PageControllerTest",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/pestphp/pest/src/Factories/TestCaseFactory.php(169) : eval()'d code",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/pestphp/pest/src/Factories/TestCaseFactory.php(169) : eval()'d code",
             "line": 89,
             "function": "__runTest",
             "class": "P\\Tests\\Feature\\Api\\PageControllerTest",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/phpunit/phpunit/src/Framework/TestCase.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/phpunit/phpunit/src/Framework/TestCase.php",
             "line": 1656,
             "function": "__pest_evaluable_delete_returns_404_for_nonexistent_page",
             "class": "P\\Tests\\Feature\\Api\\PageControllerTest",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/phpunit/phpunit/src/Framework/TestCase.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/phpunit/phpunit/src/Framework/TestCase.php",
             "line": 514,
             "function": "runTest",
             "class": "PHPUnit\\Framework\\TestCase",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/phpunit/phpunit/src/Framework/TestRunner/TestRunner.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/phpunit/phpunit/src/Framework/TestRunner/TestRunner.php",
             "line": 87,
             "function": "runBare",
             "class": "PHPUnit\\Framework\\TestCase",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/phpunit/phpunit/src/Framework/TestCase.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/phpunit/phpunit/src/Framework/TestCase.php",
             "line": 361,
             "function": "run",
             "class": "PHPUnit\\Framework\\TestRunner",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/phpunit/phpunit/src/Framework/TestSuite.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/phpunit/phpunit/src/Framework/TestSuite.php",
             "line": 369,
             "function": "run",
             "class": "PHPUnit\\Framework\\TestCase",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/phpunit/phpunit/src/Framework/TestSuite.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/phpunit/phpunit/src/Framework/TestSuite.php",
             "line": 369,
             "function": "run",
             "class": "PHPUnit\\Framework\\TestSuite",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/phpunit/phpunit/src/Framework/TestSuite.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/phpunit/phpunit/src/Framework/TestSuite.php",
             "line": 369,
             "function": "run",
             "class": "PHPUnit\\Framework\\TestSuite",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/phpunit/phpunit/src/TextUI/TestRunner.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/phpunit/phpunit/src/TextUI/TestRunner.php",
             "line": 64,
             "function": "run",
             "class": "PHPUnit\\Framework\\TestSuite",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/phpunit/phpunit/src/TextUI/Application.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/phpunit/phpunit/src/TextUI/Application.php",
             "line": 211,
             "function": "run",
             "class": "PHPUnit\\TextUI\\TestRunner",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/pestphp/pest/src/Kernel.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/pestphp/pest/src/Kernel.php",
             "line": 103,
             "function": "run",
             "class": "PHPUnit\\TextUI\\Application",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/pestphp/pest/bin/pest",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/pestphp/pest/bin/pest",
             "line": 184,
             "function": "handle",
             "class": "Pest\\Kernel",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/pestphp/pest/bin/pest",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/pestphp/pest/bin/pest",
             "line": 192,
-            "function": "{closure:/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/pestphp/pest/bin/pest:18}"
+            "function": "{closure:/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/pestphp/pest/bin/pest:18}"
         }
     ]
 }].
@@ -951,244 +951,244 @@ within response JSON:
 [{
     "message": "The route api/pages/nonexistent-page could not be found.",
     "exception": "Symfony\\Component\\HttpKernel\\Exception\\NotFoundHttpException",
-    "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Routing/AbstractRouteCollection.php",
+    "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Routing/AbstractRouteCollection.php",
     "line": 45,
     "trace": [
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Routing/RouteCollection.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Routing/RouteCollection.php",
             "line": 184,
             "function": "handleMatchedRoute",
             "class": "Illuminate\\Routing\\AbstractRouteCollection",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Routing/Router.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Routing/Router.php",
             "line": 777,
             "function": "match",
             "class": "Illuminate\\Routing\\RouteCollection",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Routing/Router.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Routing/Router.php",
             "line": 764,
             "function": "findRoute",
             "class": "Illuminate\\Routing\\Router",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Routing/Router.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Routing/Router.php",
             "line": 753,
             "function": "dispatchToRoute",
             "class": "Illuminate\\Routing\\Router",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php",
             "line": 200,
             "function": "dispatch",
             "class": "Illuminate\\Routing\\Router",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
             "line": 180,
             "function": "{closure:Illuminate\\Foundation\\Http\\Kernel::dispatchToRouter():197}",
             "class": "Illuminate\\Foundation\\Http\\Kernel",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/livewire/livewire/src/Features/SupportDisablingBackButtonCache/DisableBackButtonCacheMiddleware.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/livewire/livewire/src/Features/SupportDisablingBackButtonCache/DisableBackButtonCacheMiddleware.php",
             "line": 19,
             "function": "{closure:Illuminate\\Pipeline\\Pipeline::prepareDestination():178}",
             "class": "Illuminate\\Pipeline\\Pipeline",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
             "line": 219,
             "function": "handle",
             "class": "Livewire\\Features\\SupportDisablingBackButtonCache\\DisableBackButtonCacheMiddleware",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php",
             "line": 21,
             "function": "{closure:{closure:Illuminate\\Pipeline\\Pipeline::carry():194}:195}",
             "class": "Illuminate\\Pipeline\\Pipeline",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull.php",
             "line": 31,
             "function": "handle",
             "class": "Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
             "line": 219,
             "function": "handle",
             "class": "Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php",
             "line": 21,
             "function": "{closure:{closure:Illuminate\\Pipeline\\Pipeline::carry():194}:195}",
             "class": "Illuminate\\Pipeline\\Pipeline",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TrimStrings.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TrimStrings.php",
             "line": 51,
             "function": "handle",
             "class": "Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
             "line": 219,
             "function": "handle",
             "class": "Illuminate\\Foundation\\Http\\Middleware\\TrimStrings",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Http/Middleware/ValidatePostSize.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Http/Middleware/ValidatePostSize.php",
             "line": 27,
             "function": "{closure:{closure:Illuminate\\Pipeline\\Pipeline::carry():194}:195}",
             "class": "Illuminate\\Pipeline\\Pipeline",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
             "line": 219,
             "function": "handle",
             "class": "Illuminate\\Http\\Middleware\\ValidatePostSize",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/PreventRequestsDuringMaintenance.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/PreventRequestsDuringMaintenance.php",
             "line": 109,
             "function": "{closure:{closure:Illuminate\\Pipeline\\Pipeline::carry():194}:195}",
             "class": "Illuminate\\Pipeline\\Pipeline",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
             "line": 219,
             "function": "handle",
             "class": "Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Http/Middleware/HandleCors.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Http/Middleware/HandleCors.php",
             "line": 61,
             "function": "{closure:{closure:Illuminate\\Pipeline\\Pipeline::carry():194}:195}",
             "class": "Illuminate\\Pipeline\\Pipeline",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
             "line": 219,
             "function": "handle",
             "class": "Illuminate\\Http\\Middleware\\HandleCors",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Http/Middleware/TrustProxies.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Http/Middleware/TrustProxies.php",
             "line": 58,
             "function": "{closure:{closure:Illuminate\\Pipeline\\Pipeline::carry():194}:195}",
             "class": "Illuminate\\Pipeline\\Pipeline",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
             "line": 219,
             "function": "handle",
             "class": "Illuminate\\Http\\Middleware\\TrustProxies",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/InvokeDeferredCallbacks.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/InvokeDeferredCallbacks.php",
             "line": 22,
             "function": "{closure:{closure:Illuminate\\Pipeline\\Pipeline::carry():194}:195}",
             "class": "Illuminate\\Pipeline\\Pipeline",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
             "line": 219,
             "function": "handle",
             "class": "Illuminate\\Foundation\\Http\\Middleware\\InvokeDeferredCallbacks",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Http/Middleware/ValidatePathEncoding.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Http/Middleware/ValidatePathEncoding.php",
             "line": 26,
             "function": "{closure:{closure:Illuminate\\Pipeline\\Pipeline::carry():194}:195}",
             "class": "Illuminate\\Pipeline\\Pipeline",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
             "line": 219,
             "function": "handle",
             "class": "Illuminate\\Http\\Middleware\\ValidatePathEncoding",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
             "line": 137,
             "function": "{closure:{closure:Illuminate\\Pipeline\\Pipeline::carry():194}:195}",
             "class": "Illuminate\\Pipeline\\Pipeline",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php",
             "line": 175,
             "function": "then",
             "class": "Illuminate\\Pipeline\\Pipeline",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php",
             "line": 144,
             "function": "sendRequestThroughRouter",
             "class": "Illuminate\\Foundation\\Http\\Kernel",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Foundation/Testing/Concerns/MakesHttpRequests.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Foundation/Testing/Concerns/MakesHttpRequests.php",
             "line": 607,
             "function": "handle",
             "class": "Illuminate\\Foundation\\Http\\Kernel",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Foundation/Testing/Concerns/MakesHttpRequests.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Foundation/Testing/Concerns/MakesHttpRequests.php",
             "line": 573,
             "function": "call",
             "class": "Illuminate\\Foundation\\Testing\\TestCase",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Foundation/Testing/Concerns/MakesHttpRequests.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Foundation/Testing/Concerns/MakesHttpRequests.php",
             "line": 381,
             "function": "json",
             "class": "Illuminate\\Foundation\\Testing\\TestCase",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/tests/Feature/Api/V1/PageControllerTest.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/tests/Feature/Api/V1/PageControllerTest.php",
             "line": 66,
             "function": "getJson",
             "class": "Illuminate\\Foundation\\Testing\\TestCase",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/pestphp/pest/src/Factories/TestCaseMethodFactory.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/pestphp/pest/src/Factories/TestCaseMethodFactory.php",
             "line": 168,
-            "function": "{closure:/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/tests/Feature/Api/V1/PageControllerTest.php:64}",
+            "function": "{closure:/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/tests/Feature/Api/V1/PageControllerTest.php:64}",
             "class": "P\\Tests\\Feature\\Api\\V1\\PageControllerTest",
             "type": "-&gt;"
         },
@@ -1198,119 +1198,119 @@ within response JSON:
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/pestphp/pest/src/Concerns/Testable.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/pestphp/pest/src/Concerns/Testable.php",
             "line": 419,
             "function": "call_user_func_array"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/pestphp/pest/src/Support/ExceptionTrace.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/pestphp/pest/src/Support/ExceptionTrace.php",
             "line": 26,
             "function": "{closure:Pest\\Concerns\\Testable::__callClosure():419}",
             "class": "P\\Tests\\Feature\\Api\\V1\\PageControllerTest",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/pestphp/pest/src/Concerns/Testable.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/pestphp/pest/src/Concerns/Testable.php",
             "line": 419,
             "function": "ensure",
             "class": "Pest\\Support\\ExceptionTrace",
             "type": "::"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/pestphp/pest/src/Concerns/Testable.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/pestphp/pest/src/Concerns/Testable.php",
             "line": 321,
             "function": "__callClosure",
             "class": "P\\Tests\\Feature\\Api\\V1\\PageControllerTest",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/pestphp/pest/src/Factories/TestCaseFactory.php(169) : eval()'d code",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/pestphp/pest/src/Factories/TestCaseFactory.php(169) : eval()'d code",
             "line": 35,
             "function": "__runTest",
             "class": "P\\Tests\\Feature\\Api\\V1\\PageControllerTest",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/phpunit/phpunit/src/Framework/TestCase.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/phpunit/phpunit/src/Framework/TestCase.php",
             "line": 1656,
             "function": "__pest_evaluable_returns_404_for_nonexistent_page",
             "class": "P\\Tests\\Feature\\Api\\V1\\PageControllerTest",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/phpunit/phpunit/src/Framework/TestCase.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/phpunit/phpunit/src/Framework/TestCase.php",
             "line": 514,
             "function": "runTest",
             "class": "PHPUnit\\Framework\\TestCase",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/phpunit/phpunit/src/Framework/TestRunner/TestRunner.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/phpunit/phpunit/src/Framework/TestRunner/TestRunner.php",
             "line": 87,
             "function": "runBare",
             "class": "PHPUnit\\Framework\\TestCase",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/phpunit/phpunit/src/Framework/TestCase.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/phpunit/phpunit/src/Framework/TestCase.php",
             "line": 361,
             "function": "run",
             "class": "PHPUnit\\Framework\\TestRunner",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/phpunit/phpunit/src/Framework/TestSuite.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/phpunit/phpunit/src/Framework/TestSuite.php",
             "line": 369,
             "function": "run",
             "class": "PHPUnit\\Framework\\TestCase",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/phpunit/phpunit/src/Framework/TestSuite.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/phpunit/phpunit/src/Framework/TestSuite.php",
             "line": 369,
             "function": "run",
             "class": "PHPUnit\\Framework\\TestSuite",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/phpunit/phpunit/src/Framework/TestSuite.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/phpunit/phpunit/src/Framework/TestSuite.php",
             "line": 369,
             "function": "run",
             "class": "PHPUnit\\Framework\\TestSuite",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/phpunit/phpunit/src/TextUI/TestRunner.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/phpunit/phpunit/src/TextUI/TestRunner.php",
             "line": 64,
             "function": "run",
             "class": "PHPUnit\\Framework\\TestSuite",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/phpunit/phpunit/src/TextUI/Application.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/phpunit/phpunit/src/TextUI/Application.php",
             "line": 211,
             "function": "run",
             "class": "PHPUnit\\TextUI\\TestRunner",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/pestphp/pest/src/Kernel.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/pestphp/pest/src/Kernel.php",
             "line": 103,
             "function": "run",
             "class": "PHPUnit\\TextUI\\Application",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/pestphp/pest/bin/pest",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/pestphp/pest/bin/pest",
             "line": 184,
             "function": "handle",
             "class": "Pest\\Kernel",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/pestphp/pest/bin/pest",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/pestphp/pest/bin/pest",
             "line": 192,
-            "function": "{closure:/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/pestphp/pest/bin/pest:18}"
+            "function": "{closure:/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/pestphp/pest/bin/pest:18}"
         }
     ]
 }].
@@ -1366,244 +1366,244 @@ within response JSON:
 [{
     "message": "The route api/pages/nonexistent-page could not be found.",
     "exception": "Symfony\\Component\\HttpKernel\\Exception\\NotFoundHttpException",
-    "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Routing/AbstractRouteCollection.php",
+    "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Routing/AbstractRouteCollection.php",
     "line": 45,
     "trace": [
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Routing/RouteCollection.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Routing/RouteCollection.php",
             "line": 184,
             "function": "handleMatchedRoute",
             "class": "Illuminate\\Routing\\AbstractRouteCollection",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Routing/Router.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Routing/Router.php",
             "line": 777,
             "function": "match",
             "class": "Illuminate\\Routing\\RouteCollection",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Routing/Router.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Routing/Router.php",
             "line": 764,
             "function": "findRoute",
             "class": "Illuminate\\Routing\\Router",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Routing/Router.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Routing/Router.php",
             "line": 753,
             "function": "dispatchToRoute",
             "class": "Illuminate\\Routing\\Router",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php",
             "line": 200,
             "function": "dispatch",
             "class": "Illuminate\\Routing\\Router",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
             "line": 180,
             "function": "{closure:Illuminate\\Foundation\\Http\\Kernel::dispatchToRouter():197}",
             "class": "Illuminate\\Foundation\\Http\\Kernel",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/livewire/livewire/src/Features/SupportDisablingBackButtonCache/DisableBackButtonCacheMiddleware.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/livewire/livewire/src/Features/SupportDisablingBackButtonCache/DisableBackButtonCacheMiddleware.php",
             "line": 19,
             "function": "{closure:Illuminate\\Pipeline\\Pipeline::prepareDestination():178}",
             "class": "Illuminate\\Pipeline\\Pipeline",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
             "line": 219,
             "function": "handle",
             "class": "Livewire\\Features\\SupportDisablingBackButtonCache\\DisableBackButtonCacheMiddleware",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php",
             "line": 21,
             "function": "{closure:{closure:Illuminate\\Pipeline\\Pipeline::carry():194}:195}",
             "class": "Illuminate\\Pipeline\\Pipeline",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull.php",
             "line": 31,
             "function": "handle",
             "class": "Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
             "line": 219,
             "function": "handle",
             "class": "Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php",
             "line": 21,
             "function": "{closure:{closure:Illuminate\\Pipeline\\Pipeline::carry():194}:195}",
             "class": "Illuminate\\Pipeline\\Pipeline",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TrimStrings.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TrimStrings.php",
             "line": 51,
             "function": "handle",
             "class": "Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
             "line": 219,
             "function": "handle",
             "class": "Illuminate\\Foundation\\Http\\Middleware\\TrimStrings",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Http/Middleware/ValidatePostSize.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Http/Middleware/ValidatePostSize.php",
             "line": 27,
             "function": "{closure:{closure:Illuminate\\Pipeline\\Pipeline::carry():194}:195}",
             "class": "Illuminate\\Pipeline\\Pipeline",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
             "line": 219,
             "function": "handle",
             "class": "Illuminate\\Http\\Middleware\\ValidatePostSize",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/PreventRequestsDuringMaintenance.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/PreventRequestsDuringMaintenance.php",
             "line": 109,
             "function": "{closure:{closure:Illuminate\\Pipeline\\Pipeline::carry():194}:195}",
             "class": "Illuminate\\Pipeline\\Pipeline",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
             "line": 219,
             "function": "handle",
             "class": "Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Http/Middleware/HandleCors.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Http/Middleware/HandleCors.php",
             "line": 61,
             "function": "{closure:{closure:Illuminate\\Pipeline\\Pipeline::carry():194}:195}",
             "class": "Illuminate\\Pipeline\\Pipeline",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
             "line": 219,
             "function": "handle",
             "class": "Illuminate\\Http\\Middleware\\HandleCors",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Http/Middleware/TrustProxies.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Http/Middleware/TrustProxies.php",
             "line": 58,
             "function": "{closure:{closure:Illuminate\\Pipeline\\Pipeline::carry():194}:195}",
             "class": "Illuminate\\Pipeline\\Pipeline",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
             "line": 219,
             "function": "handle",
             "class": "Illuminate\\Http\\Middleware\\TrustProxies",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/InvokeDeferredCallbacks.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/InvokeDeferredCallbacks.php",
             "line": 22,
             "function": "{closure:{closure:Illuminate\\Pipeline\\Pipeline::carry():194}:195}",
             "class": "Illuminate\\Pipeline\\Pipeline",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
             "line": 219,
             "function": "handle",
             "class": "Illuminate\\Foundation\\Http\\Middleware\\InvokeDeferredCallbacks",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Http/Middleware/ValidatePathEncoding.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Http/Middleware/ValidatePathEncoding.php",
             "line": 26,
             "function": "{closure:{closure:Illuminate\\Pipeline\\Pipeline::carry():194}:195}",
             "class": "Illuminate\\Pipeline\\Pipeline",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
             "line": 219,
             "function": "handle",
             "class": "Illuminate\\Http\\Middleware\\ValidatePathEncoding",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php",
             "line": 137,
             "function": "{closure:{closure:Illuminate\\Pipeline\\Pipeline::carry():194}:195}",
             "class": "Illuminate\\Pipeline\\Pipeline",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php",
             "line": 175,
             "function": "then",
             "class": "Illuminate\\Pipeline\\Pipeline",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php",
             "line": 144,
             "function": "sendRequestThroughRouter",
             "class": "Illuminate\\Foundation\\Http\\Kernel",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Foundation/Testing/Concerns/MakesHttpRequests.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Foundation/Testing/Concerns/MakesHttpRequests.php",
             "line": 607,
             "function": "handle",
             "class": "Illuminate\\Foundation\\Http\\Kernel",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Foundation/Testing/Concerns/MakesHttpRequests.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Foundation/Testing/Concerns/MakesHttpRequests.php",
             "line": 573,
             "function": "call",
             "class": "Illuminate\\Foundation\\Testing\\TestCase",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Foundation/Testing/Concerns/MakesHttpRequests.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/laravel/framework/src/Illuminate/Foundation/Testing/Concerns/MakesHttpRequests.php",
             "line": 501,
             "function": "json",
             "class": "Illuminate\\Foundation\\Testing\\TestCase",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/tests/Feature/Api/V1/PageControllerTest.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/tests/Feature/Api/V1/PageControllerTest.php",
             "line": 199,
             "function": "deleteJson",
             "class": "Illuminate\\Foundation\\Testing\\TestCase",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/pestphp/pest/src/Factories/TestCaseMethodFactory.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/pestphp/pest/src/Factories/TestCaseMethodFactory.php",
             "line": 168,
-            "function": "{closure:/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/tests/Feature/Api/V1/PageControllerTest.php:197}",
+            "function": "{closure:/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/tests/Feature/Api/V1/PageControllerTest.php:197}",
             "class": "P\\Tests\\Feature\\Api\\V1\\PageControllerTest",
             "type": "-&gt;"
         },
@@ -1613,119 +1613,119 @@ within response JSON:
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/pestphp/pest/src/Concerns/Testable.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/pestphp/pest/src/Concerns/Testable.php",
             "line": 419,
             "function": "call_user_func_array"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/pestphp/pest/src/Support/ExceptionTrace.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/pestphp/pest/src/Support/ExceptionTrace.php",
             "line": 26,
             "function": "{closure:Pest\\Concerns\\Testable::__callClosure():419}",
             "class": "P\\Tests\\Feature\\Api\\V1\\PageControllerTest",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/pestphp/pest/src/Concerns/Testable.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/pestphp/pest/src/Concerns/Testable.php",
             "line": 419,
             "function": "ensure",
             "class": "Pest\\Support\\ExceptionTrace",
             "type": "::"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/pestphp/pest/src/Concerns/Testable.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/pestphp/pest/src/Concerns/Testable.php",
             "line": 321,
             "function": "__callClosure",
             "class": "P\\Tests\\Feature\\Api\\V1\\PageControllerTest",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/pestphp/pest/src/Factories/TestCaseFactory.php(169) : eval()'d code",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/pestphp/pest/src/Factories/TestCaseFactory.php(169) : eval()'d code",
             "line": 89,
             "function": "__runTest",
             "class": "P\\Tests\\Feature\\Api\\V1\\PageControllerTest",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/phpunit/phpunit/src/Framework/TestCase.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/phpunit/phpunit/src/Framework/TestCase.php",
             "line": 1656,
             "function": "__pest_evaluable_delete_returns_404_for_nonexistent_page",
             "class": "P\\Tests\\Feature\\Api\\V1\\PageControllerTest",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/phpunit/phpunit/src/Framework/TestCase.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/phpunit/phpunit/src/Framework/TestCase.php",
             "line": 514,
             "function": "runTest",
             "class": "PHPUnit\\Framework\\TestCase",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/phpunit/phpunit/src/Framework/TestRunner/TestRunner.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/phpunit/phpunit/src/Framework/TestRunner/TestRunner.php",
             "line": 87,
             "function": "runBare",
             "class": "PHPUnit\\Framework\\TestCase",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/phpunit/phpunit/src/Framework/TestCase.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/phpunit/phpunit/src/Framework/TestCase.php",
             "line": 361,
             "function": "run",
             "class": "PHPUnit\\Framework\\TestRunner",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/phpunit/phpunit/src/Framework/TestSuite.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/phpunit/phpunit/src/Framework/TestSuite.php",
             "line": 369,
             "function": "run",
             "class": "PHPUnit\\Framework\\TestCase",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/phpunit/phpunit/src/Framework/TestSuite.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/phpunit/phpunit/src/Framework/TestSuite.php",
             "line": 369,
             "function": "run",
             "class": "PHPUnit\\Framework\\TestSuite",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/phpunit/phpunit/src/Framework/TestSuite.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/phpunit/phpunit/src/Framework/TestSuite.php",
             "line": 369,
             "function": "run",
             "class": "PHPUnit\\Framework\\TestSuite",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/phpunit/phpunit/src/TextUI/TestRunner.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/phpunit/phpunit/src/TextUI/TestRunner.php",
             "line": 64,
             "function": "run",
             "class": "PHPUnit\\Framework\\TestSuite",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/phpunit/phpunit/src/TextUI/Application.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/phpunit/phpunit/src/TextUI/Application.php",
             "line": 211,
             "function": "run",
             "class": "PHPUnit\\TextUI\\TestRunner",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/pestphp/pest/src/Kernel.php",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/pestphp/pest/src/Kernel.php",
             "line": 103,
             "function": "run",
             "class": "PHPUnit\\TextUI\\Application",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/pestphp/pest/bin/pest",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/pestphp/pest/bin/pest",
             "line": 184,
             "function": "handle",
             "class": "Pest\\Kernel",
             "type": "-&gt;"
         },
         {
-            "file": "/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/pestphp/pest/bin/pest",
+            "file": "/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/pestphp/pest/bin/pest",
             "line": 192,
-            "function": "{closure:/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor/pestphp/pest/bin/pest:18}"
+            "function": "{closure:/Users/deanhowe/PROJECTS/HERD/VHOSTS/markdown.observer/vendor/pestphp/pest/bin/pest:18}"
         }
     ]
 }].
