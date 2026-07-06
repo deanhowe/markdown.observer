@@ -1,161 +1,76 @@
 # Markdown.Observer
 
-Transform your Markdown files into a collaborative, version-controlled content management system.
-Edit in Markdown or rich text, preview in real-time, and maintain your files as the single source of truth.
+**The observability layer for your markdown — including the markdown your AI agents live on.**
 
-## 🚀 MVP Features
+Transform your Markdown files into a collaborative, version-controlled content system. Edit in Markdown or rich text, watch every change, and keep your files as the single source of truth — no lock-in, ever.
 
-The current MVP (Minimum Viable Product) focuses on showcasing the core functionality of Markdown.Observer:
+🌍 **Live:** [markdown.observer](https://markdown.observer) · **AI steering docs:** [ai.markdown.observer](https://ai.markdown.observer)
 
-- **Composer Package Slideshow**
-  - Displays all installed composer packages on the homepage
-  - Shows package information (name, description, version)
-  - Renders README.md files with proper formatting and syntax highlighting
-  - Features optimized image loading for package logos
-  - Provides intuitive navigation controls
+## What it does
 
-![Composer Package Slideshow](docs/images/slideshow-screenshot.png)
-*Note: Replace with actual screenshot*
+### 📦 Package documentation, observed
+- Upload a `composer.json` / `package.json` and sync docs for every dependency
+- READMEs rendered with syntax highlighting (Shiki) and optimised logos
+- Raw markdown + HTML endpoints for every file
+- Version history per file — see what changed between releases
 
-## 🌟 Key Features
+### 🤖 AI steering docs (the new frontier)
+Every project now carries `.claude/`, `.kiro/`, `.ai/`, `.junie/` folders full of steering documents, rules, and skills — with no tooling to manage them. Markdown.Observer watches them:
 
-- **Dual Editing Modes**
-  - Native Markdown editing
-  - Rich text editing with TipTap
-  - Real-time preview
-  - Seamless switching between modes
+- **Collections** organised by GitHub repo
+- **Version history** for every steering doc — see how a project's agent rules evolve
+- Hourly crawls tracking real movement across the ecosystem
+- Live dashboard at [ai.markdown.observer](https://ai.markdown.observer)
 
-- **Version Control**
-  - Full history of all changes
-  - Track who made what changes and when
-  - Easily revert to previous versions
-  - Compare different versions
+### ✍️ Dual-mode editing
+- Native Markdown or rich text (TipTap) — switch seamlessly
+- Real-time Markdown ⇄ HTML ⇄ TipTap JSON conversion
+- Full revision history on every page; files remain canonical
 
-- **File System as Source of Truth**
-  - Your Markdown files remain the canonical source
-  - No vendor lock-in
-  - Works with your existing Markdown files
-  - Perfect for documentation, blogs, and content sites
+### 🛠 Built in public
+- [Health dashboard](https://markdown.observer/health) on the live site
+- API-first: REST endpoints for packages, pages, and conversions
 
-- **API-First Architecture**
-  - RESTful API for all operations
-  - Markdown to HTML conversion using Spatie's powerful tools
-  - TipTap JSON transformation for rich editing
-  - Webhook support for integration with your workflows
+## Pricing
 
-## 🚀 Getting Started
+**Free forever** tier, then Pro at **£9/month**, **£90/year**, or **£299 lifetime**. See [markdown.observer/pricing](https://markdown.observer/pricing).
 
-### Prerequisites
+## Stack
 
-- PHP 8.2 or higher
-- Composer
-- Node.js and npm
-- SQLite or MySQL
+Laravel 12 · Inertia + React · TipTap · Tailwind 4 · Radix UI · Cashier (Stripe) · Horizon · PostgreSQL (production) / SQLite (local) · Deployed on Laravel Cloud
 
-### Installation
+## Local development
 
-1. **Clone the repository**
+Prerequisites: PHP 8.4, Composer, Node 24+.
 
 ```bash
-git clone https://github.com/deanhowe/markdown.observer.git
+git clone git@github.com:deanhowe/markdown.observer.git
 cd markdown.observer
-```
 
-2. **Install PHP dependencies**
-
-```bash
 composer install
-```
-
-3. **Install JavaScript dependencies**
-
-```bash
 npm install
-```
 
-4. **Configure your environment**
-
-```bash
-cp .env.example .env
+cp .env.example .env   # fill in the Stripe keys (see comments in the file)
 php artisan key:generate
-```
 
-5. **Set up the database**
-
-```bash
 touch database/database.sqlite
 php artisan migrate
+
+composer dev           # dev server with hot reload (or: composer dev:ssr)
 ```
 
-6. **Start the development server**
+With [Herd](https://herd.laravel.com): the site resolves at `https://markdown.observer.test`, and the AI dashboard at `https://ai.markdown.observer.test`.
+
+### Tests
 
 ```bash
-# Run the development server with hot reloading
-composer dev
-
-# Or run with server-side rendering
-composer dev:ssr
+php artisan test
 ```
 
-### Viewing the Composer Package Slideshow
+## Docs
 
-Once the development server is running, you can view the composer package slideshow on the homepage:
+Deployment, environment, and feature notes live in [docs/](docs/). Historical session notes are archived in [docs/history/](docs/history/).
 
-1. Open your browser and navigate to `http://localhost:8000`
-2. The slideshow will appear on the homepage, displaying your installed composer packages
-3. Use the navigation controls to browse through the packages
-4. Each package will display its logo, name, description, version, and README content
+## License
 
-# 📖 How It Works
-
-1. **Load**: Your Markdown files are loaded through our API
-2. **Convert**: Files are converted to both HTML and TipTap JSON
-3. **Edit**: Make changes in either Markdown or rich text mode
-4. **Preview**: See changes in real-time
-5. **Save**: Changes are version-controlled in the database
-6. **Publish**: When ready, your Markdown files are updated
-
-## 💰 Pricing
-
-- **Personal**: $9/month
-    - Unlimited files
-    - Single user
-    - Basic version control
-
-- **Team**: $29/month
-    - 5 team members
-    - Advanced version control
-    - Team collaboration features
-
-- **Enterprise**: Contact us
-    - Custom user limits
-    - Priority support
-    - Custom integration support
-
-## 🔧 Tech Stack
-
-- Laravel 12
-- React 19
-- TipTap Editor
-- Spatie Markdown
-- SQLite/MySQL
-
-## 📝 License
-
-[MIT License](LICENSE.md)
-
----
-
-## 🤝 Contributing
-
-Contributions are welcome! Please read our [Contributing Guide](CONTRIBUTING.md) for details on our code of conduct and the process for submitting pull requests.
-
-## 💬 Support
-
-- Documentation: [docs.markdown.observer](https://docs.markdown.observer)
-- Issues: [GitHub Issues](https://github.com/deanhowe/markdown.observer/issues)
-~~- Discord: [Join our community](https://discord.gg/markdown.observer)~~
-
-## ⭐ Star Us!
-
-If you find Markdown.Observer useful, please star us on GitHub! It helps others discover the project.
+Proprietary — © Dean Howe. Package code published under its own licenses where noted.
