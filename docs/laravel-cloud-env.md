@@ -63,13 +63,26 @@ MAIL_FROM_NAME="Markdown Observer"
 
 ## Stripe (After Setup)
 
+⚠️ Variable names below match `config/services.php` — earlier versions of this
+doc used `STRIPE_PRO_PRICE_ID`/`STRIPE_LIFETIME_PRICE_ID`, which the app never
+reads. If production still has those names, the price lookups return null.
+
 ```env
 STRIPE_KEY=pk_live_YOUR_KEY
 STRIPE_SECRET=sk_live_YOUR_SECRET
 STRIPE_WEBHOOK_SECRET=whsec_YOUR_SECRET
-STRIPE_PRO_PRICE_ID=price_YOUR_PRO_ID
-STRIPE_LIFETIME_PRICE_ID=price_YOUR_LIFETIME_ID
+STRIPE_PRICE_PRO_MONTHLY=price_YOUR_MONTHLY_ID
+STRIPE_PRICE_PRO_YEARLY=price_YOUR_YEARLY_ID
+STRIPE_PRICE_LIFETIME=price_YOUR_LIFETIME_ID
 ```
+
+**STRIPE_WEBHOOK_SECRET is not optional.** Cashier only verifies webhook
+signatures when it is set — without it, `POST /stripe/webhook` accepts
+unsigned events and a spoofed `customer.subscription.*` event grants free Pro.
+Create the endpoint at Stripe dashboard → Developers → Webhooks →
+`https://markdown.observer/stripe/webhook`, subscribe to the events listed in
+the [Cashier docs](https://laravel.com/docs/12.x/billing#handling-stripe-webhooks),
+and copy the signing secret here.
 
 ## Optional (Add Later)
 
