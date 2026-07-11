@@ -24,6 +24,15 @@ return Application::configure(basePath: dirname(__DIR__))
     ->withMiddleware(function (Middleware $middleware) {
         $middleware->encryptCookies(except: ['appearance', 'sidebar_state']);
 
+        // Stripe posts webhook events with no CSRF token — this route is
+        // instead protected by signature verification (Cashier's
+        // VerifyWebhookSignature, applied automatically once
+        // STRIPE_WEBHOOK_SECRET is set). Without this exclusion every real
+        // webhook delivery 419s before it ever reaches the controller.
+        $middleware->validateCsrfTokens(except: [
+            'stripe/webhook',
+        ]);
+
         $middleware->web(append: [
             HandleAppearance::class,
             HandleInertiaRequests::class,
