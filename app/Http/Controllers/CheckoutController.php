@@ -45,21 +45,33 @@ class CheckoutController extends Controller
                 ]);
         }
 
-        // Guest: Stripe Checkout with email collection
+        // Guest: Stripe Checkout with email collection.
+        // Checkout::guest() (not User::checkout — that's an INSTANCE method
+        // on Billable for authenticated owners and cannot be called
+        // statically) is Cashier's documented entry point for a checkout
+        // session with no owner attached.
         $params = [
             'success_url' => route('checkout.success').'?session_id={CHECKOUT_SESSION_ID}',
             'cancel_url' => route('pricing'),
-            'customer_creation' => 'always',
         ];
 
         if ($plan === 'lifetime') {
+            // customer_creation is only valid in `payment` mode (Stripe
+            // rejects it in `subscription` mode — subscriptions always
+            // create a customer implicitly).
+            $params['customer_creation'] = 'always';
+
             // Price comes from the configured Stripe Price, same as the
             // logged-in flow — an ad-hoc amount here would silently diverge
             // when the price changes in the Stripe dashboard.
-            return User::checkout([$priceId => 1], $params);
+            return \Laravel\Cashier\Checkout::guest()->create([$priceId => 1], $params);
         }
 
-        return User::checkout([$priceId => ['quantity' => 1]], array_merge($params, [
+        // CheckoutBuilder::create() maps a string-keyed item as
+        // ['price' => key, 'quantity' => value] — the value must be the raw
+        // quantity int, not a nested ['quantity' => 1] array (Stripe's API
+        // rejected that with "Invalid integer").
+        return \Laravel\Cashier\Checkout::guest()->create([$priceId => 1], array_merge($params, [
             'mode' => 'subscription',
         ]));
     }

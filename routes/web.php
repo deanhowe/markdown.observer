@@ -29,6 +29,13 @@ Route::post('/checkout/{plan}', [App\Http\Controllers\CheckoutController::class,
     ->where('plan', 'pro-monthly|pro-yearly|lifetime');
 Route::get('/checkout/success', [App\Http\Controllers\CheckoutController::class, 'success'])->name('checkout.success');
 
+// Stripe webhook — custom controller (extends Cashier's) that also syncs
+// subscription_tier/upload_limit/doc_limit, the fields feature-gates actually
+// read. Cashier's own auto-registered route is disabled in AppServiceProvider
+// (Cashier::ignoreRoutes()) so this is the only /stripe/webhook route.
+Route::post('/stripe/webhook', [App\Http\Controllers\WebhookController::class, 'handleWebhook'])
+    ->name('cashier.webhook');
+
 Route::middleware(['auth'])->group(function () {
     // Dashboard
     Route::get('/dashboard', [PageController::class, 'index'])->name('dashboard');
