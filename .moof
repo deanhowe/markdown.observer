@@ -1,0 +1,85 @@
+---
+id: markdown.observer
+name: "markdown.observer"
+parent: /Users/deanhowe/PROJECTS/HERD/VHOSTS
+status: active
+role: product
+owner: deanhowe
+# mission:
+languages:
+  - PHP
+  - JavaScript
+  - Python
+frameworks:
+  - Laravel
+  - Livewire
+  - Inertia
+infra:
+  # none detected
+env:
+  APP_DEBUG: true
+  APP_ENV: local
+  APP_NAME: Markdown.Observer
+  APP_URL: https://markdown.observer.test
+  BROADCAST_CONNECTION: log
+  CACHE_STORE: database
+  DB_CONNECTION: pgsql
+  DB_DATABASE: markdown_observer
+  DB_HOST: 127.0.0.1
+  DB_PORT: 5432
+  FILESYSTEM_DISK: local
+  LOG_CHANNEL: stack
+  MAIL_HOST: 127.0.0.1
+  MAIL_MAILER: smtp
+  MAIL_PORT: 2526
+  QUEUE_CONNECTION: database
+  REDIS_HOST: 127.0.0.1
+  REDIS_PORT: 6379
+  SESSION_DRIVER: database
+git_remote: git@github.com:deanhowe/markdown.observer.git
+last_commit: 2026-02-22
+license: 
+updated: 2026-04-05
+---
+
+# markdown.observer — The WordPress Killer
+
+Edit in Markdown or TipTap, preview in real-time, maintain `.md` files as single source of truth.
+
+## What It Is
+
+A SaaS where users write in markdown (or a TipTap WYSIWYG), and their content stays as `.md` files — not locked in a database. Real-time preview. Composer package docs. Steering docs. Comments.
+
+## Current State
+
+- **Stack**: Laravel 12 + Inertia + React 19 + TipTap ✅
+- **Models**: User, Comment, ComposerPackage, PackageDoc, PageRevision, SteeringCollection, SteeringDoc, SteeringDocVersion ✅
+- **TipTap**: Installed with code blocks, images, links, typography, colors ✅
+- **Livewire**: Comments component exists ✅
+- **SSR**: Configured ✅
+
+## What's Needed to Ship (MVP)
+
+1. TipTap ↔ Markdown bidirectional sync (the core feature)
+2. File system watcher — detect `.md` changes, update UI
+3. User auth + billing (Stripe)
+4. Public page rendering from `.md` files
+5. Deploy to production server
+
+## Revenue Model
+
+- Free tier: 1 site, 10 pages
+- Pro: Unlimited sites/pages, custom domains, $9/mo
+- Team: Collaboration, $29/mo
+
+## Known Issues
+
+- TipTap setup had errors (HTMLPurifier `loading` attribute not supported — fix in `config/purify.php`)
+- File watching research done but not implemented (see `docs/file-watching-php-laravel.md`)
+
+## Key Files
+
+- Models: `app/Models/`
+- Livewire: `app/Livewire/Comments.php`
+- React pages: `resources/js/pages/`
+- TipTap config: Check `package.json` for extensions
