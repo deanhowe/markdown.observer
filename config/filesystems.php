@@ -5,14 +5,14 @@ return [
     'disks' => [
     'local' => [
     'driver' => 'local',
-    'root' => '/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/storage/app/private',
+    'root' => '/Users/deanhowe/PROJECTS/Moof/sites/markdown.observer/storage/app/private',
     'serve' => true,
     'throw' => false,
     'report' => false
 ],
     'composer-packages' => [
     'driver' => 'local',
-    'root' => '/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/vendor',
+    'root' => '/Users/deanhowe/PROJECTS/Moof/sites/markdown.observer/vendor',
     'url' => NULL,
     'visibility' => 'public',
     'throw' => false,
@@ -33,7 +33,7 @@ return [
 ],
     'public' => [
     'driver' => 'local',
-    'root' => '/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/storage/app/public',
+    'root' => '/Users/deanhowe/PROJECTS/Moof/sites/markdown.observer/storage/app/public',
     'url' => 'https://markdown.observer.test/storage',
     'visibility' => 'public',
     'throw' => false,
@@ -62,7 +62,7 @@ return [
 ],
     'test_pages' => [
     'driver' => 'local',
-    'root' => '/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/tests/Fixtures/pages',
+    'root' => '/Users/deanhowe/PROJECTS/Moof/sites/markdown.observer/tests/Fixtures/pages',
     'throw' => false,
     'report' => false
 ],
@@ -80,7 +80,7 @@ return [
 ],
     'github' => [
     'driver' => 'local',
-    'root' => '/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/storage/app/github',
+    'root' => '/Users/deanhowe/PROJECTS/Moof/sites/markdown.observer/storage/app/github',
     'url' => NULL,
     'visibility' => 'public',
     'throw' => false,
@@ -91,6 +91,6 @@ return [
 ]
 ],
     'links' => [
-    '/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/public/storage' => '/Users/deanhowe/PLANNR/VALET/VHOSTS/markdown.observer/storage/app/public'
+    '/Users/deanhowe/PROJECTS/Moof/sites/markdown.observer/public/storage' => '/Users/deanhowe/PROJECTS/Moof/sites/markdown.observer/storage/app/public'
 ]
 ];
