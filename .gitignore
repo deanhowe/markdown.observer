@@ -23,6 +23,7 @@ yarn-error.log
 /.nova
 /.vscode
 /.zed
+/.kiro
 /.mcp.json
 storage/app/private
 database/data/
