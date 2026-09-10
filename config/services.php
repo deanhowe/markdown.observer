@@ -43,4 +43,14 @@ return [
         'price_lifetime' => env('STRIPE_PRICE_LIFETIME'),
     ],
 
+    'github' => [
+        // Used by App\Jobs\CrawlRepoSteeringDocs for the AI Steering Docs
+        // crawler. Without this, every GitHub API call it makes is
+        // unauthenticated (60 requests/hour) - nowhere near enough against
+        // the ~500 target repos x up to 6 folders each it checks. A
+        // classic (or fine-grained, public-repo-read) PAT with no special
+        // scopes is enough; it only reads public repo contents.
+        'token' => env('GITHUB_TOKEN'),
+    ],
+
 ];

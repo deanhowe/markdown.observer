@@ -84,6 +84,26 @@ Create the endpoint at Stripe dashboard → Developers → Webhooks →
 the [Cashier docs](https://laravel.com/docs/12.x/billing#handling-stripe-webhooks),
 and copy the signing secret here.
 
+## AI Steering Docs Crawler (ai.markdown.observer)
+
+```env
+GITHUB_TOKEN=ghp_YOUR_TOKEN
+```
+
+**Not optional if the crawler is meant to make real progress.** Without this,
+`App\Jobs\CrawlRepoSteeringDocs` calls the GitHub API unauthenticated - a hard
+60 requests/hour cap - against ~500 target repos x up to 6 folders each to
+check. That's the most likely reason `ai.markdown.observer` was still showing
+0 repos crawled as of 2026-09-10: the job silently rate-limits itself into
+invisible progress rather than failing loudly. A classic PAT with no special
+scopes is enough (it only reads public repo contents via unauthenticated-eligible
+endpoints, just needs the higher authenticated rate limit).
+
+Also verify the "Queue workers enabled" checklist item below was actually
+ticked for this environment - the crawl command only *queues* jobs
+(`crawl:steering-docs` dispatches, it doesn't process), so nothing runs at
+all without a live queue worker regardless of this token.
+
 ## Optional (Add Later)
 
 ### Object Storage (If you add S3)
