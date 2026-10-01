@@ -3,9 +3,11 @@
 namespace App\Providers;
 
 use App\Contracts\ComposerPackages;
+use App\Models\User;
 use App\Repositories\ComposerPackagesRepository;
 use App\Repositories\ComposerPackagesRepository as ComposerPackagesRepositoryImpl;
 use App\Services\ComposerPackagesService;
+use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\ServiceProvider;
 use Laravel\Cashier\Cashier;
 
@@ -45,6 +47,11 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
+        // /health shows user counts, revenue and server versions: admins only.
+        Gate::define('viewHealth', fn (User $user): bool => in_array(
+            strtolower($user->email), config('app.admin_emails', []), true
+        ));
+
         $this->publishes([
             __DIR__.'/../../config/composer-packages.php' => config_path('composer-packages.php'),
         ], 'composer-packages-config');

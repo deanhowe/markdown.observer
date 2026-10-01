@@ -28,7 +28,7 @@ Every project now carries `.claude/`, `.kiro/`, `.ai/`, `.junie/` folders full o
 - Full revision history on every page; files remain canonical
 
 ### 🛠 Built in public
-- [Health dashboard](https://markdown.observer/health) on the live site
+- Admin-only health dashboard at `/health` (users, queue, revenue); set `ADMIN_EMAILS`
 - API-first: REST endpoints for packages, pages, and conversions
 
 ## Pricing
