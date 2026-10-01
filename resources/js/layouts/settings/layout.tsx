@@ -22,6 +22,12 @@ const sidebarNavItems: NavItem[] = [
         href: '/settings/appearance',
         icon: null,
     },
+    {
+        // Stripe's billing portal (change plan, update card, cancel).
+        title: 'Billing & plan',
+        href: '/billing',
+        icon: null,
+    },
 ];
 
 export default function SettingsLayout({ children }: PropsWithChildren) {

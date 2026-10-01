@@ -16,9 +16,16 @@ Route::domain($aiDomain)->group(function () {
 
 // Main domain
 Route::get('/', [HomeController::class, 'index'])->name('home');
-Route::get('/health', [App\Http\Controllers\HealthController::class, 'index'])->name('health');
+// Admin-only: user counts, revenue and server versions aren't for visitors.
+// Admins = ADMIN_EMAILS (falls back to HORIZON_EMAILS); see config/app.php.
+Route::get('/health', [App\Http\Controllers\HealthController::class, 'index'])
+    ->middleware(['auth', 'can:viewHealth'])
+    ->name('health');
 Route::get('/ai', [App\Http\Controllers\AI\HomeController::class, 'index'])->name('ai.local'); // Local fallback
-Route::get('/pricing', fn() => Inertia::render('Pricing'))->name('pricing');
+Route::get('/pricing', fn () => Inertia::render('Pricing', [
+    'tiers' => App\Models\User::TIERS,
+    'unlimited' => App\Models\User::UNLIMITED,
+]))->name('pricing');
 Route::get('/terms', [App\Http\Controllers\LegalController::class, 'terms'])->name('terms');
 Route::get('/privacy', [App\Http\Controllers\LegalController::class, 'privacy'])->name('privacy');
 Route::get('/faq', [App\Http\Controllers\LegalController::class, 'faq'])->name('faq');
@@ -44,7 +51,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/billing', [App\Http\Controllers\CheckoutController::class, 'portal'])->name('billing.portal');
 
     // Package upload
-    Route::get('/upload', fn() => Inertia::render('UploadPackages'))->name('packages.upload.form');
+    Route::get('/upload', fn () => Inertia::render('UploadPackages'))->name('packages.upload.form');
     Route::post('/upload', [App\Http\Controllers\PackageUploadController::class, 'upload'])->name('packages.upload');
     Route::post('/packages/confirm', [App\Http\Controllers\PackageUploadController::class, 'confirm'])->name('packages.confirm');
     Route::post('/packages/{package}/sync', [App\Http\Controllers\PackageUploadController::class, 'sync'])->name('packages.sync');
@@ -57,7 +64,7 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/steering/upload', [App\Http\Controllers\SteeringDocController::class, 'upload'])->name('steering.upload');
 
     // Page editor (legacy)
-    Route::get('/pages/create', fn() => Inertia::render('PageEditor'))->name('pages.create');
+    Route::get('/pages/create', fn () => Inertia::render('PageEditor'))->name('pages.create');
     Route::get('/pages/{slug}/edit', [PageController::class, 'edit'])->name('pages.edit');
     Route::post('/pages', [PageController::class, 'store'])->name('pages.store');
 });

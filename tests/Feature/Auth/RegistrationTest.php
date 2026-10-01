@@ -19,5 +19,6 @@ test('new users can register', function () {
     ]);
 
     $this->assertAuthenticated();
-    $response->assertRedirect(route('dashboard', absolute: false));
+    // New accounts land on pricing: deliberate since c51202f (2026-06-30).
+    $response->assertRedirect(route('pricing', absolute: false));
 });
