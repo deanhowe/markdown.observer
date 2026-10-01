@@ -53,12 +53,11 @@ class WebhookController extends CashierWebhookController
         }
 
         if ($user) {
-            $user->forceFill([
-                'subscription_tier' => 'lifetime',
-                'upload_limit' => 999,
-                'doc_limit' => 999,
-                'stripe_id' => $user->stripe_id ?? $customerId,
-            ])->save();
+            if (! $user->stripe_id) {
+                $user->forceFill(['stripe_id' => $customerId])->save();
+            }
+
+            $user->grantLifetime();
 
             Log::info('markdown.observer: lifetime tier granted', ['user_id' => $user->id]);
         } else {
@@ -110,11 +109,7 @@ class WebhookController extends CashierWebhookController
 
         if ($user = $this->getUserByStripeId($payload['data']['object']['customer'])) {
             if ($user->subscription_tier === 'pro') {
-                $user->forceFill([
-                    'subscription_tier' => 'free',
-                    'upload_limit' => 2,
-                    'doc_limit' => 10,
-                ])->save();
+                $user->applyTier('free');
 
                 Log::info('markdown.observer: downgraded to free tier', ['user_id' => $user->id]);
             }
@@ -142,13 +137,7 @@ class WebhookController extends CashierWebhookController
             return;
         }
 
-        $user->forceFill([
-            'subscription_tier' => 'pro',
-            // Pricing page advertises "Unlimited uploads" + "100 packages"
-            // for Pro — 999 is the same unlimited-sentinel lifetime uses.
-            'upload_limit' => 999,
-            'doc_limit' => 100,
-        ])->save();
+        $user->applyTier('pro');
 
         Log::info('markdown.observer: pro tier granted', ['user_id' => $user->id]);
     }

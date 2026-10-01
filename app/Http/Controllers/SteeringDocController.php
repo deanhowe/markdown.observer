@@ -18,12 +18,7 @@ class SteeringDocController extends Controller
 
         // Check subscription limits
         $user = auth()->user();
-        $limit = match($user->subscription_tier) {
-            'free' => 1,
-            'pro' => 10,
-            'lifetime' => PHP_INT_MAX,
-            default => 1,
-        };
+        $limit = $user->steeringCollectionLimit();
 
         if ($user->steeringCollections()->count() >= $limit) {
             abort(403, 'Steering collection limit reached. Upgrade to add more.');
@@ -56,17 +51,17 @@ class SteeringDocController extends Controller
     private function detectFolderType(array $files): string
     {
         $filenames = array_keys($files);
-        
+
         // Claude: instructions.md, settings.json
         if (in_array('instructions.md', $filenames) || in_array('settings.json', $filenames)) {
             return 'claude';
         }
-        
+
         // Kiro: AGENT_IDENTITY.md, QUICK_REFERENCE.md
         if (in_array('AGENT_IDENTITY.md', $filenames) || in_array('QUICK_REFERENCE.md', $filenames)) {
             return 'kiro';
         }
-        
+
         // Default
         return 'ai';
     }
