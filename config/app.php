@@ -123,4 +123,20 @@ return [
         'store' => env('APP_MAINTENANCE_STORE', 'database'),
     ],
 
+    /*
+    |--------------------------------------------------------------------------
+    | Admin Emails
+    |--------------------------------------------------------------------------
+    |
+    | Comma-separated accounts allowed onto admin-only pages such as /health.
+    | Falls back to HORIZON_EMAILS so an existing Horizon admin keeps access.
+    | Unset means nobody: admin pages fail closed.
+    |
+    */
+
+    'admin_emails' => array_values(array_filter(array_map(
+        fn (string $email): string => strtolower(trim($email)),
+        explode(',', (string) env('ADMIN_EMAILS', env('HORIZON_EMAILS', '')))
+    ))),
+
 ];
