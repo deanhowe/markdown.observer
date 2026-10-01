@@ -1,6 +1,15 @@
-import { Head, Link } from '@inertiajs/react'
+import { Head, Link, router } from '@inertiajs/react'
 
-export default function Welcome() {
+type Limits = { upload_limit: number; doc_limit: number; steering_collections: number }
+
+interface WelcomeProps {
+  // Same table the feature gates enforce (App\Models\User::TIERS).
+  tiers: Record<'free' | 'pro' | 'lifetime', Limits>
+  unlimited: number
+}
+
+export default function Welcome({ tiers, unlimited }: WelcomeProps) {
+  const limit = (n: number) => (n >= unlimited ? 'Unlimited' : String(n))
   return (
     <>
       <Head title="Markdown Observer - Your Package Documentation Hub for Laravel">
@@ -259,13 +268,13 @@ export default function Welcome() {
                   <svg className="w-5 h-5 text-green-500 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
-                  <span className="text-gray-700 dark:text-gray-300">2 composer.json uploads</span>
+                  <span className="text-gray-700 dark:text-gray-300">composer.json &amp; package.json uploads</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <svg className="w-5 h-5 text-green-500 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
-                  <span className="text-gray-700 dark:text-gray-300">Up to 10 packages</span>
+                  <span className="text-gray-700 dark:text-gray-300">Up to {limit(tiers.free.doc_limit)} packages</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <svg className="w-5 h-5 text-green-500 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
@@ -291,7 +300,7 @@ export default function Welcome() {
             {/* Pro - Popular */}
             <div className="backdrop-blur-sm bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl p-8 shadow-2xl shadow-blue-500/50 relative transform scale-105">
               <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-orange-500 text-white px-6 py-1.5 rounded-full text-sm font-bold shadow-lg">
-                Most Popular
+                Recommended
               </div>
               <div className="text-center mb-6 text-white">
                 <h4 className="text-2xl font-bold mb-2">Pro</h4>
@@ -312,19 +321,19 @@ export default function Welcome() {
                   <svg className="w-5 h-5 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
-                  <span><strong>100</strong> packages per project</span>
+                  <span><strong>{limit(tiers.pro.doc_limit)}</strong> packages</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <svg className="w-5 h-5 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
-                  <span><strong>3</strong> projects</span>
+                  <span><strong>{limit(tiers.pro.steering_collections)}</strong> AI steering-doc collections</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <svg className="w-5 h-5 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
-                  <span>API access</span>
+                  <span>Everything in Free</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <svg className="w-5 h-5 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
@@ -333,12 +342,13 @@ export default function Welcome() {
                   <span>Priority support</span>
                 </li>
               </ul>
-              <Link
-                href={route('register')}
+              <button
+                type="button"
+                onClick={() => router.post(route('checkout', { plan: 'pro-monthly' }))}
                 className="block w-full py-3 text-center bg-white text-blue-600 rounded-lg hover:bg-gray-100 font-bold transition-all shadow-lg"
               >
-                Start Pro Trial
-              </Link>
+                Upgrade to Pro
+              </button>
             </div>
 
             {/* Lifetime */}
@@ -361,13 +371,13 @@ export default function Welcome() {
                   <svg className="w-5 h-5 text-orange-500 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
-                  <span className="text-gray-700 dark:text-gray-300"><strong>Unlimited</strong> projects</span>
+                  <span className="text-gray-700 dark:text-gray-300"><strong>{limit(tiers.lifetime.steering_collections)}</strong> AI steering-doc collections</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <svg className="w-5 h-5 text-orange-500 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
-                  <span className="text-gray-700 dark:text-gray-300"><strong>500</strong> packages/project</span>
+                  <span className="text-gray-700 dark:text-gray-300"><strong>{limit(tiers.lifetime.doc_limit)}</strong> packages</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <svg className="w-5 h-5 text-orange-500 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
@@ -382,12 +392,13 @@ export default function Welcome() {
                   <span className="text-gray-700 dark:text-gray-300">Future updates included</span>
                 </li>
               </ul>
-              <Link
-                href={route('register')}
+              <button
+                type="button"
+                onClick={() => router.post(route('checkout', { plan: 'lifetime' }))}
                 className="block w-full py-3 text-center bg-gradient-to-r from-orange-500 to-red-500 text-white rounded-lg hover:from-orange-600 hover:to-red-600 font-bold transition-all shadow-lg"
               >
                 Buy Lifetime
-              </Link>
+              </button>
             </div>
           </div>
           
@@ -402,7 +413,7 @@ export default function Welcome() {
         <footer className="border-t border-gray-200 dark:border-gray-700 py-8 text-center text-gray-600 dark:text-gray-400">
           <div className="container mx-auto px-4 sm:px-6">
             <div className="flex flex-wrap justify-center gap-4 mb-4">
-              <Link href="/health" className="hover:text-gray-900 dark:hover:text-white">Health Dashboard</Link>
+              <Link href="/pricing" className="hover:text-gray-900 dark:hover:text-white">Pricing</Link>
               <Link href="/terms" className="hover:text-gray-900 dark:hover:text-white">Terms & Conditions</Link>
               <Link href="/privacy" className="hover:text-gray-900 dark:hover:text-white">Privacy Policy</Link>
               <Link href="/faq" className="hover:text-gray-900 dark:hover:text-white">FAQ</Link>

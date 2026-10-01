@@ -14,6 +14,14 @@ test('pricing page loads', function () {
     $response->assertInertia(fn ($page) => $page->component('Pricing', false));
 });
 
+test('pricing and landing pages advertise exactly the limits the gates enforce', function () {
+    foreach (['/pricing', '/'] as $url) {
+        $this->get($url)->assertInertia(fn ($page) => $page
+            ->where('tiers', User::TIERS)
+            ->where('unlimited', User::UNLIMITED));
+    }
+});
+
 test('dashboard requires auth', function () {
     $response = $this->get('/dashboard');
     $response->assertRedirect('/login');

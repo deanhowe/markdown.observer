@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Inertia\Inertia;
 
 class HomeController extends Controller
@@ -13,6 +14,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return Inertia::render('Welcome');
+        return Inertia::render('Welcome', [
+            'tiers' => User::TIERS,
+            'unlimited' => User::UNLIMITED,
+        ]);
     }
 }
