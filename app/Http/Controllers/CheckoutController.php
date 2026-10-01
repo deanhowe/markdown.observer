@@ -7,82 +7,83 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Str;
+use Inertia\Inertia;
+use Laravel\Cashier\Checkout;
 
 class CheckoutController extends Controller
 {
     /**
-     * Stripe Checkout for guests AND logged-in users.
-     * For guests: Stripe collects email, success() creates the user
-     * after verifying the session is complete and paid.
-     * For users: normal Cashier checkout.
+     * Start Stripe Checkout for guests AND logged-in users.
+     *
+     * The pricing buttons post here through Inertia's router, which is an XHR.
+     * A plain 303 to checkout.stripe.com gets followed *by the XHR*,
+     * cross-origin, and the browser blocks it with a CORS error, so the buyer
+     * never reaches Stripe. That was live in production until 2026-10-01: the
+     * server created real sessions but no browser could get to them.
+     * Inertia::location() answers an Inertia request with 409 +
+     * X-Inertia-Location, which makes the client do a full-page visit; any
+     * other request still gets an ordinary redirect.
      */
     public function checkout(Request $request, string $plan)
     {
-        $priceMap = [
+        $priceId = [
             'pro-monthly' => config('services.stripe.price_pro_monthly'),
             'pro-yearly' => config('services.stripe.price_pro_yearly'),
             'lifetime' => config('services.stripe.price_lifetime'),
-        ];
+        ][$plan] ?? null;
 
-        $priceId = $priceMap[$plan] ?? null;
         if (! $priceId) {
             abort(404, 'Unknown plan');
         }
 
-        // Logged-in user: use Cashier
-        if ($user = $request->user()) {
-            if ($plan === 'lifetime') {
-                return $user->checkout([$priceId], [
-                    'success_url' => route('dashboard').'?welcome=1',
-                    'cancel_url' => route('pricing'),
-                ]);
-            }
-
-            return $user->newSubscription('default', $priceId)
-                ->checkout([
-                    'success_url' => route('dashboard').'?welcome=1',
-                    'cancel_url' => route('pricing'),
-                ]);
-        }
-
-        // Guest: Stripe Checkout with email collection.
-        // Checkout::guest() (not User::checkout — that's an INSTANCE method
-        // on Billable for authenticated owners and cannot be called
-        // statically) is Cashier's documented entry point for a checkout
-        // session with no owner attached.
-        $params = [
+        // Every buyer comes back through success(), which fulfils the order
+        // itself rather than relying only on the webhook arriving in time.
+        $urls = [
             'success_url' => route('checkout.success').'?session_id={CHECKOUT_SESSION_ID}',
             'cancel_url' => route('pricing'),
         ];
 
-        if ($plan === 'lifetime') {
-            // customer_creation is only valid in `payment` mode (Stripe
-            // rejects it in `subscription` mode — subscriptions always
-            // create a customer implicitly).
-            $params['customer_creation'] = 'always';
+        if ($user = $request->user()) {
+            if ($user->subscription_tier === 'lifetime') {
+                return redirect()->route('dashboard')->with('status', 'You already have lifetime access.');
+            }
 
-            // Price comes from the configured Stripe Price, same as the
-            // logged-in flow — an ad-hoc amount here would silently diverge
-            // when the price changes in the Stripe dashboard.
-            return \Laravel\Cashier\Checkout::guest()->create([$priceId => 1], $params);
+            // A second Pro checkout would open a second subscription and bill
+            // them twice, so existing subscribers go to manage their plan.
+            if ($user->subscription_tier === 'pro' && $plan !== 'lifetime') {
+                return Inertia::location($user->billingPortalUrl(route('dashboard')));
+            }
+
+            $checkout = $plan === 'lifetime'
+                ? Checkout::customer($user)->allowPromotionCodes()->create([$priceId => 1], $urls)
+                : $user->newSubscription('default', $priceId)->allowPromotionCodes()->checkout($urls);
+
+            return Inertia::location($checkout->url);
         }
 
-        // CheckoutBuilder::create() maps a string-keyed item as
-        // ['price' => key, 'quantity' => value] — the value must be the raw
-        // quantity int, not a nested ['quantity' => 1] array (Stripe's API
-        // rejected that with "Invalid integer").
-        return \Laravel\Cashier\Checkout::guest()->create([$priceId => 1], array_merge($params, [
-            'mode' => 'subscription',
-        ]));
+        // Guest: Stripe collects the email and success() creates the account.
+        // Checkout::guest() is Cashier's entry point for a session with no
+        // owner. CheckoutBuilder::create() maps a string-keyed item to
+        // ['price' => key, 'quantity' => value], so the value is the raw int.
+        $checkout = $plan === 'lifetime'
+            // Only valid in payment mode; subscriptions always create a customer.
+            ? Checkout::guest()->allowPromotionCodes()->create([$priceId => 1], $urls + ['customer_creation' => 'always'])
+            : Checkout::guest()->allowPromotionCodes()->create([$priceId => 1], $urls + ['mode' => 'subscription']);
+
+        return Inertia::location($checkout->url);
     }
 
     /**
-     * After Stripe Checkout: create user from Stripe customer.
+     * Back from Stripe Checkout: fulfil the order here, not only in the webhook.
+     *
+     * Stripe often delivers the webhook before this redirect, and for a new
+     * guest there is no account yet for it to upgrade, so the buyer stayed on
+     * the free plan. Both paths grant idempotently.
      *
      * Auto-login is only granted for accounts created right here, from a
      * session Stripe confirms is complete AND paid, and each session id can
      * mint a login exactly once. Existing accounts are never auto-logged-in
-     * from a checkout redirect — the buyer hasn't proven they own them.
+     * from a checkout redirect: the buyer hasn't proven they own them.
      */
     public function success(Request $request)
     {
@@ -114,30 +115,46 @@ class CheckoutController extends Controller
             return redirect()->route('pricing')->with('error', 'Could not retrieve email from Stripe.');
         }
 
-        // Session ids appear in URLs, logs and browser history — burn each
-        // one after first use so a replayed link can't mint a session.
+        // Session ids appear in URLs, logs and browser history, so burn each
+        // one after first use: a replayed link can't mint a session.
         if (! Cache::add('checkout.session-used.'.$sessionId, true, now()->addDay())) {
-            return redirect()->route('login')
-                ->with('status', 'Purchase confirmed — please log in to continue.');
+            return Auth::check()
+                ? redirect()->route('dashboard')
+                : redirect()->route('login')->with('status', 'Purchase confirmed — please log in to continue.');
         }
 
-        $user = User::where('email', $email)->first();
+        // Match the Stripe customer first (a logged-in buyer's app email may
+        // have changed since their customer was created), then the email.
+        $user = ($customerId ? User::where('stripe_id', $customerId)->first() : null)
+            ?? User::where('email', $email)->first();
 
+        $isNewAccount = false;
         if (! $user) {
             $user = User::create([
                 'name' => (is_object($customer) ? $customer->name : null) ?? explode('@', $email)[0],
                 'email' => $email,
                 'password' => bcrypt(Str::random(32)),
-                'stripe_id' => $customerId,
             ]);
-
-            Auth::login($user, remember: true);
-
-            return redirect()->route('dashboard')->with('welcome', true);
+            $isNewAccount = true;
         }
 
-        if (! $user->stripe_id) {
-            $user->update(['stripe_id' => $customerId]);
+        // forceFill, not create()/update(): stripe_id isn't mass-assignable,
+        // so it used to be silently dropped, and the subscription webhooks
+        // (which look buyers up by stripe_id) could never find a guest.
+        if (! $user->stripe_id && $customerId) {
+            $user->forceFill(['stripe_id' => $customerId])->save();
+        }
+
+        // Same mapping the webhook uses: a one-time payment is Lifetime and a
+        // subscription is Pro. Never downgrade a lifetime owner.
+        if ($session->mode === 'payment') {
+            $user->grantLifetime();
+        } elseif ($user->subscription_tier !== 'lifetime') {
+            $user->applyTier('pro');
+        }
+
+        if ($isNewAccount) {
+            Auth::login($user, remember: true);
         }
 
         if (Auth::id() === $user->id) {
@@ -148,8 +165,18 @@ class CheckoutController extends Controller
             ->with('status', 'Purchase confirmed — log in to access your account.');
     }
 
+    /**
+     * Stripe's billing portal: change plan, update card, cancel. Inertia-safe
+     * for the same reason as checkout(): it's an external URL.
+     */
     public function portal(Request $request)
     {
-        return $request->user()->redirectToBillingPortal(route('dashboard'));
+        $user = $request->user();
+
+        if (! $user->hasStripeId()) {
+            return redirect()->route('pricing');
+        }
+
+        return Inertia::location($user->billingPortalUrl(route('dashboard')));
     }
 }
