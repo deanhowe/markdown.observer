@@ -32,18 +32,18 @@
         "docs": "https://markdown.observer/docs"
     },
     "require": {
-        "php": "^8.2",
+        "php": "^8.3",
         "calebporzio/sushi": "^2.5.3",
         "ezyang/htmlpurifier": "^4.19",
         "inertiajs/inertia-laravel": "^2.0.10",
         "laravel/boost": "^2.0",
         "laravel/cashier": "^16.2",
         "laravel/dusk": "^8.3.3",
-        "laravel/framework": "^12.39",
+        "laravel/framework": "^13.0",
         "laravel/horizon": "^5.43",
         "laravel/nightwatch": "^1.22",
         "laravel/sanctum": "^4.2.0",
-        "laravel/tinker": "^2.10.1",
+        "laravel/tinker": "^3.0",
         "league/html-to-markdown": "^5.1.1",
         "php-webdriver/webdriver": "^1.15.2",
         "sentry/sentry-laravel": "^4.19",
@@ -62,11 +62,11 @@
         "laravel/sail": "^1.48.1",
         "mockery/mockery": "^1.6.12",
         "nunomaduro/collision": "^8.8.3",
-        "pestphp/pest": "^3.8.4",
-        "pestphp/pest-plugin-drift": "^3.0",
-        "pestphp/pest-plugin-faker": "^3.0",
-        "pestphp/pest-plugin-laravel": "^3.2",
-        "pestphp/pest-plugin-livewire": "^3.0"
+        "pestphp/pest": "^4.0",
+        "pestphp/pest-plugin-drift": "^4.0",
+        "pestphp/pest-plugin-faker": "^4.0",
+        "pestphp/pest-plugin-laravel": "^4.0",
+        "pestphp/pest-plugin-livewire": "^4.0"
     },
     "autoload": {
         "psr-4": {
@@ -126,6 +126,9 @@
         "allow-plugins": {
             "pestphp/pest-plugin": true,
             "php-http/discovery": true
+        },
+        "platform": {
+            "php": "8.3.0"
         }
     },
     "minimum-stability": "stable",

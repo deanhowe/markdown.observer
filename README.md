@@ -37,11 +37,11 @@ Every project now carries `.claude/`, `.kiro/`, `.ai/`, `.junie/` folders full o
 
 ## Stack
 
-Laravel 12 · Inertia + React · TipTap · Tailwind 4 · Radix UI · Cashier (Stripe) · Horizon · PostgreSQL (production) / SQLite (local) · Deployed on Laravel Cloud
+Laravel 13 · Inertia + React · TipTap · Tailwind 4 · Radix UI · Cashier (Stripe) · Horizon · PostgreSQL (production) / SQLite (local) · Deployed on Laravel Cloud
 
 ## Local development
 
-Prerequisites: PHP 8.4, Composer, Node 24+.
+Prerequisites: PHP 8.3+, Composer, Node 24+.
 
 ```bash
 git clone git@github.com:deanhowe/markdown.observer.git
