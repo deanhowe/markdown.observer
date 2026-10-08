@@ -55,7 +55,10 @@ export default function SettingsLayout({ children }: PropsWithChildren) {
                                     'bg-muted': currentPath === item.href,
                                 })}
                             >
-                                <Link href={item.href} prefetch>
+                                {/* Billing resolves to Inertia::location() (external Stripe portal redirect),
+                                    so it must never be prefetched: prefetch would create a live Stripe
+                                    billing-portal session on hover. */}
+                                <Link href={item.href} prefetch={item.href !== '/billing'}>
                                     {item.title}
                                 </Link>
                             </Button>

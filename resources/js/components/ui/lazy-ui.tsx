@@ -10,42 +10,48 @@ const LoadingComponent = () => (
 );
 
 // Lazy load Dialog components (used in modals, sheets, etc.)
-export const LazyDialog = lazy(() => import('@radix-ui/react-dialog'));
-export const LazyDialogTrigger = lazy(() => import('@radix-ui/react-dialog').then(module => ({
-    default: module.Trigger
+export const LazyDialog = lazy(() => import('./dialog').then(module => ({
+    default: module.Dialog,
 })));
-export const LazyDialogContent = lazy(() => import('@radix-ui/react-dialog').then(module => ({
-    default: module.Content
+export const LazyDialogTrigger = lazy(() => import('./dialog').then(module => ({
+    default: module.DialogTrigger
 })));
-export const LazyDialogHeader = lazy(() => import('@radix-ui/react-dialog').then(module => ({
-    default: module.Header
+export const LazyDialogContent = lazy(() => import('./dialog').then(module => ({
+    default: module.DialogContent
 })));
-export const LazyDialogFooter = lazy(() => import('@radix-ui/react-dialog').then(module => ({
-    default: module.Footer
+export const LazyDialogHeader = lazy(() => import('./dialog').then(module => ({
+    default: module.DialogHeader
 })));
-export const LazyDialogTitle = lazy(() => import('@radix-ui/react-dialog').then(module => ({
-    default: module.Title
+export const LazyDialogFooter = lazy(() => import('./dialog').then(module => ({
+    default: module.DialogFooter
 })));
-export const LazyDialogDescription = lazy(() => import('@radix-ui/react-dialog').then(module => ({
-    default: module.Description
+export const LazyDialogTitle = lazy(() => import('./dialog').then(module => ({
+    default: module.DialogTitle
+})));
+export const LazyDialogDescription = lazy(() => import('./dialog').then(module => ({
+    default: module.DialogDescription
 })));
 
 // Lazy load Collapsible components
-export const LazyCollapsible = lazy(() => import('@radix-ui/react-collapsible'));
-export const LazyCollapsibleTrigger = lazy(() => import('@radix-ui/react-collapsible').then(module => ({
-    default: module.Trigger
+export const LazyCollapsible = lazy(() => import('./collapsible').then(module => ({
+    default: module.Collapsible,
 })));
-export const LazyCollapsibleContent = lazy(() => import('@radix-ui/react-collapsible').then(module => ({
-    default: module.Content
+export const LazyCollapsibleTrigger = lazy(() => import('./collapsible').then(module => ({
+    default: module.CollapsibleTrigger
+})));
+export const LazyCollapsibleContent = lazy(() => import('./collapsible').then(module => ({
+    default: module.CollapsibleContent
 })));
 
 // Lazy load Avatar components
-export const LazyAvatar = lazy(() => import('@radix-ui/react-avatar'));
-export const LazyAvatarImage = lazy(() => import('@radix-ui/react-avatar').then(module => ({
-    default: module.Image
+export const LazyAvatar = lazy(() => import('./avatar').then(module => ({
+    default: module.Avatar,
 })));
-export const LazyAvatarFallback = lazy(() => import('@radix-ui/react-avatar').then(module => ({
-    default: module.Fallback
+export const LazyAvatarImage = lazy(() => import('./avatar').then(module => ({
+    default: module.AvatarImage
+})));
+export const LazyAvatarFallback = lazy(() => import('./avatar').then(module => ({
+    default: module.AvatarFallback
 })));
 
 // Lazy load react-medium-image-zoom

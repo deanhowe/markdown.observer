@@ -5,7 +5,7 @@ import Underline from '@tiptap/extension-underline';
 import Link from '@tiptap/extension-link';
 import Image from '@tiptap/extension-image';
 import Placeholder from '@tiptap/extension-placeholder';
-import TextStyle from '@tiptap/extension-text-style';
+import { TextStyle } from '@tiptap/extension-text-style';
 import Color from '@tiptap/extension-color';
 import Heading from '@tiptap/extension-heading';
 import HorizontalRule from '@tiptap/extension-horizontal-rule';
@@ -30,8 +30,15 @@ export function TiptapEditor({ content = '', onChange, placeholder = 'Write some
     const [isConverting, setIsConverting] = useState<boolean>(false);
 
     const editor = useEditor({
+        shouldRerenderOnTransaction: true,
         extensions: [
-            StarterKit,
+            StarterKit.configure({
+                codeBlock: false,
+                heading: false,
+                horizontalRule: false,
+                link: false,
+                underline: false,
+            }),
             Underline,
             Link.configure({
                 openOnClick: false,
@@ -77,7 +84,7 @@ export function TiptapEditor({ content = '', onChange, placeholder = 'Write some
                     const html = await markdownToHtml(content);
 
                     if (html !== currentContent) {
-                        editor.commands.setContent(html);
+                        editor.commands.setContent(html, { emitUpdate: false });
                     }
                 } catch (error) {
                     console.error('Error converting markdown to HTML:', error);
@@ -85,7 +92,7 @@ export function TiptapEditor({ content = '', onChange, placeholder = 'Write some
 
                     // Use the raw content as fallback
                     if (content !== currentContent) {
-                        editor.commands.setContent(content);
+                        editor.commands.setContent(content, { emitUpdate: false });
                     }
                 } finally {
                     setIsConverting(false);
@@ -95,7 +102,7 @@ export function TiptapEditor({ content = '', onChange, placeholder = 'Write some
                 setConversionError(undefined);
 
                 if (content !== currentContent) {
-                    editor.commands.setContent(content);
+                    editor.commands.setContent(content, { emitUpdate: false });
                 }
             }
         };

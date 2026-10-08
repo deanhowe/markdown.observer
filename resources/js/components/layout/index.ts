@@ -4,5 +4,5 @@ export { AppShell } from '../app-shell';
 export { AppHeader } from '../app-header';
 export { AppSidebar } from '../app-sidebar';
 export { AppSidebarHeader } from '../app-sidebar-header';
-export { AppLogo } from '../app-logo';
-export { AppLogoIcon } from '../app-logo-icon';
+export { default as AppLogo } from '../app-logo';
+export { default as AppLogoIcon } from '../app-logo-icon';

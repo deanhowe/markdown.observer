@@ -227,7 +227,7 @@ export function WorkflowStatus({
                                 fill: getWorkflowChartColor()
                             }
                         ]}
-                        label={getWorkflowProgress()}
+                        label={String(getWorkflowProgress())}
                         valueFormatter={(value) => `${value}%`}
                     />
                 </div>

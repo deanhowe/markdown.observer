@@ -1,40 +1,31 @@
 import axios from 'axios';
 
 // Simple debounce function to prevent repeated API calls
-function debounce<T extends (...args: unknown[]) => Promise<unknown>>(
-    func: T,
+function debounce<Args extends unknown[], Result>(
+    func: (...args: Args) => Promise<Result>,
     wait: number
-): (...args: Parameters<T>) => Promise<ReturnType<T>> {
-    let timeout: NodeJS.Timeout | null = null;
-    let lastResult: unknown = null;
-    let lastArgs: Parameters<T> | null = null;
+): (...args: Args) => Promise<Result> {
+    let timeout: ReturnType<typeof setTimeout> | undefined;
+    let pending: Array<{ resolve: (value: Result) => void; reject: (reason?: unknown) => void }> = [];
+    let latestArgs: Args;
 
-    return async (...args: Parameters<T>): Promise<ReturnType<T>> => {
-        // If the args are the same as the last call, return the cached result
-        if (
-            lastArgs &&
-            lastArgs.length === args.length &&
-            lastArgs.every((arg, i) => JSON.stringify(arg) === JSON.stringify(args[i]))
-        ) {
-            return lastResult as ReturnType<T>;
-        }
+    return (...args: Args) => new Promise<Result>((resolve, reject) => {
+        latestArgs = args;
+        pending.push({ resolve, reject });
 
-        // Store the args for comparison in the next call
-        lastArgs = args;
+        if (timeout) clearTimeout(timeout);
+        timeout = setTimeout(async () => {
+            const waiting = pending;
+            pending = [];
 
-        // Clear any existing timeout
-        if (timeout) {
-            clearTimeout(timeout);
-        }
-
-        // Return a promise that resolves when the debounced function is called
-        return new Promise((resolve) => {
-            timeout = setTimeout(async () => {
-                lastResult = await func(...args);
-                resolve(lastResult as ReturnType<T>);
-            }, wait);
-        });
-    };
+            try {
+                const result = await func(...latestArgs);
+                waiting.forEach(({ resolve }) => resolve(result));
+            } catch (error) {
+                waiting.forEach(({ reject }) => reject(error));
+            }
+        }, wait);
+    });
 }
 
 // The original functions

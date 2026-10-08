@@ -17,7 +17,7 @@ function htmlToMarkdown(html: string): string {
   div.innerHTML = html
   
   // Basic conversion (can be enhanced)
-  let markdown = html
+  const markdown = html
     .replace(/<h1>(.*?)<\/h1>/g, '# $1\n')
     .replace(/<h2>(.*?)<\/h2>/g, '## $1\n')
     .replace(/<h3>(.*?)<\/h3>/g, '### $1\n')
@@ -34,7 +34,7 @@ function htmlToMarkdown(html: string): string {
 export default function MarkdownEditor({ content, onChange, placeholder }: MarkdownEditorProps) {
   const editor = useEditor({
     extensions: [
-      StarterKit,
+      StarterKit.configure({ link: false }),
       Placeholder.configure({ placeholder: placeholder || 'Start writing...' }),
       Link.configure({ openOnClick: false }),
       Image,
@@ -49,7 +49,7 @@ export default function MarkdownEditor({ content, onChange, placeholder }: Markd
 
   useEffect(() => {
     if (editor && content !== editor.getHTML()) {
-      editor.commands.setContent(content)
+      editor.commands.setContent(content, { emitUpdate: false })
     }
   }, [content, editor])
 

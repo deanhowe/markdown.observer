@@ -27,7 +27,7 @@ export default function AnimatedBlobs() {
       vy: number
       color: string
 
-      constructor() {
+      constructor(private readonly canvas: HTMLCanvasElement) {
         this.x = Math.random() * canvas.width
         this.y = Math.random() * canvas.height
         this.radius = Math.random() * 400 + 300
@@ -49,10 +49,10 @@ export default function AnimatedBlobs() {
         this.y += this.vy
 
         // Bounce off edges
-        if (this.x < -this.radius || this.x > canvas.width + this.radius) {
+        if (this.x < -this.radius || this.x > this.canvas.width + this.radius) {
           this.vx *= -1
         }
-        if (this.y < -this.radius || this.y > canvas.height + this.radius) {
+        if (this.y < -this.radius || this.y > this.canvas.height + this.radius) {
           this.vy *= -1
         }
       }
@@ -75,7 +75,7 @@ export default function AnimatedBlobs() {
     // Create blobs
     const blobs: Blob[] = []
     for (let i = 0; i < 7; i++) {
-      const blob = new Blob()
+      const blob = new Blob(canvas)
       // Force some blobs to bottom half
       if (i > 4) {
         blob.y = canvas.height * 0.7 + Math.random() * canvas.height * 0.3

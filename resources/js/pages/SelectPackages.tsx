@@ -18,7 +18,7 @@ interface SelectPackagesProps {
 
 export default function SelectPackages({ packages, limits }: SelectPackagesProps) {
   const [selected, setSelected] = useState<string[]>([])
-  const { post, processing } = useForm()
+  const { post, processing, transform } = useForm<{ packages: Package[] }>({ packages: [] })
 
   const togglePackage = (packageData: Package) => {
     const name = packageData.name
@@ -38,9 +38,8 @@ export default function SelectPackages({ packages, limits }: SelectPackagesProps
       .filter(pkg => selected.includes(pkg.name))
       .map(pkg => ({ name: pkg.name, version: pkg.version, type: pkg.type }))
     
-    post(route('packages.confirm'), {
-      data: { packages: selectedPackages },
-    })
+    transform(() => ({ packages: selectedPackages }))
+    post(route('packages.confirm'))
   }
 
   return (

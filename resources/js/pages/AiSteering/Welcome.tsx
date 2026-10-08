@@ -4,7 +4,6 @@ interface AIWelcomeProps {
   stats: {
     collections: number;
     documents: number;
-    repos: number;
   }
 }
 
@@ -36,12 +35,11 @@ export default function AIWelcome({ stats }: AIWelcomeProps) {
         {/* Hero */}
         <section className="container mx-auto px-6 py-20 text-center">
           <h2 className="text-5xl font-bold mb-6">
-            World's First<br />
-            <span className="text-blue-500">AI Steering Docs Search Engine</span>
+            Explore<br />
+            <span className="text-blue-500">AI Steering Docs</span>
           </h2>
           <p className="text-xl text-gray-600 dark:text-gray-400 mb-8 max-w-2xl mx-auto">
-            Learn how React, Next.js, Livewire structure their AI instructions.
-            Search 500+ top projects for <code className="bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded">.claude/</code>,
+            See how public projects organize instructions for AI coding tools. We’re collecting GitHub examples, and searchable discovery is coming soon. Explore files in <code className="bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded">.claude/</code>,
             <code className="bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded">.cursor/</code>,
             <code className="bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded">.ai/</code> folders.
           </p>
@@ -55,7 +53,9 @@ export default function AIWelcome({ stats }: AIWelcomeProps) {
                 className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 dark:bg-gray-900 dark:text-white"
                 disabled
               />
-              <p className="text-sm text-gray-500 mt-4">Coming soon - Crawler running now!</p>
+              <p className="text-sm text-gray-500 mt-4">
+                Public GitHub steering-document samples have been collected. Search is coming soon.
+              </p>
             </div>
           </div>
 
@@ -98,16 +98,16 @@ export default function AIWelcome({ stats }: AIWelcomeProps) {
         <section className="container mx-auto px-6 py-20 text-center">
           <div className="grid md:grid-cols-3 gap-8 max-w-3xl mx-auto">
             <div>
-              <p className="text-4xl font-bold text-blue-500">{stats.repos.toLocaleString()}+</p>
-              <p className="text-gray-600 dark:text-gray-400">Repos Crawled</p>
+              <p className="text-4xl font-bold text-blue-500">{stats.collections.toLocaleString()}</p>
+              <p className="text-gray-600 dark:text-gray-400">Collections</p>
             </div>
             <div>
-              <p className="text-4xl font-bold text-blue-500">~{stats.collections.toLocaleString()}</p>
-              <p className="text-gray-600 dark:text-gray-400">Collections Found</p>
+              <p className="text-4xl font-bold text-blue-500">{stats.documents.toLocaleString()}</p>
+              <p className="text-gray-600 dark:text-gray-400">Steering documents</p>
             </div>
             <div>
-              <p className="text-4xl font-bold text-blue-500">{stats.documents.toLocaleString()}+</p>
-              <p className="text-gray-600 dark:text-gray-400">Steering Docs</p>
+              <p className="text-4xl font-bold text-blue-500">Public GitHub</p>
+              <p className="text-gray-600 dark:text-gray-400">Crawl source</p>
             </div>
           </div>
         </section>
@@ -116,10 +116,10 @@ export default function AIWelcome({ stats }: AIWelcomeProps) {
         <section className="container mx-auto px-6 py-20 text-center">
           <div className="backdrop-blur-sm bg-white/70 dark:bg-gray-800/70 rounded-2xl p-12 border border-gray-200 dark:border-gray-700 max-w-2xl mx-auto">
             <h3 className="text-3xl font-bold mb-4 dark:text-white">
-              No One Else Has This Data
+              A Growing Public Reference
             </h3>
             <p className="text-xl text-gray-600 dark:text-gray-400 mb-8">
-              This is StackOverflow for AI steering docs. Be first.
+              Join the waitlist for updates as searchable discovery becomes available.
             </p>
             <Link
               href={route('register')}
