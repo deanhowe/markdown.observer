@@ -1,4 +1,8 @@
-# Production Readiness Checklist
+# Historical Production Readiness Checklist (February 2026)
+
+This checklist records the initial launch setup. Its framework and deployment
+steps are historical; consult `UPGRADE-LARAVEL-13.md` for the current local
+runtime and publication status.
 
 ## ✅ Laravel Cloud Features
 - [x] Queue workers (database driver)
@@ -31,7 +35,8 @@
 1. Create app in dashboard
 2. Connect GitHub repo
 3. Configure environment:
-   - PHP 8.4
+   - PHP 8.5 (current application requirement; this checklist's deployment
+     instructions otherwise describe the original launch setup)
    - Node 24
    - PostgreSQL database
 4. Set build commands:

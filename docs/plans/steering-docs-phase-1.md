@@ -12,8 +12,10 @@ already exists. This plan starts from what is actually built.
 - Folder-type detection (`claude`, `kiro`, fallback `ai`)
 - `ai.markdown.observer` subdomain with stats dashboard (`AI\HomeController`,
   `AiSteering/Welcome.tsx`)
-- Hourly GitHub crawls with version tracking (see git log: "hourly crawls to
-  measure real movement")
+- An hourly schedule, GitHub crawl command, and queue job exist in code.
+  This confirms configuration only: a successful production run and reliable
+  version history have not been verified. Do not market hourly crawling until
+  an end-to-end run is observed and recorded.
 
 ## Phase 1 gaps — ship these next
 

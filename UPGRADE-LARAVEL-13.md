@@ -1,6 +1,8 @@
 # Markdown.Observer — Laravel 13 upgrade
 
-Prepared 7 October 2026 in an isolated Codex worktree.
+Implemented locally on 8 October 2026. The upgrade is integrated into the
+canonical checkout; GitHub publication and production deployment remain
+pending.
 
 ## Changes
 
@@ -16,26 +18,33 @@ Prepared 7 October 2026 in an isolated Codex worktree.
 
 - Portable Composer resolution used isolated COMPOSER_HOME; no Forge hostname in manifest or lock.
 - Composer validation passed; Composer reported no security vulnerability advisories.
-- Full PHP 8.4 suite: 123 passed, 483 assertions, 12 risky, 6 skipped; no failures.
+- Full PHP 8.4 suite during the isolated upgrade: 123 passed, 483 assertions,
+  12 risky, 6 skipped; no failures.
 - Risky cases are pre-existing early-return placeholders in MarkdownService and PageService tests.
 - Skips include explicitly disabled settings tests and an unavailable vendor fixture.
 - npm ci and production Vite build passed.
 - Git fsck found no corrupt objects; existing dangling objects preserved.
 - Final PHP 8.5.0 suite: 123 passed, 483 assertions, 12 existing risky placeholders, 6 existing skips; no failures or deprecation warnings.
 - PHP 8.5 platform/extension requirements passed.
-- Cloud main is already running PHP 8.5 / Node 24, with push-to-deploy enabled.
+- The Cloud environment was reported as PHP 8.5 / Node 24 with push-to-deploy
+  enabled during upgrade preparation; the live deployment has not been
+  re-verified since this revision was integrated.
 - Replaced deprecated PDO MySQL SSL constants with Pdo\Mysql::ATTR_SSL_CA.
 
 ## Ownership and preservation
 
-Baseline: cffdf9e8125b099386a4448b15772a42ebed53f3.
-Branch: codex/markdown-laravel-13.
-Canonical checkout: sites/markdown.observer; isolated worktree retained.
-Existing dirty package files, settings layout, launch-post draft and legacy metadata deletion excluded.
-Exact scope: composer.json, composer.lock, bootstrap/app.php, README.md, resources/js/pages/Welcome.tsx, tests/Feature/Laravel13CompatibilityTest.php, config/database.php, this report.
-Commit and verified MoofForge branch publication authorized. GitHub publication requires Dean’s approval of the exact commit and main ref.
-Return strategy: reviewed commit. Retention: preserve.
+Upgrade commit: `29fb13f`; PHP 8.5 follow-up: `f342fa5`; local frontend and
+claim fixes: `cab44d5` on `main`.
+Canonical checkout: `sites/markdown.observer`. The Laravel 13 runtime is
+installed from `composer.lock`; the old vendor tree was generated dependency
+state, not unique Git history.
+The previous isolated-worktree note is historical. Current local changes are
+tracked in the canonical checkout and its `.kiro` Native Git Unit.
+MoofForge publication is allowed by the project contract. GitHub publication
+requires Dean’s approval of the exact commit and `main` ref.
 
 ## Production follow-up
 
-Verify the deployed revision and homepage after approved GitHub publication. Confirm Cloud PHP >=8.5, checkout/webhooks and queue workers. Browser payment completion and crawler execution were not performed as part of this isolated upgrade.
+After approved GitHub publication, verify the deployed revision and homepage,
+Cloud PHP >=8.5, checkout/webhooks, and queue workers. Browser payment
+completion and a successful production crawler run are still unverified.
