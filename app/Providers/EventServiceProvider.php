@@ -6,6 +6,7 @@ use App\Events\PageCreated;
 use App\Events\PageDeleted;
 use App\Events\PageUpdated;
 use App\Events\RevisionCreated;
+use App\Events\MarkdownChanged;
 use App\Events\UserLoggedIn;
 use App\Events\UserLoggedOut;
 use App\Events\UserRegistered;
@@ -13,6 +14,7 @@ use App\Listeners\CachePageData;
 use App\Listeners\CacheRevisionData;
 use App\Listeners\LogPageActivity;
 use App\Listeners\LogRevisionActivity;
+use App\Listeners\PublishMarkdownChangeToForge;
 use App\Listeners\LogUserActivity;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
 
@@ -39,6 +41,9 @@ class EventServiceProvider extends ServiceProvider
         RevisionCreated::class => [
             LogRevisionActivity::class . '@handleRevisionCreated',
             CacheRevisionData::class . '@handleRevisionCreated',
+        ],
+        MarkdownChanged::class => [
+            PublishMarkdownChangeToForge::class,
         ],
         UserRegistered::class => [
             LogUserActivity::class . '@handleUserRegistered',

@@ -2,6 +2,7 @@
 
 namespace App\Services;
 
+use App\Events\MarkdownChanged;
 use App\Repositories\Interfaces\PageRepositoryInterface;
 use App\Repositories\Interfaces\PageRevisionRepositoryInterface;
 use Illuminate\Support\Facades\Log;
@@ -89,13 +90,14 @@ class PageService
 
             // Track the change in the database
             $htmlContent = $page['html_content'];
-            $this->pageRevisionRepository->createRevision(
+            $revision = $this->pageRevisionRepository->createRevision(
                 $page['filename'],
                 $markdownContent,
                 $htmlContent,
                 $tiptapJson,
                 'create'
             );
+            $this->publishChange($page['filename'] . '.md', $markdownContent, $revision->id, 'local', 'create');
 
             return $page;
         } catch (\Exception $e) {
@@ -147,13 +149,14 @@ class PageService
 
             // Track the change in the database
             $htmlContent = $page['html_content'];
-            $this->pageRevisionRepository->createRevision(
+            $revision = $this->pageRevisionRepository->createRevision(
                 $page['filename'],
                 $markdownContent,
                 $htmlContent,
                 $tiptapJson,
                 'update'
             );
+            $this->publishChange($page['filename'] . '.md', $markdownContent, $revision->id, 'local', 'update');
 
             return $page;
         } catch (\Exception $e) {
@@ -190,13 +193,14 @@ class PageService
             }
 
             // Track the deletion in the database
-            $this->pageRevisionRepository->createRevision(
+            $revision = $this->pageRevisionRepository->createRevision(
                 $page['filename'],
                 $page['markdown_content'],
                 $page['html_content'],
                 null,
                 'delete'
             );
+            $this->publishChange($page['filename'] . '.md', $page['markdown_content'], $revision->id, 'local', 'delete');
 
             return true;
         } catch (\Exception $e) {
@@ -228,5 +232,18 @@ class PageService
     public function convertToMarkdown(string $html): string
     {
         return $this->markdownService->toMarkdown($html);
+    }
+
+    private function publishChange(string $path, string $content, int $revisionId, string $source, string $revisionType): void
+    {
+        MarkdownChanged::dispatch(
+            source: $source,
+            repository: (string) config('services.moof_forge.repository', 'markdown.observer'),
+            path: $path,
+            content: $content,
+            contentHash: hash('sha256', $content),
+            changedAt: now()->toIso8601String(),
+            metadata: ['revision_id' => $revisionId, 'revision_type' => $revisionType],
+        );
     }
 }

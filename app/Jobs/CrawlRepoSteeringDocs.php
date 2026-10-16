@@ -2,6 +2,7 @@
 
 namespace App\Jobs;
 
+use App\Events\MarkdownChanged;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
@@ -86,6 +87,16 @@ class CrawlRepoSteeringDocs implements ShouldQueue
             // Track version if content changed
             if ($doc->wasChanged('content')) {
                 $doc->createVersion('crawled');
+                MarkdownChanged::dispatch(
+                    source: 'github',
+                    repository: $this->repo,
+                    path: $file['path'],
+                    content: $content,
+                    contentHash: hash('sha256', $content),
+                    changedAt: now()->toIso8601String(),
+                    commit: $file['sha'] ?? null,
+                    metadata: ['collection_id' => $collection->id, 'change_type' => 'crawled'],
+                );
             }
         } catch (\Exception $e) {
             // Skip this file, continue with others

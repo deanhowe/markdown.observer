@@ -53,4 +53,10 @@ return [
         'token' => env('GITHUB_TOKEN'),
     ],
 
+    'moof_forge' => [
+        'url' => env('MOOF_FORGE_URL', 'http://git.moof.local/api/v1'),
+        'token' => env('MOOF_FORGE_TOKEN'),
+        'repository' => env('MOOF_MARKDOWN_REPOSITORY', 'markdown.observer'),
+    ],
+
 ];

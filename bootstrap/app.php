@@ -17,6 +17,9 @@ return Application::configure(basePath: dirname(__DIR__))
     ->withSchedule(function ($schedule) {
         // Crawl GitHub for steering docs every hour - stay fresh!
         $schedule->command('crawl:steering-docs')->hourly();
+
+        // Catch edits made by an editor, sync tool, or external checkout.
+        $schedule->command('markdown:detect-external')->everyFiveMinutes();
         
         // Clean up old failed jobs monthly
         $schedule->command('queue:prune-failed --hours=720')->monthly();
