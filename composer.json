@@ -35,7 +35,7 @@
         "php": "^8.5",
         "calebporzio/sushi": "^2.5.3",
         "ezyang/htmlpurifier": "^4.19",
-        "inertiajs/inertia-laravel": "^2.0.10",
+        "inertiajs/inertia-laravel": "^3",
         "laravel/boost": "^2.0",
         "laravel/cashier": "^16.2",
         "laravel/dusk": "^8.3.3",
@@ -62,11 +62,11 @@
         "laravel/sail": "^1.48.1",
         "mockery/mockery": "^1.6.12",
         "nunomaduro/collision": "^8.8.3",
-        "pestphp/pest": "^4.0",
-        "pestphp/pest-plugin-drift": "^4.0",
-        "pestphp/pest-plugin-faker": "^4.0",
-        "pestphp/pest-plugin-laravel": "^4.0",
-        "pestphp/pest-plugin-livewire": "^4.0"
+        "pestphp/pest": "^5",
+        "pestphp/pest-plugin-drift": "^5",
+        "pestphp/pest-plugin-faker": "^5",
+        "pestphp/pest-plugin-laravel": "^5",
+        "pestphp/pest-plugin-livewire": "^5"
     },
     "autoload": {
         "psr-4": {
